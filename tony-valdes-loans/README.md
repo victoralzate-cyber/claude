@@ -37,6 +37,15 @@ Página principal de **tonyvaldesloans.com**, construida según el brandbook ofi
 - Email: info@tonyvaldesloans.com
 - Instagram: @tonyvaldesloans
 
+## Versión para pegar en GHL (recomendada)
+
+`ghl-pegar-en-ghl.html` está lista para pegarse completa en un elemento **Code** de GHL:
+- Las imágenes van incrustadas, así que no hace falta subirlas a la Biblioteca de Medios.
+- Todo el CSS está encapsulado bajo `#tvl`, para que los estilos de GHL no alteren la página y la página no altere el resto del sitio.
+- No lleva etiquetas `<html>`, `<head>` ni `<body>`. Título y descripción SEO se configuran en los Settings de la página en GHL.
+
+Se genera a partir de `index-con-imagenes.html`. Si se edita la página, hay que regenerarla.
+
 ## Versión con imágenes incluidas
 
 `index-con-imagenes.html` es la misma página, con el logo y las fotos incrustados dentro del archivo (base64, unos 400 KB). Se ve completa al abrirla sola, sin la carpeta `assets/`. Es la ideal para revisar o compartir la página. Para GHL se recomienda la versión con imágenes subidas a la Biblioteca de Medios, porque carga más rápido.
