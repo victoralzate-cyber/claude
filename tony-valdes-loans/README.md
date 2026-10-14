@@ -2,6 +2,15 @@
 
 Página principal de **tonyvaldesloans.com**, construida según el brandbook oficial de la marca. Es un solo archivo (`index.html`, con HTML, CSS y JS incluidos) más la carpeta `assets/`, y está pensada para pegarse en un bloque de **Código personalizado** de GoHighLevel.
 
+## Idiomas: Español, English y Português
+
+La página es trilingüe. El selector **ES · EN · PT** del header cambia todo el contenido al instante, sin recargar: textos, botones, formulario, mensajes de error, textos alternativos de las imágenes y avisos legales.
+- **Español** es el idioma por defecto.
+- El idioma elegido se recuerda en el navegador del visitante para su próxima visita.
+- **Links directos por idioma**, útiles para anuncios y campañas: agrega `?lang=en` o `?lang=pt` a la URL. Ejemplo: `tonyvaldesloans.com/?lang=pt`.
+- Los nombres propios de programas (FHA, VA, DSCR, Fix & Flip, etc.) y el sello Equal Housing Opportunity se mantienen igual en los tres idiomas.
+- Las traducciones viven en el objeto `I18N` dentro del `<script>`. Cada texto tiene una clave `data-i18n="tNNN"`.
+
 ## Identidad aplicada (brandbook)
 
 | Elemento | Valor |
