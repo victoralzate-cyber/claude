@@ -37,6 +37,10 @@ Página principal de **tonyvaldesloans.com**, construida según el brandbook ofi
 - Email: info@tonyvaldesloans.com
 - Instagram: @tonyvaldesloans
 
+## Versión con imágenes incluidas
+
+`index-con-imagenes.html` es la misma página, con el logo y las fotos incrustados dentro del archivo (base64, unos 400 KB). Se ve completa al abrirla sola, sin la carpeta `assets/`. Es la ideal para revisar o compartir la página. Para GHL se recomienda la versión con imágenes subidas a la Biblioteca de Medios, porque carga más rápido.
+
 ## Cómo subirla a GHL
 
 1. **Imágenes:** sube los archivos de `assets/` a la Biblioteca de Medios de GHL. Luego busca en `index.html` cada `assets/…` y reemplázalo por la URL pública que te da GHL:
