@@ -110,6 +110,17 @@ Página para agentes inmobiliarios en ES/EN/PT, con un **estilo "alianza" claro 
 - Fotos: blazer casual (hero) y blazer señalando (contacto).
 - En Inicio, "Realtors" y "Quiero cerrar más" apuntan a `/realtors`; en Inversionistas, el link del footer también.
 
+## Landing de Primeros Compradores (`primeros-compradores/`)
+
+Página para primeros compradores en ES/EN/PT, con un **estilo "hogar" fresco y esperanzador**: fondos blancos con azul cielo (el Cornflower Blue secundario del brandbook), tarjetas muy redondeadas, chips flotantes ("¡Recibe tus llaves!", "Preaprobado") y un camino punteado hacia las llaves. Va en GHL como página con el slug **`primeros-compradores`**.
+- Basada en la presentación de primeros compradores: hero "Tu primera casa: del sueño a tu primera inversión", beneficios de ser dueño, crédito (qué hacer y qué evitar), empleado vs. independiente (con Bank Statement), programas (Convencional, FHA, VA, USDA y DPA), el camino en 6 pasos, las historias de la Familia W. y Stephannie, FAQ y formulario.
+- **Calculadora "¿Cuánto has regalado en renta?"**: renta mensual (barra deslizante) × 1, 5 o 10 años.
+- **Test "¿Estás listo para comprar?"**: 6 preguntas con puntaje y un mensaje traducido.
+- Sin porcentajes de entrada, tasas ni pagos mensuales (Reg. Z). Se omiten el 5.9% y el pago mensual del caso de Stephannie.
+- El formulario usa el mismo webhook, con `origen=web-primeros-compradores`, y suma `plazo` (cuándo quiere comprar), `test_preparacion` (puntaje del test, ej. 4/6) y `renta_mensual` (lo que puso en la calculadora).
+- Fotos: Tony señalando al lado (hero) y Tony con traje completo (contacto).
+- "Comprar casa" en Inicio y "Compra de vivienda" en los footers de Inversionistas y Realtors apuntan a `/primeros-compradores`.
+
 ## SEO (`seo/`)
 
 - `seo/og-tony-valdes-loans.jpg`: imagen para compartir en redes (1200×630). En GHL va en Settings → SEO → Social Image.

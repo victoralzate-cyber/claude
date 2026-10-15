@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compra tu Primera Casa en EE. UU. | Tony Valdes Loans</title>
+<meta name="description" content="Tu primera casa en Estados Unidos sí es posible. Programas de ayuda para el pago inicial, opciones para empleados e independientes y una guía paso a paso. Asesoría gratis con Tony Valdes, NMLS #1593970.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*BASE_CSS*/
+
+/* ================= PRIMEROS COMPRADORES · ESTILO HOGAR (fresco) ================= */
+.h-sky{background:linear-gradient(180deg,#FFFFFF 0%,#EEF1FE 100%)}
+.h-soft{background:#F6F7FE}
+.h-sky .eyebrow,.h-soft .eyebrow,.h-hero .eyebrow,.h-contact .eyebrow{color:#8A5E05}
+.h-hero{position:relative;background:radial-gradient(900px 520px at 78% 40%,#DDE3FD 0%,#F3F5FF 45%,#FFFFFF 75%);overflow:hidden;color:var(--ink)}
+.h-hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:end;min-height:660px;padding-top:56px}
+.h-copy{padding-bottom:70px}
+.h-copy h1{font-size:clamp(2.3rem,5vw,4rem);font-weight:900;line-height:1.07;margin-bottom:18px;color:var(--blue)}
+.h-copy h1 .gold-text{background-image:linear-gradient(90deg,#8A5E05,#B07908 60%,#D9A21E)}
+.h-copy .kicker{display:inline-block;font-weight:800;color:var(--cobalt);background:#E4E8FD;border-radius:999px;padding:7px 14px;font-size:.85rem;margin-bottom:16px}
+.h-copy .sub{font-size:1.1rem;color:var(--ink-soft);max-width:560px;margin-bottom:28px}
+.h-copy .btn-outline{border-color:var(--blue);color:var(--blue)}
+.h-copy .btn-outline:hover{background:rgba(3,0,46,.05)}
+.h-trust{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.h-trust span{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid #E1E5FB;border-radius:999px;padding:9px 14px;font-size:.84rem;font-weight:700;color:var(--blue);box-shadow:0 6px 18px rgba(8,63,176,.08)}
+.h-photo{position:relative;align-self:end;display:flex;justify-content:center}
+.h-photo .blob{position:absolute;z-index:0;left:50%;bottom:40px;width:92%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 40% 35%,#C9D1FB,#7888F4 70%);opacity:.55}
+.h-photo .ring{position:absolute;z-index:1;left:50%;bottom:22px;width:100%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;border:2px dashed rgba(176,121,8,.45)}
+.h-photo img{position:relative;z-index:2;max-height:620px;width:auto;filter:drop-shadow(0 26px 34px rgba(3,0,46,.28))}
+.h-photo .chip{position:absolute;z-index:3;background:var(--white);border-radius:16px;padding:12px 16px;box-shadow:0 16px 36px rgba(3,0,46,.16);font-weight:800;color:var(--blue);font-size:.88rem;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.h-photo .chip i{font-style:normal;font-size:1.25rem}
+.h-photo .chip.c1{right:-2%;top:22%}
+.h-photo .chip.c2{left:-4%;bottom:120px}
+.h-photo .chip.c1{animation:float 6s ease-in-out infinite}
+.h-photo .chip.c2{animation:float 7s ease-in-out infinite reverse}
+
+/* Calculadora de renta */
+.rent-wrap{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--white);border-radius:28px;overflow:hidden;box-shadow:0 30px 70px rgba(8,63,176,.14)}
+.rent-in{padding:40px 38px}
+.rent-in h3{font-size:1.4rem;color:var(--blue)}
+.rent-in p{color:var(--ink-soft);font-size:.95rem}
+.range-row{margin:22px 0}
+.range-row label{display:flex;justify-content:space-between;font-weight:800;font-size:.9rem;margin-bottom:10px;color:var(--blue)}
+.range-row output{color:#8A5E05}
+.range-row input[type=range]{width:100%;accent-color:#B07908;height:6px}
+.years{display:flex;gap:10px;flex-wrap:wrap}
+.years button{font-family:inherit;font-weight:800;font-size:.9rem;padding:10px 18px;border-radius:999px;border:2px solid #DCE1FA;background:var(--white);color:var(--blue);cursor:pointer}
+.years button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:var(--jasmine)}
+.rent-out{background:var(--blue);color:var(--white);padding:40px 38px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.rent-out::after{content:"";position:absolute;right:-60px;bottom:-60px;width:220px;height:220px;border-radius:50%;border:2px solid rgba(244,228,120,.18)}
+.rent-out .lbl{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#B9B6D6}
+.rent-out .big{font-size:clamp(2.4rem,4.6vw,3.4rem);font-weight:900;line-height:1.05;margin:6px 0 10px}
+.rent-out p{color:#D9D7EE;font-size:.98rem}
+.rent-out .bar{height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin:6px 0 18px}
+.rent-out .bar span{display:block;height:100%;width:0;background:var(--gold-grad);border-radius:999px;transition:width .5s ease}
+.rent-out .btn{align-self:flex-start;position:relative;z-index:1}
+.rent-note{font-size:.76rem;color:#9C99BE;margin:14px 0 0}
+
+/* Beneficios */
+.h-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.h-benefit{background:var(--white);border-radius:24px;padding:28px 24px;box-shadow:0 14px 34px rgba(8,63,176,.08);text-align:left}
+.h-benefit .em{font-size:2rem;display:block;margin-bottom:12px}
+.h-benefit h3{font-size:1.05rem;color:var(--blue)}
+.h-benefit p{font-size:.9rem;color:var(--ink-soft);margin:0}
+
+/* Test de preparación */
+.quiz{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:start}
+.quiz-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.quiz-list label{display:flex;gap:14px;align-items:flex-start;background:var(--white);border:2px solid #E1E5FB;border-radius:18px;padding:16px 18px;cursor:pointer;transition:border-color .2s ease,background .2s ease}
+.quiz-list input{width:22px;height:22px;flex:none;margin-top:2px;accent-color:var(--blue)}
+.quiz-list label:has(input:checked){border-color:var(--gold);background:#FFFBEA}
+.quiz-list strong{display:block;color:var(--blue);font-size:.98rem}
+.quiz-list span{font-size:.86rem;color:var(--ink-soft)}
+.quiz-result{position:sticky;top:110px;background:var(--blue);color:var(--white);border-radius:28px;padding:34px 30px;text-align:center}
+.quiz-result .score{font-size:3.4rem;font-weight:900;line-height:1}
+.quiz-result .of{color:#B9B6D6;font-size:.9rem;margin-bottom:16px;display:block}
+.quiz-result .meter{height:12px;border-radius:999px;background:rgba(255,255,255,.12);overflow:hidden;margin:0 0 18px}
+.quiz-result .meter span{display:block;height:100%;width:0;background:var(--gold-grad);transition:width .4s ease}
+.quiz-result p{color:#E1DFF2;font-size:.98rem;min-height:3.2em}
+
+/* Crédito */
+.credit{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.credit-box{border-radius:24px;padding:30px 28px}
+.credit-box.do{background:var(--white);box-shadow:0 14px 34px rgba(8,63,176,.08);border-top:5px solid var(--gold)}
+.credit-box.dont{background:var(--white);box-shadow:0 14px 34px rgba(8,63,176,.08);border-top:5px solid #E5735C}
+.credit-box h3{font-size:1.15rem;color:var(--blue)}
+.credit-box ul{margin:0;padding-left:20px}
+.credit-box li{margin-bottom:9px;font-size:.94rem;color:var(--ink-soft)}
+.credit-tip{margin-top:26px;background:#E4E8FD;border-radius:22px;padding:24px 28px;color:var(--blue);font-weight:600;font-size:1rem;display:flex;gap:16px;align-items:center}
+.credit-tip .em{font-size:2rem;flex:none}
+
+/* Empleado vs independiente */
+.vs2{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.vs2-card{background:var(--white);border-radius:24px;padding:30px 28px;box-shadow:0 14px 34px rgba(8,63,176,.08)}
+.vs2-card .pill{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;margin-bottom:12px}
+.vs2-card.emp .pill{background:#E4E8FD;color:var(--cobalt)}
+.vs2-card.ind .pill{background:#FBF3D3;color:#8A5E05}
+.vs2-card h3{font-size:1.2rem;color:var(--blue)}
+.vs2-card p{color:var(--ink-soft);font-size:.94rem}
+.vs2-card .extra{margin-top:14px;padding:14px 16px;border-radius:14px;background:#F6F7FE;font-size:.9rem;color:var(--ink)}
+
+/* Programas */
+.h-programs{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.h-prog{background:var(--white);border-radius:22px;padding:24px 20px;box-shadow:0 12px 30px rgba(8,63,176,.08);border:2px solid transparent;transition:border-color .2s ease,transform .2s ease}
+.h-prog:hover{border-color:#C9D1FB;transform:translateY(-4px)}
+.h-prog h3{font-size:1.05rem;color:var(--blue);margin-bottom:6px}
+.h-prog p{font-size:.86rem;color:var(--ink-soft);margin:0}
+.h-prog.dpa{background:var(--blue);color:var(--white)}
+.h-prog.dpa h3{color:var(--jasmine)}
+.h-prog.dpa p{color:#D9D7EE}
+
+/* Camino (proceso) */
+.journey{position:relative;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.journey::before{content:"";position:absolute;left:5%;right:5%;top:30px;border-top:3px dashed #C9D1FB}
+.journey .stop{position:relative;text-align:center}
+.journey .stop .pin{width:60px;height:60px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-size:1.5rem;background:var(--white);border:3px solid #C9D1FB;box-shadow:0 8px 20px rgba(8,63,176,.12)}
+.journey .stop:last-child .pin{background:var(--gold-grad);border-color:transparent}
+.journey h3{font-size:.95rem;color:var(--blue);margin-bottom:6px}
+.journey p{font-size:.82rem;color:var(--ink-soft);margin:0}
+
+/* Historias */
+.stories{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.story{background:var(--white);border-radius:28px;overflow:hidden;box-shadow:0 18px 44px rgba(8,63,176,.12)}
+.story header{background:var(--blue);color:var(--white);padding:26px 28px}
+.story header .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--jasmine);padding:5px 11px;border-radius:999px;margin-bottom:10px}
+.story header h3{margin:0;font-size:1.35rem;color:var(--white)}
+.story .body{padding:24px 28px 28px}
+.story .body p{color:var(--ink-soft);font-size:.95rem}
+.story .nums{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;margin:16px 0}
+.story .nums div{background:#F6F7FE;border-radius:16px;padding:14px;text-align:center}
+.story .nums span{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft)}
+.story .nums strong{font-size:1.5rem;font-weight:900;color:var(--blue)}
+.story .nums i{font-style:normal;font-weight:900;color:var(--gold);font-size:1.4rem}
+.story .nums .win strong{background:linear-gradient(90deg,#8A5E05,#B07908);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Contacto */
+.h-contact{background:linear-gradient(180deg,#EEF1FE 0%,#FFFFFF 100%);position:relative;overflow:hidden}
+.h-contact .container{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end}
+.h-contact .form-card{margin-bottom:80px;box-shadow:0 30px 70px rgba(8,63,176,.18);border-radius:28px}
+.h-contact .contact-photo{position:relative;display:flex;justify-content:center;align-self:end}
+.h-contact .contact-photo .blob{position:absolute;z-index:0;left:50%;bottom:40px;width:96%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle at 40% 35%,#C9D1FB,#7888F4 70%);opacity:.5}
+.h-contact .contact-photo img{position:relative;z-index:2;max-height:720px;width:auto;filter:drop-shadow(0 26px 34px rgba(3,0,46,.28))}
+
+@media (max-width:1080px){
+  .h-benefits{grid-template-columns:1fr 1fr}
+  .h-programs{grid-template-columns:repeat(3,1fr)}
+  .journey{grid-template-columns:repeat(3,1fr);row-gap:30px}.journey::before{display:none}
+}
+@media (max-width:920px){
+  .h-hero .container,.h-contact .container{grid-template-columns:1fr;min-height:auto;padding-top:40px}
+  .h-copy{padding-bottom:10px}
+  .h-photo img{max-height:440px}
+  .h-photo .chip.c1{right:0}.h-photo .chip.c2{left:0;bottom:60px}
+  .rent-wrap,.quiz,.credit,.vs2,.stories{grid-template-columns:1fr}
+  .quiz-result{position:static}
+  .h-contact .contact-photo{display:none}
+  .h-contact .form-card{margin-bottom:0}
+}
+@media (max-width:600px){
+  .h-benefits,.h-programs{grid-template-columns:1fr}
+  .journey{grid-template-columns:1fr 1fr}
+  .rent-in,.rent-out{padding:30px 22px}
+  .h-photo .chip{font-size:.78rem;padding:10px 12px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="house" viewBox="0 0 100 80">
+    <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="butt" stroke-linejoin="miter">
+      <path d="M6 44 L50 4 L94 44"/><path d="M33 64 V40 L50 23 L67 40 V64"/><path d="M19 50 V75 H81 V50"/><path d="M78 10 V30"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-contact">
+      <a href="tel:+17708656771">📞 (770) 865-6771</a>
+      <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a>
+      <a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a>
+    </div>
+    <div class="topbar-hours">NMLS #1593970 · Hablamos español &amp; English</div>
+  </div>
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="container">
+    <a class="brand" href="/" aria-label="Tony Valdes Loans - Inicio">
+      <img src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans">
+    </a>
+    <nav class="main" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="#renta">Calculadora</a></li>
+        <li><a href="#listo">¿Estás listo?</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a href="#proceso">Paso a paso</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-gold" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda tu asesoría</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="h-hero" id="inicio" style="padding:0">
+  <div class="container">
+    <div class="h-copy">
+      <span class="kicker">🏡 El sueño americano evolucionó</span>
+      <h1>Tu primera casa: del sueño a <span class="gold-text">tu primera inversión</span></h1>
+      <p class="sub">Deja de pagar la hipoteca de alguien más. Te guío paso a paso para comprar tu primera casa en Estados Unidos, con la estrategia correcta y muchas veces con menos dinero del que imaginas.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#contacto">Quiero comprar mi casa</a>
+        <a class="btn btn-outline" href="#listo">¿Estoy listo para comprar?</a>
+      </div>
+      <div class="h-trust">
+        <span>✅ Programas de ayuda para el pago inicial</span>
+        <span>✅ Empleados e independientes</span>
+        <span>✅ Plan para mejorar tu crédito</span>
+      </div>
+    </div>
+    <div class="h-photo">
+      <div class="blob" aria-hidden="true"></div>
+      <div class="ring" aria-hidden="true"></div>
+      <img src="../assets/tony-senalando-lado.webp" alt="Tony Valdes te muestra el camino a tu primera casa" width="1051" height="1476" fetchpriority="high">
+      <div class="chip c1" aria-hidden="true"><i>🔑</i>¡Recibe tus llaves!</div>
+      <div class="chip c2" aria-hidden="true"><i>✅</i>Preaprobado</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALCULADORA DE RENTA ============ -->
+<section class="h-sky" id="renta">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Haz la cuenta</span>
+      <h2>Cada mes que pagas renta, estás pagando la hipoteca de alguien más</h2>
+      <p>Descubre cuánto dinero se va en renta con el paso de los años. Ese mismo dinero podría estar construyendo tu propio patrimonio.</p>
+    </div>
+    <div class="rent-wrap reveal">
+      <div class="rent-in">
+        <h3>¿Cuánto has regalado en renta?</h3>
+        <p>Mueve la barra con lo que pagas de renta hoy y elige el periodo.</p>
+        <div class="range-row">
+          <label for="rent">Tu renta mensual <output id="rentOut">$1,800</output></label>
+          <input id="rent" type="range" min="500" max="5000" step="50" value="1800">
+        </div>
+        <div class="range-row">
+          <label>Periodo</label>
+          <div class="years" role="group" aria-label="Periodo">
+            <button type="button" data-y="1" aria-pressed="false">1 año</button>
+            <button type="button" data-y="5" aria-pressed="true">5 años</button>
+            <button type="button" data-y="10" aria-pressed="false">10 años</button>
+          </div>
+        </div>
+      </div>
+      <div class="rent-out" aria-live="polite">
+        <span class="lbl">Dinero que se va en renta</span>
+        <div class="big gold-text" id="rentTotal">$108,000</div>
+        <div class="bar" aria-hidden="true"><span id="rentBar"></span></div>
+        <p>Siendo dueño, cada pago aumenta tu equity, no la riqueza del dueño de la casa. Y nadie puede pedirte que te mudes ni subirte la renta.</p>
+        <a class="btn btn-gold" href="#contacto">Quiero dejar de pagar renta</a>
+        <p class="rent-note">Cálculo simple con fines educativos: renta mensual × meses, sin aumentos anuales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section class="section-light" id="beneficios">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Por qué ser dueño es tu mejor negocio</span>
+      <h2>Tu casa es tu refugio y tu primer activo financiero</h2>
+    </div>
+    <div class="h-benefits">
+      <div class="h-benefit reveal"><span class="em">📈</span><h3>Construyes equity</h3><p>Cada pago aumenta tu riqueza, no la del dueño de la casa.</p></div>
+      <div class="h-benefit reveal"><span class="em">🛡️</span><h3>Estabilidad para tu familia</h3><p>Nadie puede pedirte que te mudes ni subirte la renta.</p></div>
+      <div class="h-benefit reveal"><span class="em">🏗️</span><h3>Libertad para mejorarla</h3><p>Personaliza y mejora tu propiedad a tu gusto, y aumenta su valor.</p></div>
+      <div class="h-benefit reveal"><span class="em">🌱</span><h3>Patrimonio a largo plazo</h3><p>En una década estarás mucho más cerca de una jubilación digna.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEST ============ -->
+<section class="h-soft" id="listo">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Test rápido</span>
+      <h2>¿Estás listo para comprar tu primera casa?</h2>
+      <p>Marca lo que ya tienes. No te preocupes si te faltan cosas: para eso estoy, para ayudarte a armar tu plan.</p>
+    </div>
+    <div class="quiz reveal">
+      <ul class="quiz-list">
+        <li><label><input type="checkbox" class="q"><div><strong>Tengo ingresos estables en los últimos 2 años</strong><span>Como empleado o como independiente.</span></div></label></li>
+        <li><label><input type="checkbox" class="q"><div><strong>Tengo algo ahorrado para la entrada y los gastos de cierre</strong><span>Aunque sea poco: hay programas de ayuda.</span></div></label></li>
+        <li><label><input type="checkbox" class="q"><div><strong>Conozco mi puntaje de crédito</strong><span>Si no lo conoces, lo revisamos juntos.</span></div></label></li>
+        <li><label><input type="checkbox" class="q"><div><strong>Pago mis cuentas a tiempo</strong><span>Tarjetas, préstamos y servicios.</span></div></label></li>
+        <li><label><input type="checkbox" class="q"><div><strong>Tengo mis documentos organizados</strong><span>Identificación, paystubs o estados de cuenta, y taxes.</span></div></label></li>
+        <li><label><input type="checkbox" class="q"><div><strong>Sé cuánto quiero pagar al mes</strong><span>Un presupuesto que te deje vivir tranquilo.</span></div></label></li>
+      </ul>
+      <div class="quiz-result" aria-live="polite">
+        <div class="score gold-text" id="qScore">0</div>
+        <span class="of" id="qOf">de 6</span>
+        <div class="meter" aria-hidden="true"><span id="qMeter"></span></div>
+        <p id="qMsg"></p>
+        <a class="btn btn-gold" href="#contacto">Armemos tu plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CRÉDITO ============ -->
+<section class="section-light" id="credito">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Cuida tu crédito</span>
+      <h2>Un buen crédito te ahorra miles de dólares</h2>
+      <p>Entre más alto sea tu puntaje, mejores condiciones puedes conseguir durante toda la vida de tu préstamo.</p>
+    </div>
+    <div class="credit">
+      <div class="credit-box do reveal">
+        <h3>✅ Prepárate para calificar</h3>
+        <ul>
+          <li>Ingresos estables en los últimos 2 años, como empleado o independiente</li>
+          <li>Un fondo de reserva para la entrada y los gastos de cierre</li>
+          <li>Documentos organizados: identificación, paystubs o estados de cuenta</li>
+          <li>Paga tus cuentas a tiempo y mantén bajos los saldos de tus tarjetas</li>
+        </ul>
+      </div>
+      <div class="credit-box dont reveal">
+        <h3>🚫 Evita durante el proceso</h3>
+        <ul>
+          <li>Abrir nuevas líneas de crédito o financiar un auto</li>
+          <li>Hacer compras grandes con tus tarjetas</li>
+          <li>Cerrar cuentas antiguas (ayudan a tu historial)</li>
+          <li>Movimientos bancarios inusuales o cambiar de trabajo de repente</li>
+        </ul>
+      </div>
+    </div>
+    <div class="credit-tip reveal"><span class="em">💪</span><span>Si hoy tu puntaje no es el ideal, no te desanimes. Parte de mi asesoría es guiarte paso a paso para subirlo en los próximos meses. El camino a tu casa empieza con un plan, no solo con un número.</span></div>
+  </div>
+</section>
+
+<!-- ============ EMPLEADO VS INDEPENDIENTE ============ -->
+<section class="h-soft" id="ingresos">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Empleado o independiente</span>
+      <h2>Hay una opción para cómo ganas tu dinero</h2>
+    </div>
+    <div class="vs2">
+      <div class="vs2-card emp reveal">
+        <span class="pill">Empleado (W-2)</span>
+        <h3>Calificas con tu salario</h3>
+        <p>Se basa en tus ingresos actuales. Generalmente necesitas tus últimos paystubs y tus W-2 de los últimos 2 años. Puedes calificar incluso si empezaste un nuevo empleo en la misma industria.</p>
+      </div>
+      <div class="vs2-card ind reveal">
+        <span class="pill">Independiente / 1099</span>
+        <h3>Calificas con tus taxes o tus depósitos</h3>
+        <p>De forma tradicional se usan tus declaraciones de impuestos de los últimos 2 años y tu ingreso neto después de deducciones.</p>
+        <div class="extra"><strong>¿Tus taxes muestran poco por las deducciones?</strong> Con el programa <strong>Bank Statement</strong> calificas con 12 o 24 meses de estados de cuenta, según tus depósitos reales.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMAS ============ -->
+<section class="section-light" id="programas">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Programas para primeros compradores</span>
+      <h2>Opciones para comprar con menos dinero de tu bolsillo</h2>
+    </div>
+    <div class="h-programs">
+      <div class="h-prog reveal"><h3>Convencional</h3><p>Para residencia principal, segunda casa o inversión.</p></div>
+      <div class="h-prog reveal"><h3>FHA</h3><p>Requisitos de crédito más flexibles. Permite multifamiliar de hasta 4 unidades si vives en una.</p></div>
+      <div class="h-prog reveal"><h3>VA</h3><p>Para militares, veteranos y sus cónyuges. Sin seguro hipotecario (PMI).</p></div>
+      <div class="h-prog reveal"><h3>USDA</h3><p>Para propiedades en zonas rurales y suburbanas calificadas.</p></div>
+      <div class="h-prog dpa reveal"><h3>Ayuda para el pago inicial (DPA)</h3><p>Fondos para tu entrada y parte de los gastos de cierre, como regalo que no se devuelve o como préstamo con condiciones favorables.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CAMINO ============ -->
+<section class="h-sky" id="proceso">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Aquí te lo explico paso a paso</span>
+      <h2>El camino a tus llaves</h2>
+    </div>
+    <div class="journey">
+      <div class="stop reveal"><div class="pin">📋</div><h3>Preaprobación</h3><p>Revisamos tu crédito y finanzas para saber cuánto puedes comprar.</p></div>
+      <div class="stop reveal"><div class="pin">🏠</div><h3>Busca tu casa</h3><p>Con tu agente, visitas propiedades en tu rango de precio.</p></div>
+      <div class="stop reveal"><div class="pin">✍️</div><h3>Oferta</h3><p>Presentas una oferta sólida, respaldada por tu preaprobación.</p></div>
+      <div class="stop reveal"><div class="pin">🔍</div><h3>Gestiones</h3><p>Inspección, tasación, título y aprobación final del préstamo.</p></div>
+      <div class="stop reveal"><div class="pin">📑</div><h3>Pre-cierre</h3><p>Recorrido final y envío de fondos a la compañía de títulos.</p></div>
+      <div class="stop reveal"><div class="pin">🔑</div><h3>¡Cierre!</h3><p>Firmas los documentos y recibes las llaves de tu casa.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HISTORIAS ============ -->
+<section class="section-light" id="historias">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Historias reales</span>
+      <h2>Familias que ya tienen su casa</h2>
+    </div>
+    <div class="stories">
+      <article class="story reveal">
+        <header><span class="tag">Primer comprador</span><h3>Familia W.: de $39,000 a solo $4,364</h3></header>
+        <div class="body">
+          <p>Entre la cuota inicial, los gastos de abogados y los trámites, necesitaban casi $39,000 que no tenían. Aplicamos una estrategia de dos pasos: negociamos un bono del vendedor de $14,000 y los calificamos para un programa de ayuda que les dio más de $15,700 que no tienen que devolver.</p>
+          <div class="nums"><div><span>Necesitaban</span><strong>$38,987</strong></div><i aria-hidden="true">→</i><div class="win"><span>Llevaron al cierre</span><strong>$4,364</strong></div></div>
+          <p style="margin:0">Pasaron de inquilinos a dueños con una inversión mínima, gracias a usar la estrategia correcta.</p>
+        </div>
+      </article>
+      <article class="story reveal">
+        <header><span class="tag">Primer comprador inversionista</span><h3>Stephannie (GA): el “salto inteligente”</h3></header>
+        <div class="body">
+          <p>En lugar de una casa normal, compró un dúplex. Usó fondos de regalo de su familia y sus ahorros de retiro, y logramos que el vendedor le diera $5,000 para sus gastos.</p>
+          <div class="nums"><div><span>Vive en</span><strong>1 unidad</strong></div><i aria-hidden="true">+</i><div class="win"><span>Renta la otra en</span><strong>$1,700/mes</strong></div></div>
+          <p style="margin:0">La renta cubre la mayor parte de su hipoteca. Stephannie no solo compró un techo: compró un activo que crece cada día.</p>
+        </div>
+      </article>
+    </div>
+    <p class="disclaimer-small" style="color:#6E6B8E">Los resultados individuales pueden variar. Cada caso depende de la calificación del cliente, la propiedad y las condiciones del mercado.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="h-soft" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que más preguntan los primeros compradores</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>¿Necesito tener el 20% de entrada?</summary><p>No necesariamente. Existen programas con entrada baja y programas de ayuda para el pago inicial (DPA) que pueden cubrir parte de tu entrada y de tus gastos de cierre. En la asesoría revisamos para cuáles calificas.</p></details>
+      <details><summary>¿Mi familia me puede ayudar con el dinero?</summary><p>Sí. En muchos programas el banco permite fondos de regalo (gift funds) de familiares para tu entrada o tus gastos de cierre.</p></details>
+      <details><summary>¿Qué pasa si mi crédito no es perfecto?</summary><p>No te desanimes. Parte de mi asesoría es guiarte paso a paso para mejorar tu puntaje. El camino a tu casa empieza con un plan, no solo con un número.</p></details>
+      <details><summary>¿Puedo comprar casa si soy independiente o trabajo con 1099?</summary><p>¡Sí! Con programas como Bank Statement o Profit &amp; Loss calificas con tus depósitos reales o con un estado financiero de tu CPA, aunque tus taxes muestren pocos ingresos por las deducciones.</p></details>
+      <details><summary>¿Cuánto tiempo toma comprar una casa?</summary><p>Depende de cada caso, pero con tu preaprobación lista y tus documentos organizados, el proceso desde la oferta hasta el cierre suele avanzar mucho más rápido.</p></details>
+      <details><summary>¿Puedo comprar un dúplex como primera casa?</summary><p>Sí. Con programas como FHA puedes comprar una propiedad de hasta 4 unidades si vives en una de ellas, y la renta de las otras te ayuda a pagar tu hipoteca.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="h-contact" id="contacto" style="padding:96px 0 0">
+  <div class="container">
+    <div class="form-card reveal">
+      <div id="formWrap">
+        <span class="eyebrow">Asesoría sin costo</span>
+        <h2>Empecemos el camino a tu primera casa</h2>
+        <p>Déjame tus datos y te contacto para revisar tus opciones, sin compromiso.</p>
+        <form id="leadForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="objetivo">¿Qué quieres lograr?</label>
+              <select id="objetivo" name="objetivo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Comprar mi primera casa">Comprar mi primera casa</option>
+                <option value="Comprar: dúplex para vivir y rentar">Un dúplex para vivir y rentar</option>
+                <option value="Comprar: necesito mejorar mi crédito">Primero mejorar mi crédito</option>
+                <option value="Soy self-employed / 1099">Soy self-employed / 1099</option>
+                <option value="Comprar: quiero saber si califico para ayuda (DPA)">Saber si califico para ayuda (DPA)</option>
+              </select><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="plazo">¿Cuándo te gustaría comprar?</label>
+              <select id="plazo" name="plazo">
+                <option value="">Selecciona una opción</option>
+                <option value="0-3 meses">En los próximos 3 meses</option>
+                <option value="3-6 meses">En 3 a 6 meses</option>
+                <option value="6-12 meses">En 6 a 12 meses</option>
+                <option value="Más de 1 año">En más de un año</option>
+              </select></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+            <span>Acepto los <a href="/terminos">Términos</a> y la <a href="/privacidad">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+          <span class="err" id="consentErr" aria-live="polite"></span>
+          <button class="btn btn-gold" type="submit">Quiero mi asesoría</button>
+        </form>
+        <div class="contact-direct">
+          <a href="tel:+17708656771">📞 (770) 865-6771</a>
+          <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="mailto:info@tonyvaldesloans.com">✉️ Email</a>
+        </div>
+      </div>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="check">✓</div>
+        <h2>¡Gracias! Ya estás un paso más cerca</h2>
+        <p>Recibí tu información y te contactaré muy pronto. Si quieres adelantar, agenda tu cita directamente.</p>
+        <a class="btn btn-blue" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agendar ahora</a>
+      </div>
+    </div>
+    <div class="contact-photo">
+      <div class="blob" aria-hidden="true"></div>
+      <img src="../assets/tony-traje-completo.webp" alt="Tony Valdes listo para ayudarte a comprar tu casa" width="544" height="1813" loading="lazy">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans" loading="lazy">
+        <p>Préstamos Inteligentes. ¡Sí Es Posible! Te ayudamos a comprar, invertir y crecer con la estrategia de financiamiento correcta.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener" aria-label="Instagram @tonyvaldesloans"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zm-2.1 10a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9A3.3 3.3 0 0 1 6.1 4.2C7.4 3.7 10.5 3.8 12 3.8s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9z"/></svg></a>
+          <a href="https://www.facebook.com/tonyvaldesloanss/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.5V1H14c-3.6 0-4.4 2.7-4.4 4.4V8H7v4h2.6v11H14V12h3.2l.4-4z"/></svg></a>
+          <a href="https://www.youtube.com/@TonyValdesLoans" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Primeros compradores</h4>
+        <ul>
+          <li><a href="#renta">Calculadora de renta</a></li>
+          <li><a href="#listo">¿Estás listo para comprar?</a></li>
+          <li><a href="#programas">Programas</a></li>
+          <li><a href="#proceso">Paso a paso</a></li>
+          <li><a href="#historias">Historias reales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tony Valdes Loans</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#sobre-tony">Sobre Tony</a></li>
+          <li><a href="/inversionistas">Inversionistas</a></li>
+          <li><a href="/realtors">Para Realtors</a></li>
+          <li><a href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda tu asesoría</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+17708656771">📞 (770) 865-6771</a></li>
+          <li><a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a></li>
+          <li><a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a></li>
+          <li><a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener">📷 @tonyvaldesloans</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div class="ehl" aria-label="Equal Housing Opportunity">
+        <svg viewBox="0 0 48 48" fill="#D9D7EE" aria-hidden="true"><path d="M24 4 3 16v4h3v22h36V20h3v-4zm14 34H10V18.6L24 10l14 8.6z"/><path d="M16 24h16v3H16zm0 6h16v3H16z"/></svg>
+        EQUAL HOUSING<br>OPPORTUNITY
+      </div>
+      <div>
+        <p><strong>Tony Valdes, Mortgage Loan Officer, NMLS #1593970.</strong> Tony Valdes Loans opera con <strong>Loan Factory, Inc., NMLS #320841</strong>. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</p>
+        <p>Esto no es una oferta de préstamo ni un compromiso de prestar. Todos los préstamos están sujetos a la aprobación de crédito, verificación de ingresos, tasación y suscripción (underwriting). Los programas, tasas, términos y condiciones pueden cambiar sin previo aviso y no están disponibles en todos los estados. Otras restricciones pueden aplicar.</p>
+        <p>Los casos presentados son ejemplos reales de clientes. Los resultados individuales pueden variar. La información de este sitio es educativa y no constituye asesoría legal ni fiscal; consulta con tu contador o abogado.</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> Tony Valdes Loans. Todos los derechos reservados. · <a href="/privacidad">Privacidad</a> · <a href="/terminos">Términos</a></p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20quiero%20analizar%20una%20inversi%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbele a Tony por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+
+<a class="wa-float" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20quiero%20comprar%20mi%20primera%20casa" target="_blank" rel="noopener" aria-label="Escríbele a Tony por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+<script>
+(function(){
+  // Año dinámico
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+
+  var header=document.getElementById('siteHeader');
+  window.addEventListener('scroll',function(){header.classList.toggle('shrink',window.scrollY>40)},{passive:true});
+
+  var toggle=document.getElementById('menuToggle'), nav=document.getElementById('mainNav');
+  function closeNav(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
+  toggle.addEventListener('click',function(){var o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav()});
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}) }
+
+  // ===== Calculadora de renta =====
+  var rent=document.getElementById('rent'), years=5;
+  function money(v){return '$'+Math.round(v).toLocaleString('en-US')}
+  function calcRent(){
+    var r=parseFloat(rent.value)||0, total=r*12*years;
+    document.getElementById('rentOut').textContent=money(r);
+    document.getElementById('rentTotal').textContent=money(total);
+    document.getElementById('rentBar').style.width=Math.min(100,total/(5000*12*10)*100)+'%';
+  }
+  rent.addEventListener('input',calcRent);
+  document.querySelectorAll('.years button').forEach(function(b){b.addEventListener('click',function(){
+    years=parseInt(b.getAttribute('data-y'),10);
+    document.querySelectorAll('.years button').forEach(function(o){o.setAttribute('aria-pressed',o===b?'true':'false')});
+    calcRent();
+  })});
+
+  // ===== Test de preparación =====
+  var qs=document.querySelectorAll('.quiz-list .q');
+  function calcQuiz(){
+    var n=0; qs.forEach(function(q){if(q.checked)n++});
+    document.getElementById('qScore').textContent=n;
+    document.getElementById('qMeter').style.width=(n/qs.length*100)+'%';
+    document.getElementById('qMsg').textContent=T(n>=5?'_quiz_high':n>=3?'_quiz_mid':'_quiz_low');
+  }
+  qs.forEach(function(q){q.addEventListener('change',calcQuiz)});
+  window.tvlRecalc=function(){calcRent();calcQuiz()};
+  window.tvlRecalc();
+
+  // ===== Formulario =====
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, obj=form.objetivo, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    if(!obj.value){setErr(obj,T('_err_goal'));ok=false}else setErr(obj);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input,.invalid select');if(first)first.focus();return}
+
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var score=0; qs.forEach(function(q){if(q.checked)score++});
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:obj.value, plazo:form.plazo.value,
+      test_preparacion:score+'/6', renta_mensual:rent.value,
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'web-primeros-compradores', pagina:location.href
+    };
+    var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(showSuccess,showSuccess);
+  });
+  function showSuccess(){document.getElementById('formWrap').style.display='none';document.getElementById('formSuccess').classList.add('show')}
+})();
+</script>
+</body>
+</html>
