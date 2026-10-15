@@ -69,14 +69,25 @@ Se genera a partir de `index-con-imagenes.html`. Si se edita la página, hay que
    - `assets/tony-senalando-lado.webp` y `assets/tony-traje-completo.webp` (reservadas para las páginas de Inversionistas y Realtors)
 2. **Código:** pega el contenido del archivo en un elemento de **Custom Code**. Si GHL separa los campos, el contenido de `<style>` va en CSS y el de `<script>` va en JS.
 
-## Placeholders pendientes
+## Links configurados
 
-| Buscar | Reemplazar por |
+| Elemento | Destino |
 |---|---|
-| `CALENDAR_LINK_AQUI` | Link del calendario de GHL para agendar asesoría |
-| `TERMINOS_URL_AQUI` | URL de Términos y Condiciones |
-| `PRIVACIDAD_URL_AQUI` | URL de Política de Privacidad |
-| `TU_LINK_FACEBOOK_AQUI` / `TU_LINK_YOUTUBE_AQUI` | Redes sociales (si no se usan, elimina el ícono) |
+| Botones "Agenda tu asesoría" | https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans |
+| Términos y Condiciones | `/terminos` (página en GHL con ese slug) |
+| Política de Privacidad | `/privacidad` (página en GHL con ese slug) |
+| Instagram | https://www.instagram.com/tonyvaldesloans/ |
+| Facebook | https://www.facebook.com/tonyvaldesloanss/ |
+| YouTube | https://www.youtube.com/@TonyValdesLoans |
+
+## Páginas legales (`legal/`)
+
+Términos y Privacidad en ES/EN/PT, con el mismo diseño de la marca. El idioma se comparte con la página principal (se guarda como `tvl-lang`). Incluyen el lenguaje que pide el registro A2P 10DLC para SMS: frecuencia de mensajes, STOP/HELP, tarifas, y que los datos de móvil no se comparten con terceros para marketing.
+- `legal/ghl-terminos.html` y `legal/ghl-privacidad.html`: para pegar en GHL en páginas con los slugs `terminos` y `privacidad`.
+- `legal/terminos.html` y `legal/privacidad.html`: para revisarlas en el navegador.
+- El contenido se edita en `legal/legal_content.py`. Para regenerar: `python3 legal/build_legal.py`.
+- Antes de publicar, deben revisarlas compliance de Loan Factory o un abogado.
+
 
 El formulario está conectado al workflow **"Lead Web – Tony Valdes Loans"** (disparador Inbound Webhook, constante `GHL_WEBHOOK` en el `<script>`). Envía en formato form-urlencoded: `nombre`, `first_name`, `last_name`, `telefono` (E.164), `email`, `objetivo` (siempre en español), `idioma` (es/en/pt), `consentimiento_tcpa`, `consentimiento_fecha`, `origen` y `pagina`.
 
