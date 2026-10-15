@@ -93,8 +93,8 @@ El formulario está conectado al workflow **"Lead Web – Tony Valdes Loans"** (
 
 ## Landing de Inversionistas (`inversionistas/`)
 
-Página para inversionistas inmobiliarios, en ES/EN/PT y con el mismo sistema visual. Va en GHL como página con el slug **`inversionistas`**.
-- Secciones: hero con KPIs, por qué invertir, las 5 estrategias en detalle (con claves y financiamiento), **calculadoras Fix & Flip y DSCR**, programas, casos reales, proceso, FAQ y formulario.
+Página para inversionistas inmobiliarios, en ES/EN/PT. Usa los colores y la tipografía de la marca, pero con un **estilo ejecutivo propio**: franjas diagonales del membrete en el hero, marcos dorados dobles de las tarjetas de presentación, estrategias en pestañas, línea de tiempo con rombos y fotos distintas a las de Inicio (brazos cruzados, blazer señalando y traje señalando). Va en GHL como página con el slug **`inversionistas`**.
+- Secciones: hero con panel de métricas, por qué invertir, las 5 estrategias en pestañas (con claves y financiamiento), **calculadoras Fix & Flip y DSCR**, programas, casos reales, proceso, FAQ y formulario.
 - Calculadora Fix & Flip: ganancia, inversión total, ROI y oferta máxima (regla del 70%). Calculadora DSCR: ratio, PITIA y flujo de caja mensual y anual. Las dos dan un veredicto traducido.
 - El formulario usa el mismo webhook, con `origen=web-inversionistas`, y suma un campo opcional `deal` para que el cliente describa su inversión.
 - Archivos: `inversionistas/ghl-pegar-en-ghl.html` (pegar en GHL), `inversionistas/index-con-imagenes.html` (revisar), `inversionistas/index.html` y `inversionistas/src-es.html` (fuente en español). Las traducciones nuevas están en `inversionistas/i18n/`.
