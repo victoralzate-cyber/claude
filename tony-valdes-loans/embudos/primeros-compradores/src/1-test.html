@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Página 1 · Test ===== */
+.p1-hero{position:relative;overflow:hidden;background:radial-gradient(900px 600px at 85% 30%,#F3E6C4 0%,var(--cream) 55%)}
+.p1-hero::after{content:"";position:absolute;left:-120px;bottom:-160px;width:420px;height:420px;border-radius:50%;border:2px dashed rgba(176,121,8,.25)}
+.p1-hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:80px}
+.p1-kicker{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:var(--jasmine);font-weight:800;font-size:.8rem;letter-spacing:.04em;padding:8px 16px;border-radius:999px;margin-bottom:22px}
+.p1-hero h1{font-size:clamp(2.3rem,5.2vw,4rem);font-weight:900;color:var(--blue);line-height:1.04;margin-bottom:20px}
+.p1-hero h1 .gold-text{background-image:linear-gradient(90deg,#8A5E05,#B07908 55%,#D9A21E)}
+.p1-sub{font-size:1.12rem;color:var(--ink-soft);max-width:540px;margin-bottom:30px}
+.p1-ctas{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.p1-mini{font-size:.82rem;font-weight:700;color:var(--ink-soft)}
+.p1-trust{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.p1-trust span{background:#fff;border:1px solid #EADFC2;border-radius:999px;padding:8px 14px;font-size:.8rem;font-weight:700;color:var(--blue)}
+.p1-photo{position:relative;max-width:420px;justify-self:center;width:100%}
+.p1-photo .arch{aspect-ratio:4/5.2}
+.p1-photo .arch img{object-position:center 30%}
+.p1-photo .chip.c1{top:16%;left:-34px}
+.p1-photo .chip.c2{top:46%;right:-30px;animation-delay:-2.5s}
+.p1-photo .tony-card{position:absolute;z-index:3;left:50%;bottom:-26px;transform:translateX(-50%);white-space:nowrap}
+@media (max-width:900px){
+  .p1-hero .container{grid-template-columns:1fr;gap:60px;padding-top:44px}
+  .p1-photo{max-width:340px}
+  .p1-photo .chip.c1{left:-8px}.p1-photo .chip.c2{right:-8px}
+}
+
+/* Test */
+.quiz-sec{padding:90px 0;background:linear-gradient(180deg,var(--blue) 0%,var(--blue-2) 100%);color:#fff;position:relative;overflow:hidden}
+.quiz-sec::before{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:999px 999px 0 0;border:2px solid rgba(244,228,120,.14)}
+.quiz-sec .sec-head h2{color:#fff}
+.quiz-sec .sec-head p{color:#CFCDE6}
+.quiz{position:relative;max-width:760px;margin:0 auto;background:#fff;color:var(--ink);border-radius:26px;box-shadow:0 30px 80px rgba(0,0,0,.35);overflow:hidden}
+.quiz-top{padding:22px 30px 18px;border-bottom:1px solid #F0EADB;background:var(--cream)}
+.quiz-top .row{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:.8rem;font-weight:800;color:var(--ink-soft)}
+.quiz-top .row b{color:var(--gold-d)}
+.qback{font:inherit;font-size:.8rem;font-weight:800;color:var(--blue);background:none;border:0;cursor:pointer;padding:0}
+.qback[hidden]{display:block;visibility:hidden}
+.quiz-body{padding:34px 30px 36px;min-height:380px}
+.qstep{display:none;animation:qin .45s ease}
+.qstep.on{display:block}
+@keyframes qin{from{opacity:0;transform:translateX(26px)}to{opacity:1;transform:none}}
+.qstep h3{font-size:clamp(1.3rem,2.6vw,1.65rem);color:var(--blue);margin-bottom:8px}
+.qstep .hint{color:var(--ink-soft);font-size:.92rem;margin-bottom:22px}
+.opts{display:grid;gap:12px}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-weight:700;font-size:1rem;color:var(--blue);background:#fff;border:2px solid #ECE4CF;border-radius:16px;padding:16px 18px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+.opt::before{content:attr(data-ico);display:grid;place-items:center;width:42px;height:42px;flex:none;border-radius:12px;background:var(--cream);font-size:1.25rem}
+.opt:hover{border-color:var(--gold);transform:translateY(-1px)}
+.opt.sel{border-color:var(--blue);background:#F5F4FB}
+.opt.sel::before{background:var(--gold-grad)}
+.rent-box{background:var(--cream);border-radius:18px;padding:26px;text-align:center;margin-bottom:22px}
+.rent-box output{display:block;font-size:2.6rem;font-weight:900;color:var(--blue);line-height:1.1}
+.rent-box small{display:block;color:var(--ink-soft);font-weight:600;margin-bottom:16px}
+.rent-box input[type=range]{width:100%;accent-color:var(--gold)}
+.rent-box .lost{margin:16px 0 0;font-weight:700;color:var(--ink-soft)}
+.rent-box .lost b{color:#B3261E}
+.gate-ico{width:74px;height:74px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;font-size:2rem;margin-bottom:16px}
+.gate-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.gate-grid .full{grid-column:1/-1}
+@media (max-width:620px){.gate-grid{grid-template-columns:1fr}.quiz-body{padding:28px 20px 30px}.quiz-top{padding:18px 20px 14px}}
+.gate-btn{width:100%;margin-top:10px}
+.gate-note{margin:14px 0 0;text-align:center}
+.quiz-foot{text-align:center;margin:26px auto 0;max-width:640px;color:#B9B7D3;font-size:.8rem}
+
+/* CTA final */
+.final{padding:80px 0;text-align:center;background:var(--cream-2)}
+.final h2{font-size:clamp(1.7rem,3.4vw,2.4rem);color:var(--blue);max-width:720px;margin:0 auto 14px}
+.final p{color:var(--ink-soft);max-width:560px;margin:0 auto 26px}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="p1-hero">
+  <div class="container">
+    <div>
+      <span class="p1-kicker">🔑 Test gratis · 60 segundos</span>
+      <h1>¿Qué tan cerca estás de <span class="gold-text">tu primera casa</span>?</h1>
+      <p class="p1-sub">Responde 8 preguntas rápidas y recibe tu plan personalizado: qué ya tienes listo, qué te falta y cuál es tu siguiente paso para dejar de pagar renta.</p>
+      <div class="p1-ctas">
+        <a class="btn btn-gold" href="#test">Empezar mi test</a>
+        <span class="p1-mini">Sin costo · No afecta tu crédito</span>
+      </div>
+      <div class="p1-trust">
+        <span>✅ Programas de ayuda para la entrada</span>
+        <span>✅ Empleados e independientes</span>
+        <span>✅ En español, inglés o portugués</span>
+      </div>
+    </div>
+    <div class="p1-photo">
+      <div class="arch-frame"><div class="arch"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/HPP0xQMdW6R0lXxSsNah/media/691ccf3edd38288f048c0f51.jpg" alt="Familia celebrando en la puerta de su nueva casa" width="600" height="780"></div></div>
+      <span class="chip c1"><i>🔑</i>¡Día de llaves!</span>
+      <span class="chip gold c2"><i>🏡</i>Tu casa, tu patrimonio</span>
+      <div class="tony-card">
+        <div class="av"><img src="{{A}}/tony-senalando-frente.webp?h=260" alt="Tony Valdes" width="104" height="104"></div>
+        <div><strong>Te guía Tony Valdes</strong><span>Loan Officer · NMLS #1593970</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEST ============ -->
+<section class="quiz-sec dark" id="test">
+  <div class="container">
+    <div class="sec-head">
+      <span class="eyebrow">Tu test de preparación</span>
+      <h2>Descubre si estás listo para comprar</h2>
+      <p>Elige la opción que más se parezca a tu situación. No hay respuestas buenas ni malas.</p>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz-top">
+        <div class="row">
+          <button type="button" class="qback" id="qBack" hidden>← Atrás</button>
+          <span><span id="qLabel">Pregunta</span> <b id="qNum">1</b> / 8</span>
+        </div>
+        <div class="keys" id="qKeys" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="quiz-body">
+
+        <div class="qstep on" data-key="plazo">
+          <h3>¿Cuándo te gustaría comprar tu casa?</h3>
+          <p class="hint">Así sabemos qué tan rápido armar tu plan.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="⚡" data-v="0-3 meses">En los próximos 3 meses</button>
+            <button type="button" class="opt" data-ico="📅" data-v="3-6 meses">En 3 a 6 meses</button>
+            <button type="button" class="opt" data-ico="🗓️" data-v="6-12 meses">En 6 a 12 meses</button>
+            <button type="button" class="opt" data-ico="🔎" data-v="Explorando">Solo estoy explorando</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="tipo_ingreso">
+          <h3>¿Cómo recibes tus ingresos?</h3>
+          <p class="hint">Hay programas para cada forma de ganar dinero.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="💼" data-v="Empleado W-2">Soy empleado (W-2)</button>
+            <button type="button" class="opt" data-ico="🧾" data-v="Independiente 1099 / negocio">Trabajo por mi cuenta (1099 o negocio propio)</button>
+            <button type="button" class="opt" data-ico="➕" data-v="Ambos">Ambos</button>
+            <button type="button" class="opt" data-ico="⏳" data-v="Sin ingresos fijos">Por ahora no tengo ingresos fijos</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="tiempo_ingresos">
+          <h3>¿Cuánto tiempo llevas con esos ingresos?</h3>
+          <p class="hint">En el mismo trabajo, negocio o industria.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🏆" data-v="2+ años">2 años o más</button>
+            <button type="button" class="opt" data-ico="📈" data-v="1-2 años">Entre 1 y 2 años</button>
+            <button type="button" class="opt" data-ico="🌱" data-v="Menos de 1 año">Menos de 1 año</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="credito">
+          <h3>¿Cómo describirías tu crédito?</h3>
+          <p class="hint">Un aproximado está bien. Este test no revisa tu crédito.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🌟" data-v="Muy bueno (700+)">Muy bueno (700 o más)</button>
+            <button type="button" class="opt" data-ico="👍" data-v="Bueno (640-699)">Bueno (640 a 699)</button>
+            <button type="button" class="opt" data-ico="🔧" data-v="Regular (580-639)">Regular (580 a 639)</button>
+            <button type="button" class="opt" data-ico="❓" data-v="Bajo o no sabe">Bajo o no lo sé</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="pagos">
+          <h3>¿Pagas tus cuentas a tiempo?</h3>
+          <p class="hint">Tarjetas, préstamos, carro y servicios.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="✅" data-v="Siempre a tiempo">Sí, siempre</button>
+            <button type="button" class="opt" data-ico="⚠️" data-v="Algún atraso este año">Tuve algún atraso este último año</button>
+            <button type="button" class="opt" data-ico="📉" data-v="Cuentas en cobranza">Tengo cuentas en cobranza</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="ahorro">
+          <h3>¿Tienes algo ahorrado para la compra?</h3>
+          <p class="hint">Aunque sea poco: existen programas de ayuda para la entrada.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="💰" data-v="Ahorros para entrada y cierre">Sí, tengo para la entrada y el cierre</button>
+            <button type="button" class="opt" data-ico="🐷" data-v="Algo, pero poco">Tengo algo, pero es poco</button>
+            <button type="button" class="opt" data-ico="🚀" data-v="Todavía no">Todavía no he ahorrado</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="documentos">
+          <h3>¿Declaras taxes y tienes tus documentos al día?</h3>
+          <p class="hint">Taxes, W-2 o 1099 y estados de cuenta.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="📂" data-v="Todo al día">Sí, todo al día</button>
+            <button type="button" class="opt" data-ico="🗂️" data-v="Declara, pero desordenado">Declaro, pero tengo todo desordenado</button>
+            <button type="button" class="opt" data-ico="📭" data-v="Sin taxes recientes">No he declarado los últimos años</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="renta_mensual">
+          <h3>¿Cuánto pagas hoy de renta?</h3>
+          <p class="hint">Mueve la barra. Te mostramos cuánto se te va al año.</p>
+          <div class="rent-box">
+            <output id="rentOut">$1,800</output>
+            <small>al mes</small>
+            <input type="range" id="rent" min="500" max="5000" step="50" value="1800" aria-label="Renta mensual">
+            <p class="lost"><span>En un año le pagas al dueño</span> <b id="rentYear">$21,600</b></p>
+          </div>
+          <button type="button" class="btn btn-blue gate-btn" id="rentNext">Ver mi resultado</button>
+        </div>
+
+        <div class="qstep" data-key="gate" id="gate">
+          <div class="gate-ico" aria-hidden="true">🎉</div>
+          <h3>¡Tu resultado está listo!</h3>
+          <p class="hint">¿A dónde te enviamos tu plan personalizado? Lo verás en la siguiente pantalla.</p>
+          <form id="leadForm" novalidate>
+            <div class="gate-grid">
+              <div class="field full"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+              <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+              <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            </div>
+            <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+              <span>Acepto los <a href="https://www.valdesloans.com/terminos" target="_blank" rel="noopener">Términos</a> y la <a href="https://www.valdesloans.com/privacidad" target="_blank" rel="noopener">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+            <span class="err" id="consentErr" aria-live="polite"></span>
+            <button class="btn btn-gold gate-btn" type="submit">Ver mi plan ahora</button>
+            <p class="fine gate-note">Este test es educativo. No es una solicitud de crédito ni afecta tu puntaje.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <p class="quiz-foot">🔒 Tus datos están seguros. Nunca los vendemos ni los compartimos con terceros para marketing.</p>
+  </div>
+</section>
+
+<!-- ============ QUÉ DESCUBRIRÁS ============ -->
+<section class="sec cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Tu plan personalizado</span>
+      <h2>Al terminar el test vas a saber</h2>
+    </div>
+    <div class="cards3">
+      <div class="card reveal"><div class="ico">🎯</div><h3>Qué tan listo estás</h3><p>Tu nivel de preparación en ingresos, crédito, ahorro y documentos, explicado en palabras simples.</p></div>
+      <div class="card reveal"><div class="ico">🧭</div><h3>Qué te falta y cómo resolverlo</h3><p>Consejos concretos para cada área, incluso si eres independiente o tu crédito no es perfecto.</p></div>
+      <div class="card reveal"><div class="ico">💸</div><h3>Cuánto te cuesta esperar</h3><p>El dinero que se va en renta cada año, y que podría estar construyendo tu propio patrimonio.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTES REALES ============ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Ellos ya dieron el paso</span>
+      <h2>De inquilinos a dueños</h2>
+      <p>Familias que empezaron igual que tú: con dudas, con preguntas y con muchas ganas de tener su casa.</p>
+    </div>
+    <div class="polas">
+      <figure class="pola reveal" style="margin:0"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/HPP0xQMdW6R0lXxSsNah/media/682bec08bff63d64e7972baf.jpeg" alt="Clienta con Tony frente a su nueva casa" width="400" height="500" loading="lazy"><p>¡Nueva casa!</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/HPP0xQMdW6R0lXxSsNah/media/6a611e5ade69375f6a7ff18e.jpg" alt="Clientes firmando los documentos de cierre" width="400" height="500" loading="lazy"><p>Firmando el cierre</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/HPP0xQMdW6R0lXxSsNah/media/68fc3cf6f1ef9861b2ff87c5.jpeg" alt="Clienta con Tony frente a la casa que compró" width="400" height="500" loading="lazy"><p>Sí es posible</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/HPP0xQMdW6R0lXxSsNah/media/68fc3cf6f1ef986799ff87c4.jpeg" alt="Cliente con Tony celebrando después del cierre" width="400" height="500" loading="lazy"><p>¡Lo logramos!</p></figure>
+    </div>
+    <p class="pola-note">Clientes reales de Tony Valdes Loans. Los resultados individuales pueden variar.</p>
+  </div>
+</section>
+
+<!-- ============ TONY ============ -->
+<section class="sec cream">
+  <div class="container tony-quote">
+    <div class="photo reveal"><img src="{{A}}/tony-senalando-frente.webp?h=900" alt="Tony Valdes, Loan Officer" width="420" height="700" loading="lazy"></div>
+    <div class="reveal">
+      <span class="eyebrow">Quién te acompaña</span>
+      <blockquote>Mi trabajo no es solo aprobar préstamos. Es enseñarte a usar el crédito como una herramienta para construir patrimonio, y acompañarte hasta que tengas tus llaves en la mano.</blockquote>
+      <p class="sig">Tony Valdes<span>Loan Officer · NMLS #1593970 · Más de 25 años en finanzas</span></p>
+      <a class="btn btn-blue" href="#test">Hacer mi test ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="final">
+  <div class="container">
+    <h2>Cada mes que esperas, le pagas la hipoteca a alguien más</h2>
+    <p>En 60 segundos sabes dónde estás parado y qué hacer. Tu primera casa empieza con un plan.</p>
+    <a class="btn btn-gold" href="#test">Quiero saber si estoy listo</a>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+
+  // ===== Configuración del embudo =====
+  var NEXT_URL='/primeros-compradores-resultado';   // paso 2 del embudo en GHL
+  var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+  if(location.protocol==='file:') NEXT_URL='2-resultado.html';
+
+  // ===== Test paso a paso =====
+  var steps=[].slice.call(document.querySelectorAll('.qstep'));
+  var keys=document.querySelectorAll('#qKeys i');
+  var back=document.getElementById('qBack');
+  var idx=0, ans={}, ansIdx={};
+  var PTS={tiempo_ingresos:[2,1,0],credito:[2,2,1,0],pagos:[2,1,0],ahorro:[2,1,0],documentos:[2,1,0]};
+  function show(i){
+    idx=i;
+    steps.forEach(function(s,j){s.classList.toggle('on',j===i)});
+    keys.forEach(function(k,j){k.classList.toggle('on',j<=i)});
+    back.hidden=(i===0);
+    var last=steps.length-1;
+    document.getElementById('qNum').textContent=Math.min(i+1,8);
+    document.getElementById('qLabel').textContent=T(i===last?'_q_last':'_q_label');
+    document.querySelector('.quiz-top .row span:last-child').style.visibility=i===last?'hidden':'visible';
+  }
+  steps.forEach(function(s,i){
+    s.querySelectorAll('.opt').forEach(function(b,j){
+      b.addEventListener('click',function(){
+        s.querySelectorAll('.opt').forEach(function(o){o.classList.toggle('sel',o===b)});
+        ans[s.getAttribute('data-key')]=b.getAttribute('data-v'); ansIdx[s.getAttribute('data-key')]=j;
+        setTimeout(function(){show(i+1);scrollQuiz()},260);
+      });
+    });
+  });
+  function scrollQuiz(){var q=document.getElementById('quiz');var r=q.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.4)q.scrollIntoView({behavior:'smooth',block:'start'})}
+  back.addEventListener('click',function(){if(idx>0)show(idx-1)});
+  var rent=document.getElementById('rent');
+  function calcRent(){var r=parseFloat(rent.value)||0;document.getElementById('rentOut').textContent=money(r);document.getElementById('rentYear').textContent=money(r*12)}
+  rent.addEventListener('input',calcRent);
+  document.getElementById('rentNext').addEventListener('click',function(){ans.renta_mensual=rent.value;show(steps.length-1);scrollQuiz()});
+  function score(){
+    var s=0; for(var k in PTS){ if(ansIdx[k]!=null) s+=PTS[k][ansIdx[k]] }
+    if(ansIdx.tipo_ingreso===3) s-=(ansIdx.tiempo_ingresos!=null?PTS.tiempo_ingresos[ansIdx.tiempo_ingresos]:0);
+    return Math.max(0,s);
+  }
+  window.tvlRecalc=function(){calcRent();show(idx)};
+  startLang();
+
+  // ===== Formulario (puerta del resultado) =====
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input');if(first)first.focus();return}
+
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var s=score(), nivel=s>=8?'Listo':s>=5?'Casi listo':'Empezando';
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:'Comprar mi primera casa',
+      plazo:ans.plazo||'', tipo_ingreso:ans.tipo_ingreso||'', tiempo_ingresos:ans.tiempo_ingresos||'',
+      credito:ans.credito||'', pagos:ans.pagos||'', ahorro:ans.ahorro||'', documentos:ans.documentos||'',
+      renta_mensual:ans.renta_mensual||rent.value, test_preparacion:s+'/10', nivel:nivel,
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'funnel-primeros-compradores', pagina:location.href
+    };
+    var order=['plazo','tipo_ingreso','tiempo_ingresos','credito','pagos','ahorro','documentos'];
+    var code=order.map(function(k){return ansIdx[k]!=null?ansIdx[k]:'x'}).join('');
+    var url=NEXT_URL+'?n='+encodeURIComponent(parts[0])+'&a='+code+'&r='+encodeURIComponent(payload.renta_mensual)+'&lang='+LANG;
+    try{sessionStorage.setItem('tvl-pc',JSON.stringify({n:parts[0],a:code,r:payload.renta_mensual}))}catch(err){}
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+    var gone=false; function go(){if(!gone){gone=true;location.href=url}}
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(go,go);
+    setTimeout(go,1800);
+  });
+})();
+</script>
+</body>
+</html>

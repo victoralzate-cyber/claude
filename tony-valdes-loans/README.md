@@ -133,3 +133,7 @@ Página para primeros compradores en ES/EN/PT, con un **estilo "hogar" fresco y 
 - No se usan promesas de tasas ("garantizo los rates más bajos"), y los casos no mencionan tasas ni pagos mensuales de préstamos de vivienda. Esos datos son "triggering terms" de la Reg. Z y obligarían a publicar el APR y los términos completos.
 - Los casos aparecen con nombre de pila o inicial. **Hay que confirmar que cada cliente o agente autorizó su testimonio** antes de publicar.
 - Antes de salir en vivo, revisa el texto legal del footer con el departamento de compliance de Loan Factory.
+
+## Embudos (`embudos/`)
+
+Rediseño de los embudos de tonyvaldesloansinfo.com: el plan completo y las instrucciones para montarlos están en `embudos/README.md`. El primero listo es **Primeros Compradores**, con 4 páginas: test, resultado, guía y cita confirmada.

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Página 4 · Cita confirmada ===== */
+.c-hero{position:relative;overflow:hidden;background:radial-gradient(700px 500px at 75% 60%,#F3E6C4 0%,var(--cream) 60%)}
+.c-hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding-top:64px}
+.c-copy{padding-bottom:80px}
+.c-check{width:84px;height:84px;border-radius:50%;background:#2E9E5B;color:#fff;display:grid;place-items:center;font-size:2.4rem;font-weight:900;margin-bottom:22px;box-shadow:0 0 0 10px rgba(46,158,91,.15);animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.c-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:900;color:var(--blue);line-height:1.05;margin-bottom:16px}
+.c-hero .sub{font-size:1.1rem;color:var(--ink-soft);max-width:540px;margin-bottom:26px}
+.c-photo{position:relative;max-width:380px;justify-self:center;width:100%}
+.c-photo::before{content:"";position:absolute;left:0;right:0;bottom:0;top:20%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,var(--blue-3),var(--blue))}
+.c-photo img{position:relative;width:100%}
+.confetti{position:absolute;inset:0;pointer-events:none;z-index:1}
+.confetti i{position:absolute;width:10px;height:16px;border-radius:3px;opacity:.75;animation:fall 6s linear infinite}
+@keyframes fall{from{transform:translateY(-40px) rotate(0)}to{transform:translateY(720px) rotate(540deg)}}
+@media (prefers-reduced-motion:reduce){.confetti{display:none}.c-check{animation:none}}
+@media (max-width:860px){.c-hero .container{grid-template-columns:1fr}.c-copy{padding-bottom:10px}.c-photo{max-width:300px}}
+
+.prep{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.prep h2{font-size:clamp(1.6rem,3vw,2.2rem);color:var(--blue)}
+.ticks{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.ticks li{display:flex;gap:14px;align-items:flex-start;background:#fff;border-radius:16px;padding:16px 18px;box-shadow:0 8px 24px rgba(3,0,46,.06);border:1px solid #EFE7D2}
+.ticks li::before{content:"✓";flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold-grad);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:.85rem}
+.ticks strong{display:block;color:var(--blue)}
+.ticks span{font-size:.88rem;color:var(--ink-soft)}
+.call{background:var(--blue);color:#fff;border-radius:24px;padding:34px}
+.call h3{font-size:1.3rem;margin-bottom:20px}
+.call ol{list-style:none;margin:0;padding:0;counter-reset:c;display:grid;gap:18px}
+.call li{counter-increment:c;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;color:#D6D4EC}
+.call li::before{content:counter(c);width:44px;height:44px;border-radius:12px;border:2px solid var(--jasmine);color:var(--jasmine);display:grid;place-items:center;font-weight:900}
+.call li b{display:block;color:#fff}
+@media (max-width:860px){.prep{grid-template-columns:1fr}}
+
+.share{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.share .card{text-align:center;display:flex;flex-direction:column;align-items:center}
+.share .card .ico{margin-left:auto;margin-right:auto}
+.share .card p{margin-bottom:18px;flex:1}
+.share .btn{padding:12px 22px;font-size:.9rem}
+@media (max-width:860px){.share{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<section class="c-hero">
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <div class="container">
+    <div class="c-copy">
+      <div class="c-check" aria-hidden="true">✓</div>
+      <h1>¡Tu cita con Tony está confirmada!</h1>
+      <p class="sub">Revisa tu correo y tus mensajes de texto: ahí tienes la fecha, la hora y los detalles de la llamada. Ya diste el paso más importante.</p>
+      <a class="btn btn-gold" href="#preparate">Cómo prepararme</a>
+    </div>
+    <div class="c-photo"><img src="{{A}}/tony-traje-senalando.webp?h=1000" alt="Tony Valdes te espera en tu cita" width="420" height="700"></div>
+  </div>
+</section>
+
+<section class="sec" id="preparate">
+  <div class="container prep">
+    <div class="reveal">
+      <span class="eyebrow">Para aprovechar tus 15 minutos</span>
+      <h2>Ten esto a la mano</h2>
+      <ul class="ticks">
+        <li><div><strong>Una idea de tus ingresos mensuales</strong><span>Salario, negocio propio o ambos.</span></div></li>
+        <li><div><strong>Cuánto tienes ahorrado</strong><span>Un aproximado está bien.</span></div></li>
+        <li><div><strong>Tus deudas mensuales</strong><span>Carro, tarjetas, préstamos estudiantiles.</span></div></li>
+        <li><div><strong>La zona donde te gustaría vivir</strong><span>Ciudad o condado, y el tipo de casa.</span></div></li>
+        <li><div><strong>Tus preguntas</strong><span>No hay preguntas tontas. Anótalas todas.</span></div></li>
+      </ul>
+    </div>
+    <div class="call reveal">
+      <h3>¿Qué pasa en la llamada?</h3>
+      <ol>
+        <li><span><b>Revisamos tu situación</b>Hablamos de tus metas, tus ingresos y tu crédito, sin juicios.</span></li>
+        <li><span><b>Vemos tus opciones</b>Te digo para qué programas podrías calificar, incluyendo ayudas para la entrada.</span></li>
+        <li><span><b>Definimos tu plan</b>Sales con los siguientes pasos claros, estés listo hoy o en unos meses.</span></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="sec cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Mientras llega el día</span>
+      <h2>Tres cosas que puedes hacer ahora</h2>
+    </div>
+    <div class="share">
+      <div class="card reveal"><div class="ico">💑</div><h3>¿Compras con alguien más?</h3><p>Invita a tu pareja o co-comprador a la llamada. Las decisiones grandes se toman juntos.</p><a class="btn btn-blue" id="shareBtn" href="#">Invitar por WhatsApp</a></div>
+      <div class="card reveal"><div class="ico">📲</div><h3>Guarda mi número</h3><p>Así reconoces mi llamada y puedes escribirme si te surge una duda antes de la cita.</p><a class="btn btn-wa" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20ya%20agend%C3%A9%20mi%20cita" target="_blank" rel="noopener">Escribirme por WhatsApp</a></div>
+      <div class="card reveal"><div class="ico">📘</div><h3>Lee tu guía</h3><p>Llega a la llamada con ventaja: los 6 pasos, tus documentos y los programas de ayuda.</p><a class="btn btn-blue" id="toGuide" href="/primeros-compradores-guia">Abrir la guía</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container tony-quote">
+    <div class="photo reveal"><img src="{{A}}/tony-senalando-frente.webp?h=900" alt="Tony Valdes, Loan Officer" width="420" height="700" loading="lazy"></div>
+    <div class="reveal">
+      <span class="eyebrow">Nos vemos pronto</span>
+      <blockquote>Gracias por confiar en mí. Mi compromiso es que salgas de esta llamada sabiendo exactamente qué hacer para tener tu casa. ¡Sí es posible!</blockquote>
+      <p class="sig">Tony Valdes<span>Loan Officer · NMLS #1593970</span></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-ghost" style="color:var(--blue)" href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener">Sígueme en Instagram</a>
+        <a class="btn btn-ghost" style="color:var(--blue)" href="https://www.youtube.com/@TonyValdesLoans" target="_blank" rel="noopener">Ver mi canal de YouTube</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+<script>
+(function(){
+/*CORE_JS*/
+
+  var GUIDE_URL='/primeros-compradores-guia';
+  if(location.protocol==='file:') GUIDE_URL='3-guia.html';
+  document.getElementById('toGuide').href=GUIDE_URL;
+  var c=document.getElementById('confetti'), cols=['#B07908','#F4E478','#03002E','#7888F4','#2E9E5B'];
+  for(var i=0;i<26;i++){var e=document.createElement('i');e.style.left=Math.random()*100+'%';e.style.top=(-Math.random()*40)+'px';e.style.background=cols[i%5];e.style.animationDelay=(-Math.random()*6)+'s';e.style.animationDuration=(4+Math.random()*4)+'s';c.appendChild(e)}
+  window.tvlRecalc=function(){
+    var guide=location.origin&&location.protocol!=='file:'?location.origin+GUIDE_URL:'';
+    document.getElementById('shareBtn').href='https://wa.me/?text='+encodeURIComponent(T('_share')+(guide?' '+guide:''));
+  };
+  startLang();
+})();
+</script>
+</body>
+</html>

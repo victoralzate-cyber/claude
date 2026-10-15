@@ -1,0 +1,93 @@
+/* ============ EMBUDOS · BASE COMPARTIDA (Brandbook Tony Valdes Loans) ============ */
+:root{
+  --blue:#03002E; --blue-2:#0A0745; --blue-3:#14105C;
+  --gold:#B07908; --gold-d:#8A5E05; --jasmine:#F4E478;
+  --gold-grad:linear-gradient(90deg,#B07908 0%,#D9B23F 50%,#F4E478 100%);
+  --cobalt:#083FB0; --cornflower:#7888F4;
+  --white:#FFFFFF; --cream:#FBF6EA; --cream-2:#F4ECD8;
+  --ink:#03002E; --ink-soft:#4A4866;
+  --font:"Montserrat",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --max:1160px; --radius:18px;
+  --shadow:0 20px 50px rgba(3,0,46,.16);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font-family:var(--font);color:var(--ink);background:var(--white);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{line-height:1.12;margin:0 0 .5em;font-weight:800}
+p{margin:0 0 1em}
+.container{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--cobalt);outline-offset:3px;border-radius:6px}
+.gold-text{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px}
+.eyebrow::before{content:"";width:30px;height:2px;background:var(--gold-grad)}
+.dark .eyebrow{color:var(--jasmine)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 30px;border-radius:999px;font-weight:800;font-size:1rem;text-decoration:none;border:2px solid transparent;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease;position:relative;overflow:hidden;font-family:inherit;line-height:1.2;text-align:center}
+.btn-gold{background:var(--gold-grad);color:var(--blue);box-shadow:0 12px 30px rgba(176,121,8,.35)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 40px rgba(176,121,8,.5)}
+.btn-gold::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);animation:shine 3.8s ease-in-out infinite}
+@keyframes shine{0%,60%{left:-120%}100%{left:140%}}
+.btn-blue{background:var(--blue);color:var(--white)}
+.btn-blue:hover{background:var(--blue-3);transform:translateY(-2px)}
+.btn-ghost{border-color:currentColor;background:transparent}
+.btn-ghost:hover{transform:translateY(-2px)}
+.btn-wa{background:#1FAF55;color:#fff}
+.btn-wa:hover{background:#18964A;transform:translateY(-2px)}
+.btn[disabled]{opacity:.6;cursor:wait}
+.btn svg{width:20px;height:20px;flex:none;fill:currentColor}
+
+/* Header del embudo (sin menú: el lead no se sale del embudo) */
+.fh{position:sticky;top:0;z-index:50;background:rgba(3,0,46,.96);backdrop-filter:blur(8px);color:#fff;border-bottom:1px solid rgba(244,228,120,.18)}
+.fh .container{display:flex;align-items:center;justify-content:space-between;gap:14px;height:68px}
+.fh-logo img{height:44px;width:auto}
+.fh-right{display:flex;align-items:center;gap:14px}
+.fh-phone{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:.9rem;text-decoration:none;color:#fff}
+.fh-phone svg{width:16px;height:16px;fill:var(--jasmine)}
+.lang-switch{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(244,228,120,.35);border-radius:999px;padding:3px}
+.lang-switch button{font:inherit;font-size:.72rem;font-weight:800;letter-spacing:.06em;color:#fff;background:transparent;border:0;border-radius:999px;padding:6px 10px;cursor:pointer}
+.lang-switch button[aria-pressed="true"]{background:var(--gold-grad);color:var(--blue)}
+@media (max-width:560px){.fh-phone span{display:none}.fh-logo img{height:38px}}
+
+/* Formularios */
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-weight:700;font-size:.86rem;color:var(--blue)}
+.field input,.field select,.field textarea{font:inherit;font-size:1rem;padding:14px 16px;border:1.5px solid #D8D4C4;border-radius:12px;background:#fff;color:var(--ink);width:100%;transition:border-color .2s,box-shadow .2s}
+.field input:focus,.field select:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 4px rgba(8,63,176,.12)}
+.field.invalid input,.field.invalid select{border-color:#C62828}
+.err{color:#C62828;font-size:.8rem;font-weight:600;min-height:1em}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:.74rem;line-height:1.5;color:var(--ink-soft);margin:14px 0 4px;cursor:pointer}
+.consent input{margin-top:3px;width:18px;height:18px;flex:none;accent-color:var(--blue)}
+.consent a{color:var(--cobalt)}
+
+/* Animación de entrada */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.btn-gold::after{animation:none}html{scroll-behavior:auto}}
+
+/* Footer legal del embudo */
+.ff{background:var(--blue);color:#C9C7E0;font-size:.8rem;padding:46px 0 28px}
+.ff-top{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-bottom:22px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:22px}
+.ff-top img{height:54px;width:auto}
+.ff-slogan{font-weight:700;color:var(--jasmine);margin:0}
+.ff-social{display:flex;gap:10px}
+.ff-social a{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.08);transition:background .2s}
+.ff-social a:hover{background:rgba(244,228,120,.2)}
+.ff-social svg{width:18px;height:18px;fill:#fff}
+.ff-legal{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start}
+.ff-legal p{margin:0 0 .8em}
+.ff-legal a,.ff-copy a{color:var(--jasmine)}
+.ehl{display:flex;flex-direction:column;align-items:center;text-align:center;font-size:.6rem;font-weight:800;letter-spacing:.06em;color:#D9D7EE;width:92px;line-height:1.3}
+.ehl svg{width:44px;height:44px;margin-bottom:4px}
+.ff-copy{margin:14px 0 0;font-size:.74rem;opacity:.8}
+@media (max-width:640px){.ff-legal{grid-template-columns:1fr}.ehl{flex-direction:row;width:auto;gap:10px;text-align:left}}
+
+/* WhatsApp flotante */
+.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:58px;height:58px;border-radius:50%;background:#1FAF55;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.25);transition:transform .2s}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float svg{width:30px;height:30px;fill:#fff}
+
+/* Impresión */
+@media print{.fh,.wa-float,.no-print{display:none!important}.reveal{opacity:1;transform:none}body{font-size:12px}}
