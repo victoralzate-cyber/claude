@@ -100,6 +100,16 @@ Página para inversionistas inmobiliarios, en ES/EN/PT. Usa los colores y la tip
 - Archivos: `inversionistas/ghl-pegar-en-ghl.html` (pegar en GHL), `inversionistas/index-con-imagenes.html` (revisar), `inversionistas/index.html` y `inversionistas/src-es.html` (fuente en español). Las traducciones nuevas están en `inversionistas/i18n/`.
 - En Inicio, los links "Invertir" y "Quiero invertir" apuntan a `/inversionistas`.
 
+## Landing de Realtors (`realtors/`)
+
+Página para agentes inmobiliarios en ES/EN/PT, con un **estilo "alianza" claro y luminoso** (fondos crema y blancos, arco azul detrás de Tony y banda dorada de llamada a la acción) para diferenciarla de Inicio y de Inversionistas, que son oscuras. Va en GHL como página con el slug **`realtors`**.
+- Basada en la presentación para agentes: "Cómo duplicar o triplicar tus cierres", comparación 1 cierre vs. 3–10+ por inversionista, beneficios del aliado estratégico, programas tradicionales y no tradicionales, resultados de agentes aliados (3 cierres en 90 días, 10+ en el primer año, 3 Fix & Flip en 90 días), deal rescatado en 10 días, proceso en 4 pasos, FAQ y formulario.
+- Los testimonios no llevan nombres porque la presentación no deja claro a qué agente corresponde cada historia. Si se confirma con autorización, se pueden agregar.
+- Sin ofrecimientos de pagos ni incentivos por referidos (RESPA, Sección 8).
+- El formulario usa el mismo webhook, con `origen=web-realtors`, y suma los campos `brokerage` y `estado`. Los valores de `objetivo` empiezan con "Realtor:" para facilitar las etiquetas en GHL.
+- Fotos: blazer casual (hero) y blazer señalando (contacto).
+- En Inicio, "Realtors" y "Quiero cerrar más" apuntan a `/realtors`; en Inversionistas, el link del footer también.
+
 ## SEO (`seo/`)
 
 - `seo/og-tony-valdes-loans.jpg`: imagen para compartir en redes (1200×630). En GHL va en Settings → SEO → Social Image.

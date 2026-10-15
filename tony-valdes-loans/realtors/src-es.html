@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Realtors: Cierra Más Transacciones | Tony Valdes Loans</title>
+<meta name="description" content="Agentes inmobiliarios: duplica o triplica tus cierres con un aliado de financiamiento. Preaprobaciones rápidas, deals complejos, inversionistas y self-employed. Tony Valdes, NMLS #1593970.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*BASE_CSS*/
+
+/* ================= REALTORS · ESTILO ALIANZA (claro) ================= */
+.r-cream{background:#FBF8EE}
+.r-cream .eyebrow,.r-contact .eyebrow,.r-hero .eyebrow{color:#8A5E05}
+.r-hero{position:relative;background:linear-gradient(180deg,#FBF8EE 0%,#F4EEDA 100%);overflow:hidden;color:var(--ink)}
+.r-hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.05fr .95fr;gap:30px;align-items:end;min-height:660px;padding-top:56px}
+.r-hero .outline-house{position:absolute;z-index:0;left:-4%;bottom:-12%;width:42%;height:auto;aspect-ratio:100/80;color:#B07908;opacity:.08}
+.r-copy{padding-bottom:70px}
+.r-copy .eyebrow{color:#8A5E05}
+.r-copy h1{font-size:clamp(2.3rem,5vw,4.1rem);font-weight:900;line-height:1.06;margin-bottom:20px;color:var(--blue)}
+.r-copy h1 .hl{position:relative;display:inline-block;color:var(--blue)}
+.r-copy h1 .hl::after{content:"";position:absolute;left:-4px;right:-4px;bottom:.08em;height:.32em;background:var(--gold-grad);opacity:.55;z-index:-1;border-radius:4px}
+.r-copy .sub{font-size:1.1rem;color:var(--ink-soft);max-width:560px;margin-bottom:28px}
+.r-copy .btn-outline{border-color:var(--blue);color:var(--blue)}
+.r-copy .btn-outline:hover{background:rgba(3,0,46,.06)}
+.r-proof{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;margin-top:34px;padding-top:22px;border-top:1px solid rgba(3,0,46,.12)}
+.r-proof strong{display:block;font-size:1.6rem;font-weight:900;color:var(--blue);line-height:1.1}
+.r-proof span{display:block;line-height:1.35;font-size:.72rem;text-transform:uppercase;letter-spacing:.07em;color:var(--ink-soft)}
+.r-photo{position:relative;align-self:end;display:flex;justify-content:center}
+.r-photo .arch{position:absolute;z-index:0;left:50%;bottom:0;width:86%;height:86%;transform:translateX(-50%);background:var(--blue);border-radius:260px 260px 0 0}
+.r-photo .arch::after{content:"";position:absolute;inset:14px 14px 0;border:2px solid rgba(244,228,120,.45);border-bottom:0;border-radius:250px 250px 0 0}
+.r-photo img{position:relative;z-index:2;max-height:640px;width:auto;filter:drop-shadow(0 26px 34px rgba(3,0,46,.35))}
+.r-photo .badge{position:absolute;z-index:3;left:-2%;top:30%;background:var(--white);border-radius:16px;padding:14px 18px;box-shadow:0 18px 40px rgba(3,0,46,.18);display:flex;gap:12px;align-items:center}
+.r-photo .badge .ic{width:44px;height:44px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;color:var(--blue);font-weight:900}
+.r-photo .badge strong{display:block;font-size:.95rem;color:var(--blue)}
+.r-photo .badge span{font-size:.78rem;color:var(--ink-soft)}
+
+/* Comparación 1 vs 3-10+ */
+.r-compare{display:grid;grid-template-columns:1fr auto 1fr;gap:26px;align-items:stretch}
+.r-card{border-radius:24px;padding:36px 32px;position:relative}
+.r-card h3{font-size:1.35rem;margin-bottom:6px}
+.r-card .big{font-size:3.4rem;font-weight:900;line-height:1;margin:14px 0 4px}
+.r-card .cap{font-size:.82rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+.r-card ul{list-style:none;padding:0;margin:18px 0 0}
+.r-card li{padding:9px 0 9px 28px;position:relative;font-size:.94rem;border-top:1px solid rgba(3,0,46,.08)}
+.r-card li::before{content:"";position:absolute;left:2px;top:15px;width:12px;height:12px;border-radius:50%;border:2px solid currentColor;opacity:.5}
+.r-card.a{background:var(--white);border:1px solid #E7E1CB;color:var(--ink)}
+.r-card.a .big{color:#B9B2A0}
+.r-card.b{background:var(--blue);color:var(--white);box-shadow:0 30px 60px rgba(3,0,46,.28)}
+.r-card.b li{border-top-color:rgba(244,228,120,.15);color:#E1DFF2}
+.r-card.b li::before{border-color:var(--jasmine);opacity:1}
+.r-card.b .cap{color:var(--jasmine)}
+.r-vs{align-self:center;width:62px;height:62px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;font-weight:900;color:var(--blue);box-shadow:0 10px 26px rgba(176,121,8,.35)}
+.r-note{margin:34px auto 0;max-width:820px;text-align:center;font-size:1.05rem;color:var(--ink-soft)}
+.r-note strong{color:var(--blue)}
+
+/* Beneficios (aliado estratégico) */
+.r-benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.r-benefit{background:var(--white);border-radius:20px;padding:30px 26px;border:1px solid #EDE7D3;transition:transform .25s ease,box-shadow .25s ease}
+.r-benefit:hover{transform:translateY(-5px);box-shadow:0 22px 48px rgba(3,0,46,.12)}
+.r-benefit .ic{width:56px;height:56px;border-radius:16px;background:#FBF3D3;display:grid;place-items:center;margin-bottom:18px}
+.r-benefit .ic svg{width:28px;height:28px;stroke:#8A5E05}
+.r-benefit h3{font-size:1.08rem;color:var(--blue)}
+.r-benefit p{font-size:.92rem;color:var(--ink-soft);margin:0}
+
+/* Herramientas de financiamiento */
+.r-tools{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.r-tool{background:var(--white);border-radius:24px;overflow:hidden;border:1px solid #EDE7D3}
+.r-tool header{padding:26px 30px;display:flex;align-items:center;gap:14px}
+.r-tool header .dot{width:14px;height:14px;border-radius:50%}
+.r-tool header h3{margin:0;font-size:1.2rem;color:var(--blue)}
+.r-tool header p{margin:2px 0 0;font-size:.86rem;color:var(--ink-soft)}
+.r-tool.trad header{background:#F3F1FB}.r-tool.trad .dot{background:var(--cobalt)}
+.r-tool.notrad header{background:#FBF3D3}.r-tool.notrad .dot{background:var(--gold)}
+.r-chips{display:flex;flex-wrap:wrap;gap:10px;padding:24px 30px 6px}
+.r-chips span{font-size:.86rem;font-weight:700;color:var(--blue);background:#F7F5EE;border:1px solid #E7E1CB;padding:8px 14px;border-radius:999px}
+.r-tool ul{margin:0;padding:10px 30px 26px 48px}
+.r-tool li{font-size:.92rem;color:var(--ink-soft);margin-bottom:6px}
+.r-quote{margin:40px auto 0;max-width:900px;background:var(--blue);color:var(--white);border-radius:24px;padding:34px 40px;position:relative;text-align:center}
+.r-quote::before{content:"“";position:absolute;left:28px;top:-18px;font-size:6rem;line-height:1;font-weight:900;background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.r-quote p{font-size:clamp(1.15rem,2.3vw,1.45rem);font-weight:800;margin:0 0 8px}
+.r-quote span{color:var(--jasmine);font-weight:700;font-size:.95rem}
+
+/* Resultados de agentes */
+.r-results{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.r-result{background:var(--white);border-radius:22px;padding:30px 26px;border-top:6px solid transparent;border-image:var(--gold-grad) 1;box-shadow:0 16px 40px rgba(3,0,46,.08)}
+.r-result .num{font-size:2.6rem;font-weight:900;line-height:1;color:var(--blue)}
+.r-result .num small{font-size:1rem;font-weight:800;color:#8A5E05;margin-left:6px}
+.r-result h3{font-size:1.05rem;margin:12px 0 8px;color:var(--blue)}
+.r-result p{font-size:.92rem;color:var(--ink-soft)}
+.r-result .res{display:block;margin-top:12px;font-size:.86rem;font-weight:700;color:#8A5E05}
+.r-rescue{margin-top:26px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center;background:var(--blue);color:var(--white);border-radius:24px;padding:28px 34px}
+.r-rescue .tag{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);background:var(--jasmine);padding:6px 12px;border-radius:999px;white-space:nowrap}
+.r-rescue p{margin:0;color:#E1DFF2}
+.r-rescue p strong{color:var(--white)}
+.r-rescue .big{font-size:2.2rem;font-weight:900;white-space:nowrap}
+
+/* Banda CTA dorada */
+.r-band{background:var(--gold-grad);color:var(--blue);padding:56px 0}
+.r-band .container{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.r-band h2{margin:0;font-size:clamp(1.5rem,3vw,2.1rem);max-width:720px}
+.r-band .btn-blue{box-shadow:0 12px 28px rgba(3,0,46,.25)}
+
+/* Proceso: cadena de pasos */
+.r-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:r}
+.r-step{position:relative;background:var(--white);border:1px solid #EDE7D3;border-radius:20px;padding:28px 24px}
+.r-step .n{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:12px;background:var(--blue);color:var(--jasmine);font-weight:900;margin-bottom:14px}
+.r-step h3{font-size:1.02rem;color:var(--blue)}
+.r-step p{font-size:.9rem;color:var(--ink-soft);margin:0}
+.r-step:not(:last-child)::after{content:"→";position:absolute;right:-17px;top:38px;font-weight:900;color:var(--gold);font-size:1.3rem}
+
+/* Contacto (claro) */
+.r-contact{background:linear-gradient(180deg,#FBF8EE 0%,#F4EEDA 100%);position:relative;overflow:hidden}
+.r-contact .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:40px;align-items:end}
+.r-contact .contact-photo{position:relative;display:flex;justify-content:center;align-self:end}
+.r-contact .contact-photo .arch{position:absolute;z-index:0;left:50%;bottom:0;width:84%;height:80%;transform:translateX(-50%);background:var(--blue);border-radius:240px 240px 0 0}
+.r-contact .contact-photo img{position:relative;z-index:2;max-height:660px;width:auto;filter:drop-shadow(0 26px 34px rgba(3,0,46,.35))}
+.r-contact .form-card{margin-bottom:80px;box-shadow:0 30px 70px rgba(3,0,46,.18)}
+.form-grid .field textarea{font-family:inherit;font-size:1rem;padding:13px 14px;border-radius:10px;border:1.5px solid #D8D5E6;background:#FBFAFE;color:var(--ink);width:100%;min-height:84px;resize:vertical}
+
+@media (max-width:1080px){
+  .r-benefits,.r-results{grid-template-columns:1fr 1fr}
+  .r-steps{grid-template-columns:1fr 1fr}.r-step::after{display:none}
+}
+@media (max-width:920px){
+  .r-hero .container,.r-contact .container{grid-template-columns:1fr;min-height:auto;padding-top:40px}
+  .r-copy{padding-bottom:10px}
+  .r-photo img{max-height:460px}
+  .r-photo .badge{left:0;top:auto;bottom:40px}
+  .r-compare{grid-template-columns:1fr}.r-vs{justify-self:center}
+  .r-tools{grid-template-columns:1fr}
+  .r-rescue{grid-template-columns:1fr;text-align:left}
+  .r-contact .contact-photo{display:none}
+  .r-contact .form-card{margin-bottom:0}
+}
+@media (max-width:600px){
+  .r-benefits,.r-results,.r-steps{grid-template-columns:1fr}
+  .r-card{padding:28px 22px}
+  .r-quote{padding:30px 22px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="house" viewBox="0 0 100 80">
+    <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="butt" stroke-linejoin="miter">
+      <path d="M6 44 L50 4 L94 44"/><path d="M33 64 V40 L50 23 L67 40 V64"/><path d="M19 50 V75 H81 V50"/><path d="M78 10 V30"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-contact">
+      <a href="tel:+17708656771">📞 (770) 865-6771</a>
+      <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a>
+      <a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a>
+    </div>
+    <div class="topbar-hours">NMLS #1593970 · Hablamos español &amp; English</div>
+  </div>
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="container">
+    <a class="brand" href="/" aria-label="Tony Valdes Loans - Inicio">
+      <img src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans">
+    </a>
+    <nav class="main" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="#beneficios">Beneficios</a></li>
+        <li><a href="#herramientas">Programas</a></li>
+        <li><a href="#resultados">Resultados</a></li>
+        <li><a href="#proceso">Cómo trabajamos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-gold" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Quiero ser aliado</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="r-hero" id="inicio" style="padding:0">
+  <svg class="outline-house" aria-hidden="true"><use href="#house"/></svg>
+  <div class="container">
+    <div class="r-copy">
+      <span class="eyebrow">Para Realtors y agentes inmobiliarios</span>
+      <h1>Cómo duplicar o <span class="hl">triplicar</span> tus cierres</h1>
+      <p class="sub">Los agentes que crean oportunidades para sus clientes cierran más. En Tony Valdes Loans somos más que préstamos: somos tu aliado estratégico para que cada cliente compre, invierta y vuelva a cerrar contigo.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#contacto">Quiero ser aliado</a>
+        <a class="btn btn-outline" href="#resultados">Ver resultados de agentes</a>
+      </div>
+      <div class="r-proof">
+        <div><strong>10+</strong><span>cierres en el primer año de una agente aliada</span></div>
+        <div><strong>10 días</strong><span>para rescatar y cerrar un deal</span></div>
+        <div><strong>3–10+</strong><span>cierres por cliente inversionista</span></div>
+      </div>
+    </div>
+    <div class="r-photo">
+      <div class="arch" aria-hidden="true"></div>
+      <img src="../assets/tony-blazer-casual.webp" alt="Tony Valdes, tu aliado de financiamiento" width="726" height="1329" fetchpriority="high">
+      <div class="badge" aria-hidden="true"><div class="ic">25+</div><div><strong>Años en banca</strong><span>y finanzas</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EL TIPO DE CLIENTE DEFINE TU NEGOCIO ============ -->
+<section class="section-light" id="oportunidad">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">¿1 cierre o 10 cierres?</span>
+      <h2>El tipo de cliente define tu negocio</h2>
+      <p>El mercado hispano está pasando de compradores tradicionales a inversionistas enfocados en crear patrimonio. Esa transición es una gran oportunidad para los agentes que saben aprovecharla.</p>
+    </div>
+    <div class="r-compare">
+      <div class="r-card a reveal">
+        <span class="cap">Primer comprador</span>
+        <h3>Compra para vivir</h3>
+        <div class="big">1</div><span class="cap">cliente = 1 cierre</span>
+        <ul>
+          <li>Depende de las tasas y de sus ingresos</li>
+          <li>Muy sensible a los cambios del mercado</li>
+          <li>Una sola transacción, enfocada en la necesidad</li>
+        </ul>
+      </div>
+      <div class="r-vs reveal" aria-hidden="true">VS</div>
+      <div class="r-card b reveal">
+        <span class="cap">Inversionista</span>
+        <h3>Compra para crecer</h3>
+        <div class="big gold-text">3–10+</div><span class="cap">cierres por cliente</span>
+        <ul>
+          <li>Compra en cualquier mercado</li>
+          <li>Se enfoca en números y oportunidades</li>
+          <li>Usa varias estrategias: Fix &amp; Flip, rentas, multifamily y construcción</li>
+        </ul>
+      </div>
+    </div>
+    <p class="r-note reveal">La oportunidad es para los agentes que <strong>entienden las estrategias de inversión</strong>, tienen <strong>acceso al financiamiento adecuado</strong> y saben <strong>estructurar deals más complejos</strong>.</p>
+  </div>
+</section>
+
+<!-- ============ BENEFICIOS ============ -->
+<section class="r-cream" id="beneficios">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Más que préstamos</span>
+      <h2>Un aliado estratégico para tu negocio</h2>
+      <p>Trabajamos alineados contigo, como un verdadero socio, para que tus clientes compren con ventaja en cualquier mercado.</p>
+    </div>
+    <div class="r-benefits">
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg></div><h3>Preaprobaciones rápidas</h3><p>Tus clientes salen a buscar casa con una preaprobación sólida que da confianza al vendedor.</p></div>
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></div><h3>Deals complejos resueltos</h3><p>Estructuramos operaciones que otros lenders rechazan: self-employed, inversionistas y extranjeros.</p></div>
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 19V5l8 4 8-4v14l-8-4z"/></svg></div><h3>Educamos a tus clientes</h3><p>Les explicamos estrategias de compra, financiamiento y salida para que actúen con ventaja.</p></div>
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3>Clientes que vuelven</h3><p>Convertimos compradores en inversionistas que hacen varias transacciones contigo.</p></div>
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><h3>Comunicación constante</h3><p>Te mantenemos informado en cada etapa, en español y en inglés, para que nunca pierdas el control del deal.</p></div>
+      <div class="r-benefit reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="10" r="3"/><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/></svg></div><h3>Operamos en varios estados</h3><p>Un equipo enfocado en resultados, listo para ayudarte a cerrar más transacciones.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HERRAMIENTAS ============ -->
+<section class="section-light" id="herramientas">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Tu caja de herramientas</span>
+      <h2>Una opción de financiamiento para cada cliente</h2>
+      <p>Cuando conoces todas las opciones, empiezas a cerrar más. Estos son los programas que ponemos a disposición de tus clientes.</p>
+    </div>
+    <div class="r-tools">
+      <div class="r-tool trad reveal">
+        <header><span class="dot" aria-hidden="true"></span><div><h3>Financiamiento tradicional</h3><p>Para primeros compradores y familias</p></div></header>
+        <div class="r-chips"><span>Convencional</span><span>FHA</span><span>VA</span><span>USDA</span><span>Ayuda para el pago inicial (DPA)</span></div>
+        <ul><li>Programas de asistencia para el pago inicial y gastos de cierre</li><li>Opciones para empleados con W-2</li></ul>
+      </div>
+      <div class="r-tool notrad reveal">
+        <header><span class="dot" aria-hidden="true"></span><div><h3>Financiamiento no tradicional</h3><p>Para inversionistas, self-employed y extranjeros</p></div></header>
+        <div class="r-chips"><span>Bank Statement</span><span>Profit &amp; Loss</span><span>Asset-Based</span><span>DSCR</span><span>Fix &amp; Flip</span><span>No residentes y extranjeros</span></div>
+        <ul><li>Flexibilidad en la documentación de ingresos</li><li>Enfocado en inversión y flujo de caja</li><li>Permite escalar portafolios</li></ul>
+      </div>
+    </div>
+    <div class="r-quote reveal">
+      <p>Muchos deals no se caen por el cliente… se caen porque el agente solo conoce una opción de financiamiento.</p>
+      <span>Cuando entiendes estas opciones, empiezas a cerrar más.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ RESULTADOS ============ -->
+<section class="r-cream" id="resultados">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Resultados de agentes aliados</span>
+      <h2>Agentes que ya están cerrando más</h2>
+      <p>Historias reales de agentes que trabajan con nosotros y convirtieron oportunidades en cierres.</p>
+    </div>
+    <div class="r-results">
+      <article class="r-result reveal">
+        <div class="num">3<small>cierres en 90 días</small></div>
+        <h3>Crecimiento acelerado</h3>
+        <p>Comenzó a trabajar con nosotros el verano pasado y en sus primeros 90 días cerró 3 transacciones, incluyendo propiedades de renta corta tipo Airbnb.</p>
+        <span class="res">➡️ Sigue generando nuevas oportunidades con apoyo estratégico.</span>
+      </article>
+      <article class="r-result reveal">
+        <div class="num">10+<small>cierres en su primer año</small></div>
+        <h3>De agente nueva a top producer</h3>
+        <p>Inició como agente en octubre de 2024 y en su primer año cerró más de 10 transacciones con nosotros, entre Fix &amp; Flip, multifamiliares y rentas.</p>
+        <span class="res">➡️ Múltiples oportunidades convertidas en cierres.</span>
+      </article>
+      <article class="r-result reveal">
+        <div class="num">3<small>Fix &amp; Flip en 90 días</small></div>
+        <h3>Ejecución rápida</h3>
+        <p>En sus primeros 90 días logró cerrar 3 transacciones de Fix &amp; Flip trabajando con nosotros, y seguimos colaborando en varias operaciones activas.</p>
+        <span class="res">➡️ Ejecución rápida y expansión continua.</span>
+      </article>
+    </div>
+    <div class="r-rescue reveal">
+      <span class="tag">Deal rescatado</span>
+      <p>Una transacción convencional fallida, con <strong>riesgo de perder $7,000 de depósito</strong>, se reestructuró con financiamiento estratégico y se cerró a tiempo.</p>
+      <span class="big gold-text">10 días</span>
+    </div>
+    <p class="disclaimer-small" style="color:#6E6B8E">Los resultados individuales pueden variar.</p>
+  </div>
+</section>
+
+<!-- ============ BANDA CTA ============ -->
+<section class="r-band" style="padding:56px 0">
+  <div class="container">
+    <h2>Tony Valdes Loans = más oportunidades, más cierres. ¡Sí Es Posible!</h2>
+    <a class="btn btn-blue" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda una llamada con Tony</a>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section-light" id="proceso">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Cómo trabajamos juntos</span>
+      <h2>Simple, rápido y siempre alineados contigo</h2>
+    </div>
+    <div class="r-steps">
+      <div class="r-step reveal"><span class="n">1</span><h3>Conectamos</h3><p>Agenda una llamada y conozcamos tu negocio y tus clientes.</p></div>
+      <div class="r-step reveal"><span class="n">2</span><h3>Comparte el escenario</h3><p>Cuéntanos el caso de tu cliente, aunque sea complicado.</p></div>
+      <div class="r-step reveal"><span class="n">3</span><h3>Estrategia y preaprobación</h3><p>Analizamos opciones y preaprobamos rápido para que puedas ofertar.</p></div>
+      <div class="r-step reveal"><span class="n">4</span><h3>Cierre y siguiente deal</h3><p>Coordinamos el cierre contigo y planeamos la próxima oportunidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="r-cream" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Lo que nos preguntan los agentes</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>¿Qué tan rápido pueden preaprobar a mi cliente?</summary><p>Depende del programa y de la documentación, pero trabajamos con rapidez para que tu cliente pueda presentar una oferta sólida lo antes posible.</p></details>
+      <details><summary>¿Pueden ayudar a clientes self-employed o con ingresos 1099?</summary><p>Sí. Con programas como Bank Statement o Profit &amp; Loss tus clientes califican con sus depósitos reales o con un estado financiero de su CPA.</p></details>
+      <details><summary>¿Trabajan con clientes inversionistas o extranjeros?</summary><p>Sí. Tenemos préstamos DSCR, Fix &amp; Flip, multifamily, construcción y opciones para extranjeros y no residentes.</p></details>
+      <details><summary>¿Qué pasa si un deal está a punto de caerse?</summary><p>Escríbenos de inmediato. Revisamos el caso y buscamos una estructura alternativa; en un caso real rescatamos un deal y lo cerramos en solo 10 días.</p></details>
+      <details><summary>¿Me mantienen informado durante el proceso?</summary><p>Sí. Te mantenemos al tanto en cada etapa, desde la preaprobación hasta el cierre, para que puedas atender a tu cliente con confianza.</p></details>
+      <details><summary>¿En qué estados operan?</summary><p>Operamos en múltiples estados. Escríbenos y te confirmamos las opciones disponibles donde trabajas.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="r-contact" id="contacto" style="padding:96px 0 0">
+  <div class="container">
+    <div class="contact-photo">
+      <div class="arch" aria-hidden="true"></div>
+      <img src="../assets/tony-blazer-senalando.webp" alt="Tony Valdes invitándote a ser su aliado" width="730" height="1324" loading="lazy">
+    </div>
+    <div class="form-card reveal">
+      <div id="formWrap">
+        <span class="eyebrow">Programa de agentes aliados</span>
+        <h2>Hagamos crecer tu negocio juntos</h2>
+        <p>Déjame tus datos y te contacto para conocer tu negocio y cómo podemos ayudarte a cerrar más.</p>
+        <form id="leadForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="brokerage">Brokerage o compañía</label><input id="brokerage" name="brokerage" type="text" autocomplete="organization"></div>
+            <div class="field"><label for="estado">Estado donde trabajas</label><input id="estado" name="estado" type="text"></div>
+            <div class="field full"><label for="objetivo">¿Cómo te podemos ayudar?</label>
+              <select id="objetivo" name="objetivo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Realtor: quiero ser aliado">Quiero ser agente aliado</option>
+                <option value="Realtor: preaprobación para un cliente">Necesito una preaprobación para un cliente</option>
+                <option value="Realtor: tengo un cliente inversionista">Tengo un cliente inversionista</option>
+                <option value="Realtor: tengo un deal complicado">Tengo un deal complicado</option>
+                <option value="Realtor: cliente self-employed o extranjero">Mi cliente es self-employed o extranjero</option>
+              </select><span class="err" aria-live="polite"></span></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+            <span>Acepto los <a href="/terminos">Términos</a> y la <a href="/privacidad">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+          <span class="err" id="consentErr" aria-live="polite"></span>
+          <button class="btn btn-gold" type="submit">Quiero ser aliado</button>
+        </form>
+        <div class="contact-direct">
+          <a href="tel:+17708656771">📞 (770) 865-6771</a>
+          <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="mailto:info@tonyvaldesloans.com">✉️ Email</a>
+        </div>
+      </div>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="check">✓</div>
+        <h2>¡Gracias! Pronto hablamos</h2>
+        <p>Recibí tu información y te contactaré muy pronto. Si quieres adelantar, agenda una llamada directamente.</p>
+        <a class="btn btn-blue" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agendar ahora</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans" loading="lazy">
+        <p>Préstamos Inteligentes. ¡Sí Es Posible! Te ayudamos a comprar, invertir y crecer con la estrategia de financiamiento correcta.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener" aria-label="Instagram @tonyvaldesloans"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zm-2.1 10a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9A3.3 3.3 0 0 1 6.1 4.2C7.4 3.7 10.5 3.8 12 3.8s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9z"/></svg></a>
+          <a href="https://www.facebook.com/tonyvaldesloanss/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.5V1H14c-3.6 0-4.4 2.7-4.4 4.4V8H7v4h2.6v11H14V12h3.2l.4-4z"/></svg></a>
+          <a href="https://www.youtube.com/@TonyValdesLoans" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Para Realtors</h4>
+        <ul>
+          <li><a href="#beneficios">Beneficios</a></li>
+          <li><a href="#herramientas">Programas</a></li>
+          <li><a href="#resultados">Resultados de agentes</a></li>
+          <li><a href="#proceso">Cómo trabajamos</a></li>
+          <li><a href="#contacto">Quiero ser aliado</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tony Valdes Loans</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#sobre-tony">Sobre Tony</a></li>
+          <li><a href="/#comprar">Compra de vivienda</a></li>
+          <li><a href="/inversionistas">Inversionistas</a></li>
+          <li><a href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda tu asesoría</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+17708656771">📞 (770) 865-6771</a></li>
+          <li><a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a></li>
+          <li><a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a></li>
+          <li><a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener">📷 @tonyvaldesloans</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div class="ehl" aria-label="Equal Housing Opportunity">
+        <svg viewBox="0 0 48 48" fill="#D9D7EE" aria-hidden="true"><path d="M24 4 3 16v4h3v22h36V20h3v-4zm14 34H10V18.6L24 10l14 8.6z"/><path d="M16 24h16v3H16zm0 6h16v3H16z"/></svg>
+        EQUAL HOUSING<br>OPPORTUNITY
+      </div>
+      <div>
+        <p><strong>Tony Valdes, Mortgage Loan Officer, NMLS #1593970.</strong> Tony Valdes Loans opera con <strong>Loan Factory, Inc., NMLS #320841</strong>. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</p>
+        <p>Esto no es una oferta de préstamo ni un compromiso de prestar. Todos los préstamos están sujetos a la aprobación de crédito, verificación de ingresos, tasación y suscripción (underwriting). Los programas, tasas, términos y condiciones pueden cambiar sin previo aviso y no están disponibles en todos los estados. Otras restricciones pueden aplicar.</p>
+        <p>Los casos presentados son ejemplos reales de clientes. Los resultados individuales pueden variar. La información de este sitio es educativa y no constituye asesoría legal ni fiscal; consulta con tu contador o abogado.</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> Tony Valdes Loans. Todos los derechos reservados. · <a href="/privacidad">Privacidad</a> · <a href="/terminos">Términos</a></p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20quiero%20analizar%20una%20inversi%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbele a Tony por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+
+<a class="wa-float" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20soy%20Realtor%20y%20quiero%20saber%20m%C3%A1s" target="_blank" rel="noopener" aria-label="Escríbele a Tony por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+<script>
+(function(){
+  // Año dinámico
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+
+  var header=document.getElementById('siteHeader');
+  window.addEventListener('scroll',function(){header.classList.toggle('shrink',window.scrollY>40)},{passive:true});
+
+  var toggle=document.getElementById('menuToggle'), nav=document.getElementById('mainNav');
+  function closeNav(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
+  toggle.addEventListener('click',function(){var o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav()});
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}) }
+
+  // ===== Formulario =====
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, obj=form.objetivo, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    if(!obj.value){setErr(obj,T('_err_goal'));ok=false}else setErr(obj);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input,.invalid select');if(first)first.focus();return}
+
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:obj.value,
+      brokerage:form.brokerage.value.trim(), estado:form.estado.value.trim(),
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'web-realtors', pagina:location.href
+    };
+    var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(showSuccess,showSuccess);
+  });
+  function showSuccess(){document.getElementById('formWrap').style.display='none';document.getElementById('formSuccess').classList.add('show')}
+})();
+</script>
+</body>
+</html>
