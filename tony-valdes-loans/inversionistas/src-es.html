@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Préstamos para Inversionistas Inmobiliarios | Tony Valdes Loans</title>
+<meta name="description" content="Financiamiento para inversionistas: Fix &amp; Flip, DSCR para rentas cortas y largas, Multifamily y nueva construcción. Calcula tu deal y agenda tu análisis gratis con Tony Valdes, NMLS #1593970.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*BASE_CSS*/
+
+/* ============ INVERSIONISTAS ============ */
+.inv-hero{position:relative;background:radial-gradient(1100px 620px at 78% 35%,#1A1570 0%,var(--blue) 62%);color:var(--white);overflow:hidden}
+.inv-hero .watermark{position:absolute;right:-4%;top:8%;width:56%;max-width:760px;height:auto;aspect-ratio:100/80;opacity:.07;pointer-events:none}
+.inv-hero .container{display:grid;grid-template-columns:1.15fr .85fr;align-items:end;gap:30px;min-height:660px;padding-top:56px}
+.inv-hero-copy{padding-bottom:74px;position:relative;z-index:2}
+.inv-hero h1{font-size:clamp(2.2rem,4.8vw,3.8rem);font-weight:900;margin-bottom:20px}
+.inv-hero-sub{font-size:1.1rem;color:#D9D7EE;max-width:580px;margin-bottom:28px}
+.inv-photo{position:relative;align-self:end;display:flex;justify-content:center;z-index:1}
+.inv-photo img{position:relative;z-index:2;max-height:640px;width:auto;filter:drop-shadow(0 30px 40px rgba(0,0,0,.45))}
+.inv-photo .glow{position:absolute;z-index:0;left:50%;bottom:60px;width:95%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;background:radial-gradient(circle,rgba(176,121,8,.3),transparent 65%)}
+.inv-photo .house{position:absolute;z-index:1;left:-8%;top:6%;width:62%;height:auto;aspect-ratio:100/80;color:#D9B23F;opacity:.14}
+.inv-photo .seal{right:-4%;bottom:170px;animation:float 6s ease-in-out infinite}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;border-top:1px solid rgba(244,228,120,.2);padding-top:24px}
+.kpis strong{display:block;font-size:1.65rem;font-weight:900;line-height:1.1}
+.kpis span{font-size:.76rem;color:#B9B6D6;text-transform:uppercase;letter-spacing:.06em}
+
+/* Por qué invertir */
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why-card{background:var(--white);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);border-top:4px solid transparent;border-image:var(--gold-grad) 1}
+.why-card .ic{width:52px;height:52px;border-radius:50%;background:var(--blue);display:grid;place-items:center;margin-bottom:16px}
+.why-card .ic svg{width:26px;height:26px;stroke:var(--jasmine)}
+.why-card h3{font-size:1.08rem}
+.why-card p{font-size:.92rem;color:var(--ink-soft);margin:0}
+
+/* Estrategias detalladas */
+.strat-list{display:grid;gap:22px}
+.strat{display:grid;grid-template-columns:90px 1fr 1fr;gap:26px;align-items:start;background:var(--white);border:1px solid #E7E4D8;border-radius:var(--radius);padding:30px 30px;transition:box-shadow .25s ease,transform .25s ease}
+.strat:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.strat .n{font-size:3rem;font-weight:900;line-height:1}
+.strat h3{font-size:1.3rem;margin-bottom:8px}
+.strat .lead{color:var(--ink-soft);font-size:.96rem}
+.strat .tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--jasmine);padding:4px 10px;border-radius:999px;margin-bottom:12px}
+.strat h4{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:#8A5E05;margin:0 0 8px}
+.strat ul{margin:0 0 14px;padding-left:18px}
+.strat li{font-size:.9rem;color:var(--ink-soft);margin-bottom:6px}
+.strat .fin{background:var(--paper);border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;font-size:.9rem;color:var(--ink)}
+
+/* Calculadoras */
+.calc-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:var(--white);border-radius:20px;overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.calc-tabs{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap}
+.calc-tabs button{font-family:inherit;font-weight:800;font-size:.88rem;padding:11px 18px;border-radius:999px;border:2px solid #D8D5E6;background:#fff;color:var(--ink);cursor:pointer}
+.calc-tabs button[aria-selected="true"]{background:var(--blue);border-color:var(--blue);color:var(--jasmine)}
+.calc-in{padding:36px 34px;color:var(--ink);background:var(--white)}
+.calc-in h3{font-size:1.35rem}
+.calc-in > p{color:var(--ink-soft);font-size:.92rem}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-grid .field.full{grid-column:1/-1}
+.calc-grid .money{position:relative}
+.calc-grid .money::before{content:"$";position:absolute;left:13px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--ink-soft)}
+.calc-grid .money input{padding-left:26px}
+.calc-grid .pct{position:relative}
+.calc-grid .pct::after{content:"%";position:absolute;right:14px;top:50%;transform:translateY(-50%);font-weight:700;color:var(--ink-soft)}
+.calc-out{background:var(--blue);color:var(--white);padding:36px 34px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.calc-out::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;background:var(--gold-grad)}
+.calc-out .big{font-size:clamp(2.2rem,4vw,3rem);font-weight:900;line-height:1.05;margin:4px 0 6px}
+.calc-out .lbl{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:#B9B6D6}
+.calc-rows{list-style:none;padding:0;margin:22px 0 18px}
+.calc-rows li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed rgba(244,228,120,.2);font-size:.94rem;color:#E1DFF2}
+.calc-rows li strong{color:var(--white)}
+.verdict{border-radius:12px;padding:14px 16px;font-size:.92rem;font-weight:600;margin-bottom:18px;background:rgba(255,255,255,.07);border-left:4px solid var(--jasmine)}
+.verdict.good{border-left-color:#4CC38A}
+.verdict.mid{border-left-color:var(--jasmine)}
+.verdict.low{border-left-color:#E5735C}
+.calc-note{font-size:.74rem;color:#9C99BE;margin:14px 0 0}
+.calc-panel[hidden]{display:none}
+
+/* Proceso inversionista */
+.steps5{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;counter-reset:s}
+.steps5 .st{background:var(--white);border-radius:var(--radius);padding:26px 20px;box-shadow:0 8px 24px rgba(3,0,46,.08);position:relative}
+.steps5 .st .dot{width:48px;height:48px;border-radius:50%;background:var(--gold-grad);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:1.15rem;margin-bottom:14px}
+.steps5 h3{font-size:1rem}
+.steps5 p{font-size:.86rem;color:var(--ink-soft);margin:0}
+
+/* Contacto inversionistas */
+.inv-contact .contact-photo img{height:92%}
+.inv-contact .contact-photo .contact-house{position:absolute;z-index:1;right:-2%;left:auto;top:0;width:58%;height:auto;aspect-ratio:100/80;color:#D9B23F;opacity:.13}
+.form-grid .field textarea{font-family:inherit;font-size:1rem;padding:13px 14px;border-radius:10px;border:1.5px solid #D8D5E6;background:#FBFAFE;color:var(--ink);width:100%;min-height:84px;resize:vertical}
+.form-grid .field textarea:focus{outline:none;border-color:var(--cobalt);box-shadow:0 0 0 3px rgba(8,63,176,.15)}
+
+@media (max-width:1080px){
+  .why{grid-template-columns:1fr 1fr}
+  .steps5{grid-template-columns:repeat(3,1fr)}
+  .kpis{grid-template-columns:1fr 1fr}
+}
+@media (max-width:920px){
+  .inv-hero .container{grid-template-columns:1fr;min-height:auto;padding-top:40px}
+  .inv-hero-copy{padding-bottom:10px}
+  .inv-photo img{max-height:460px}
+  .inv-photo .seal{right:0;bottom:80px;width:110px;height:110px}
+  .strat{grid-template-columns:1fr;gap:12px}
+  .calc-wrap{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .why,.calc-grid{grid-template-columns:1fr}
+  .steps5{grid-template-columns:1fr 1fr}
+  .calc-in,.calc-out{padding:28px 20px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Saltar al contenido</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="house" viewBox="0 0 100 80">
+    <g fill="none" stroke="currentColor" stroke-width="6.5" stroke-linecap="butt" stroke-linejoin="miter">
+      <path d="M6 44 L50 4 L94 44"/><path d="M33 64 V40 L50 23 L67 40 V64"/><path d="M19 50 V75 H81 V50"/><path d="M78 10 V30"/>
+    </g>
+  </symbol>
+</svg>
+
+<div class="topbar">
+  <div class="container">
+    <div class="topbar-contact">
+      <a href="tel:+17708656771">📞 (770) 865-6771</a>
+      <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a>
+      <a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a>
+    </div>
+    <div class="topbar-hours">NMLS #1593970 · Hablamos español &amp; English</div>
+  </div>
+</div>
+
+<header class="site" id="siteHeader">
+  <div class="container">
+    <a class="brand" href="/" aria-label="Tony Valdes Loans - Inicio">
+      <img src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans">
+    </a>
+    <nav class="main" id="mainNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="#estrategias">Estrategias</a></li>
+        <li><a href="#calculadora">Calculadora</a></li>
+        <li><a href="#programas">Programas</a></li>
+        <li><a href="#casos">Casos reales</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="header-cta">
+      <a class="btn btn-gold" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Analiza tu deal</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="inv-hero" id="inicio" style="padding:0">
+  <svg class="watermark" aria-hidden="true" style="color:#F4E478"><use href="#house"/></svg>
+  <div class="container">
+    <div class="inv-hero-copy">
+      <span class="eyebrow">Para inversionistas inmobiliarios</span>
+      <h1>Financiamiento inteligente para <span class="gold-text">crecer tu portafolio</span></h1>
+      <p class="inv-hero-sub">Fix &amp; Flip, rentas cortas y largas, multifamiliares y nueva construcción. Te ayudo a estructurar cada deal con la estrategia y el préstamo correctos, aunque no tengas ingresos “tradicionales”.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda el análisis de tu deal</a>
+        <a class="btn btn-outline" href="#calculadora">Calcula tu inversión</a>
+      </div>
+      <div class="kpis">
+        <div><strong class="gold-text">5</strong><span>estrategias de inversión</span></div>
+        <div><strong class="gold-text">$100K+</strong><span>ganancia en un flip real</span></div>
+        <div><strong class="gold-text">DSCR</strong><span>califica con la renta</span></div>
+        <div><strong class="gold-text">3–10+</strong><span>deals por inversionista</span></div>
+      </div>
+    </div>
+    <div class="inv-photo">
+      <div class="glow" aria-hidden="true"></div>
+      <svg class="house" aria-hidden="true"><use href="#house"/></svg>
+      <img src="../assets/tony-traje-completo.webp" alt="Tony Valdes, consultor de préstamos para inversionistas" width="544" height="1813" fetchpriority="high">
+      <div class="seal" aria-hidden="true"><strong class="gold-text">25+</strong><span>años en banca</span></div>
+    </div>
+  </div>
+</section>
+<div class="gold-band" aria-hidden="true"></div>
+
+<!-- ============ POR QUÉ ============ -->
+<section class="section-paper" id="porque">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Por qué invertir en bienes raíces</span>
+      <h2>Los inversionistas compran en cualquier mercado</h2>
+      <p>Mientras el comprador tradicional depende de las tasas y de sus ingresos, el inversionista se enfoca en los números y en las oportunidades. La clave está en tener el financiamiento correcto.</p>
+    </div>
+    <div class="why">
+      <div class="why-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg></div><h3>Flujo de caja mensual</h3><p>Las rentas generan ingresos todos los meses que pagan el préstamo y te dejan ganancia.</p></div>
+      <div class="why-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M12 22V12"/></svg></div><h3>Valorización y equity</h3><p>Cada remodelación y cada año suman valor a tu propiedad y aumentan tu patrimonio.</p></div>
+      <div class="why-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></div><h3>Beneficios fiscales</h3><p>Depreciación, intereses y gastos de mantenimiento pueden ser deducibles. Consulta siempre con tu contador.</p></div>
+      <div class="why-card reveal"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M4 20h16"/><path d="M6 16V9M10 16V6M14 16v-5M18 16V4"/></svg></div><h3>Un portafolio escalable</h3><p>Con la estructura adecuada, un deal financia el siguiente. Así se construye riqueza a largo plazo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ESTRATEGIAS ============ -->
+<section class="section-light" id="estrategias">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Las 5 estrategias</span>
+      <h2>Elige la estrategia que se adapta a ti</h2>
+      <p>La estrategia ideal depende de tu liquidez, tu experiencia, tu crédito y tus objetivos. Estas son las cinco que más usamos con nuestros clientes.</p>
+    </div>
+    <div class="strat-list">
+      <article class="strat reveal">
+        <div class="n gold-text">01</div>
+        <div><span class="tag">Ganancia rápida</span><h3>Fix &amp; Flip</h3><p class="lead">Compra una propiedad por debajo del valor de mercado, remodélala para aumentar su valor y véndela para generar una ganancia de capital. También puedes conservarla como renta.</p></div>
+        <div><h4>Claves</h4><ul><li>Busca zonas con alta valorización</li><li>Usa comparables para calcular tu margen y el costo de las reparaciones</li><li>Ten un buen equipo para remodelar rápido</li></ul><div class="fin"><strong>Financiamiento:</strong> préstamos que pueden cubrir entre el 80% y el 100% de la compra, más el costo de la remodelación, según tu caso.*</div></div>
+      </article>
+      <article class="strat reveal">
+        <div class="n gold-text">02</div>
+        <div><span class="tag">Ingresos más altos</span><h3>Renta a corto plazo</h3><p class="lead">Propiedades tipo Airbnb que se rentan por noches o semanas. Generan ingresos variables, normalmente más altos que una renta tradicional.</p></div>
+        <div><h4>Claves</h4><ul><li>La ubicación lo es todo: turismo, hospitales, universidades</li><li>Revisa las reglas de la ciudad y del HOA</li><li>Una buena gestión de reservas y limpieza</li></ul><div class="fin"><strong>Financiamiento:</strong> préstamos DSCR que califican con la renta proyectada de la propiedad, sin verificar tus ingresos personales.*</div></div>
+      </article>
+      <article class="strat reveal">
+        <div class="n gold-text">03</div>
+        <div><span class="tag">Ingresos pasivos</span><h3>Renta a largo plazo</h3><p class="lead">Alquila la propiedad por un año o más y recibe ingresos estables cada mes, con más control y menos gestión.</p></div>
+        <div><h4>Claves</h4><ul><li>Buena selección de inquilinos y contratos claros</li><li>Remodelar para crear más unidades aumenta la renta</li><li>Ubicación estratégica con alta demanda</li></ul><div class="fin"><strong>Financiamiento:</strong> préstamos DSCR o convencionales para inversión, según tu perfil.*</div></div>
+      </article>
+      <article class="strat reveal">
+        <div class="n gold-text">04</div>
+        <div><span class="tag">Escalable</span><h3>Multifamily</h3><p class="lead">Edificios de varias unidades que multiplican tus ingresos con una sola compra y aprovechan las economías de escala.</p></div>
+        <div><h4>Claves</h4><ul><li><strong>2 a 4 unidades:</strong> financiamiento residencial, ideal para empezar</li><li><strong>5 a 10 unidades:</strong> transición a activos semi-comerciales</li><li><strong>50+ unidades:</strong> activos comerciales a gran escala</li></ul><div class="fin"><strong>Financiamiento:</strong> opciones residenciales para 2–4 unidades y comerciales para 5 o más.*</div></div>
+      </article>
+      <article class="strat reveal">
+        <div class="n gold-text">05</div>
+        <div><span class="tag">Mayor control</span><h3>Nueva construcción</h3><p class="lead">Construye viviendas o multifamiliares nuevos para vender o rentar, con diseño moderno y control total de los costos.</p></div>
+        <div><h4>Claves</h4><ul><li>Requiere permisos y coordinación de obra</li><li>Evalúa costos de construcción y tiempos de entrega</li><li>Se necesita capital inicial sólido</li></ul><div class="fin"><strong>Financiamiento:</strong> préstamos de construcción con desembolsos por etapas de obra.*</div></div>
+      </article>
+    </div>
+    <p class="disclaimer-small" style="color:#6E6B8E">*Programas para propiedades de inversión con fines comerciales. Todos los préstamos están sujetos a calificación, tasación y aprobación. Los términos varían según el caso.</p>
+  </div>
+</section>
+
+<!-- ============ CALCULADORA ============ -->
+<section class="section-dark" id="calculadora">
+  <svg class="wm" aria-hidden="true" style="position:absolute;right:-8%;top:-8%;width:42%;opacity:.05;color:#F4E478"><use href="#house"/></svg>
+  <div class="container" style="position:relative">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Calculadora para inversionistas</span>
+      <h2>¿Tu próximo deal tiene <span class="gold-text">buenos números</span>?</h2>
+      <p>Haz un cálculo rápido antes de ofertar. Después lo revisamos juntos con números reales y la estrategia de financiamiento adecuada.</p>
+    </div>
+    <div class="calc-wrap reveal">
+      <div class="calc-in">
+        <div class="calc-tabs" role="tablist" aria-label="Calculadoras">
+          <button type="button" role="tab" id="tab-flip" aria-controls="panel-flip" aria-selected="true">Fix &amp; Flip</button>
+          <button type="button" role="tab" id="tab-dscr" aria-controls="panel-dscr" aria-selected="false">DSCR (renta)</button>
+        </div>
+        <div class="calc-panel" id="panel-flip" role="tabpanel" aria-labelledby="tab-flip">
+          <h3>Calculadora Fix &amp; Flip</h3>
+          <p>Estima tu ganancia y la oferta máxima recomendada.</p>
+          <div class="calc-grid">
+            <div class="field"><label for="f-buy">Precio de compra</label><div class="money"><input id="f-buy" type="number" inputmode="decimal" min="0" step="1000" value="235000"></div></div>
+            <div class="field"><label for="f-rehab">Costo de remodelación</label><div class="money"><input id="f-rehab" type="number" inputmode="decimal" min="0" step="1000" value="70000"></div></div>
+            <div class="field"><label for="f-arv">Valor después de remodelar (ARV)</label><div class="money"><input id="f-arv" type="number" inputmode="decimal" min="0" step="1000" value="420000"></div></div>
+            <div class="field"><label for="f-hold">Costos de mantener (meses × gastos)</label><div class="money"><input id="f-hold" type="number" inputmode="decimal" min="0" step="500" value="9000"></div></div>
+            <div class="field full"><label for="f-sell">Costos de compra y venta (% del ARV)</label><div class="pct"><input id="f-sell" type="number" inputmode="decimal" min="0" max="20" step="0.5" value="8"></div></div>
+          </div>
+        </div>
+        <div class="calc-panel" id="panel-dscr" role="tabpanel" aria-labelledby="tab-dscr" hidden>
+          <h3>Calculadora DSCR</h3>
+          <p>El DSCR compara la renta de la propiedad con su pago mensual. Con un préstamo DSCR calificas con la renta, sin verificar tus ingresos personales.</p>
+          <div class="calc-grid">
+            <div class="field full"><label for="d-rent">Renta mensual estimada</label><div class="money"><input id="d-rent" type="number" inputmode="decimal" min="0" step="50" value="3000"></div></div>
+            <div class="field"><label for="d-pi">Pago del préstamo (capital + interés)</label><div class="money"><input id="d-pi" type="number" inputmode="decimal" min="0" step="50" value="1850"></div></div>
+            <div class="field"><label for="d-tax">Impuestos de propiedad (mensual)</label><div class="money"><input id="d-tax" type="number" inputmode="decimal" min="0" step="10" value="250"></div></div>
+            <div class="field"><label for="d-ins">Seguro (mensual)</label><div class="money"><input id="d-ins" type="number" inputmode="decimal" min="0" step="10" value="120"></div></div>
+            <div class="field"><label for="d-hoa">HOA (mensual)</label><div class="money"><input id="d-hoa" type="number" inputmode="decimal" min="0" step="10" value="0"></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="calc-out" aria-live="polite">
+        <div id="out-flip">
+          <span class="lbl">Ganancia estimada</span>
+          <div class="big gold-text" id="flip-profit">$0</div>
+          <ul class="calc-rows">
+            <li><span>Inversión total</span><strong id="flip-total">$0</strong></li>
+            <li><span>Retorno sobre la inversión (ROI)</span><strong id="flip-roi">0%</strong></li>
+            <li><span>Oferta máxima (regla del 70%)</span><strong id="flip-mao">$0</strong></li>
+          </ul>
+          <div class="verdict" id="flip-verdict"></div>
+        </div>
+        <div id="out-dscr" hidden>
+          <span class="lbl">Tu DSCR</span>
+          <div class="big gold-text" id="dscr-ratio">0.00</div>
+          <ul class="calc-rows">
+            <li><span>Pago mensual total (PITIA)</span><strong id="dscr-pitia">$0</strong></li>
+            <li><span>Flujo de caja mensual</span><strong id="dscr-cash">$0</strong></li>
+            <li><span>Flujo de caja anual</span><strong id="dscr-year">$0</strong></li>
+          </ul>
+          <div class="verdict" id="dscr-verdict"></div>
+        </div>
+        <a class="btn btn-gold" href="#contacto">Quiero que analicen mi deal</a>
+        <p class="calc-note">Cálculo estimado con fines educativos. No es una oferta ni una aprobación de préstamo. Los números reales dependen de la propiedad, el mercado y la calificación.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROGRAMAS ============ -->
+<section class="section-paper" id="programas">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Programas para inversionistas</span>
+      <h2>Más opciones, más deals cerrados</h2>
+      <p>Muchos deals no se caen por el inversionista, sino por conocer una sola opción de financiamiento. Estos son los programas con los que trabajamos.</p>
+    </div>
+    <div class="programs">
+      <div class="program-col reveal">
+        <header><h3>Para comprar y remodelar</h3><p>Corto plazo, cierres rápidos</p></header>
+        <ul class="program-list">
+          <li><strong>Fix &amp; Flip / Bridge</strong><span>Financia la compra y la remodelación. Ideal para flips y para el método BRRRR.</span></li>
+          <li><strong>Construcción nueva</strong><span>Desembolsos por etapas de obra para construir y vender o rentar.</span></li>
+          <li><strong>Multifamily 5+ unidades</strong><span>Financiamiento comercial para edificios de varias unidades.</span></li>
+          <li><strong>HELOC / HELOAN</strong><span>Usa el equity de tu casa o de una propiedad de inversión para tu próxima compra.</span></li>
+        </ul>
+      </div>
+      <div class="program-col reveal">
+        <header><h3>Para rentar y conservar</h3><p>Largo plazo, flujo de caja</p></header>
+        <ul class="program-list">
+          <li><strong>DSCR</strong><span>Califica con la renta de la propiedad, sin verificar ingresos personales. Para rentas cortas y largas.</span></li>
+          <li><strong>Bank Statement / P&amp;L</strong><span>Para dueños de negocio y self-employed: califica con tus estados de cuenta o con un P&amp;L de tu CPA.</span></li>
+          <li><strong>Asset-Based</strong><span>Califica usando tus activos y ahorros.</span></li>
+          <li><strong>Extranjeros (Foreign National)</strong><span>Opciones para invertir en EE. UU. sin ser residente.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CASOS ============ -->
+<section class="section-dark" id="casos">
+  <svg class="wm" aria-hidden="true" style="position:absolute;left:-8%;bottom:-10%;width:40%;opacity:.05;color:#F4E478"><use href="#house"/></svg>
+  <div class="container" style="position:relative">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Casos reales con Tony Valdes</span>
+      <h2>Números reales de <span class="gold-text">inversionistas reales</span></h2>
+    </div>
+    <div class="cases">
+      <article class="case case-feature reveal">
+        <div><span class="case-tag">Fix &amp; Flip</span><h3>Duncan Drive</h3><p style="margin:0">Compra de $235,000 y remodelación de $70,000. Vendida en septiembre de 2025 por $419,999.</p></div>
+        <div class="before-after"><div class="ba-step"><span>Inversión total</span><strong>$305K</strong></div><span class="ba-arrow" aria-hidden="true">→</span><div class="ba-step"><span>Precio de venta</span><strong>$420K</strong></div></div>
+        <div class="case-metric" style="border:0;margin:0;padding:0;justify-content:center"><strong class="gold-text" style="font-size:2.4rem">$100K+</strong><span>de ganancia</span></div>
+      </article>
+      <article class="case reveal">
+        <span class="case-tag">Renta</span>
+        <h3>Dúplex en Forest Park, GA</h3>
+        <p>Compra de $165,000 y remodelación de $80,000. Valor después de remodelar: $320,000. El cliente renta cada unidad en $1,500.</p>
+        <div class="case-metric"><strong class="gold-text">$75K</strong><span>de valorización</span></div>
+      </article>
+      <article class="case reveal">
+        <span class="case-tag">Multifamily</span>
+        <h3>Cuádruplex en Forest Park, GA</h3>
+        <p>Compra de $730,000 y una mejora de $7,000 por unidad. Cuatro rentas trabajando para el inversionista cada mes.</p>
+        <div class="case-metric"><strong class="gold-text">$6,600</strong><span>de renta mensual</span></div>
+      </article>
+      <article class="case reveal">
+        <span class="case-tag">Primer inversionista</span>
+        <h3>Oscar: su primer dúplex</h3>
+        <p>Financiamos el primer dúplex de Oscar, primer comprador e inversionista, con solo $7,000 de entrada, junto con nuestro aliado Walter Montano.</p>
+        <div class="case-metric"><strong class="gold-text">$7,000</strong><span>de entrada inicial</span></div>
+      </article>
+    </div>
+    <p class="disclaimer-small">Los resultados individuales pueden variar. Cada caso depende de la propiedad, el mercado y la calificación del cliente.</p>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section-paper" id="proceso">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Cómo trabajamos</span>
+      <h2>De la oportunidad al cierre, paso a paso</h2>
+    </div>
+    <div class="steps5">
+      <div class="st reveal"><div class="dot">1</div><h3>Cuéntame tu deal</h3><p>La propiedad, tu estrategia y tu experiencia como inversionista.</p></div>
+      <div class="st reveal"><div class="dot">2</div><h3>Análisis y estrategia</h3><p>Revisamos los números y elegimos el programa que mejor encaja.</p></div>
+      <div class="st reveal"><div class="dot">3</div><h3>Términos y aprobación</h3><p>Te presentamos las opciones y avanzamos con la aprobación.</p></div>
+      <div class="st reveal"><div class="dot">4</div><h3>Cierre ágil</h3><p>Coordinamos tasación, título y cierre para que no pierdas la oportunidad.</p></div>
+      <div class="st reveal"><div class="dot">5</div><h3>Escala tu portafolio</h3><p>Planeamos juntos tu siguiente deal: refinanciar, rentar o vender.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="section-light" id="faq">
+  <div class="container">
+    <div class="section-head center reveal">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2>Dudas comunes de inversionistas</h2>
+    </div>
+    <div class="faq reveal">
+      <details><summary>¿Qué es un préstamo DSCR?</summary><p>Es un préstamo para propiedades de inversión que califica con la renta que genera la propiedad, en lugar de tus ingresos personales. El DSCR es la renta dividida entre el pago mensual total: mientras más alto, mejor.</p></details>
+      <details><summary>¿Necesito experiencia para hacer un Fix &amp; Flip?</summary><p>No necesariamente. Hay programas para inversionistas nuevos, aunque la experiencia puede mejorar los términos. Te ayudamos a armar tu primer deal con un plan sólido.</p></details>
+      <details><summary>¿Puedo comprar a nombre de mi LLC?</summary><p>Sí. Muchos programas para inversionistas permiten comprar a nombre de una LLC o empresa. Consulta con tu contador o abogado la estructura que más te conviene.</p></details>
+      <details><summary>¿Puedo invertir si soy extranjero o no tengo Social Security?</summary><p>Existen programas para extranjeros (Foreign National) y opciones con ITIN. Escríbenos y revisamos tu caso.</p></details>
+      <details><summary>¿Qué tan rápido se puede cerrar?</summary><p>Depende del programa y de la propiedad. Los préstamos para inversionistas suelen cerrar más rápido que un préstamo tradicional. En un caso real rescatamos un deal y lo cerramos en solo 10 días.</p></details>
+      <details><summary>¿Puedo usar el equity de mi casa para invertir?</summary><p>Sí. Con un HELOC o HELOAN puedes usar el equity de tu casa o de otra propiedad como capital para tu próxima inversión.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section-dark contact inv-contact" id="contacto" style="padding-bottom:0">
+  <div class="container" style="position:relative">
+    <div class="form-card reveal">
+      <div id="formWrap">
+        <span class="eyebrow">Análisis gratis de tu deal</span>
+        <h2>Cuéntame tu próxima inversión</h2>
+        <p>Déjame tus datos y revisamos juntos los números y la mejor estrategia de financiamiento, sin compromiso.</p>
+        <form id="leadForm" novalidate>
+          <div class="form-grid">
+            <div class="field"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="objetivo">¿Qué estrategia te interesa?</label>
+              <select id="objetivo" name="objetivo" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Invertir: Fix &amp; Flip">Fix &amp; Flip</option>
+                <option value="Invertir: renta corta o larga (DSCR)">Renta corta o larga (DSCR)</option>
+                <option value="Invertir: Multifamily o nueva construcción">Multifamily</option>
+                <option value="Invertir: Multifamily o nueva construcción">Nueva construcción</option>
+                <option value="Invertir: HELOC / equity">Usar el equity de mi propiedad</option>
+                <option value="Invertir: extranjero">Soy extranjero / no residente</option>
+                <option value="Invertir: aún no sé">Aún no sé, quiero asesoría</option>
+              </select><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="deal">Cuéntame brevemente tu deal (opcional)</label><textarea id="deal" name="deal" maxlength="600"></textarea></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+            <span>Acepto los <a href="/terminos">Términos</a> y la <a href="/privacidad">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+          <span class="err" id="consentErr" aria-live="polite"></span>
+          <button class="btn btn-gold" type="submit">Quiero mi análisis gratis</button>
+        </form>
+        <div class="contact-direct">
+          <a href="tel:+17708656771">📞 (770) 865-6771</a>
+          <a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a href="mailto:info@tonyvaldesloans.com">✉️ Email</a>
+        </div>
+      </div>
+      <div class="form-success" id="formSuccess" role="status">
+        <div class="check">✓</div>
+        <h2>¡Gracias! Ya estamos revisando tu deal</h2>
+        <p>Recibí tu información y te contactaré muy pronto. Si quieres adelantar, agenda tu análisis directamente.</p>
+        <a class="btn btn-blue" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agendar ahora</a>
+      </div>
+    </div>
+    <div class="contact-photo">
+      <div class="glow" aria-hidden="true"></div>
+      <svg class="contact-house" aria-hidden="true"><use href="#house"/></svg>
+      <img src="../assets/tony-senalando-lado.webp" alt="Tony Valdes señalando el formulario" width="1051" height="1476" loading="lazy">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img class="footer-logo" src="../assets/logo-tony-valdes-loans.png" alt="Tony Valdes Loans" loading="lazy">
+        <p>Préstamos Inteligentes. ¡Sí Es Posible! Te ayudamos a comprar, invertir y crecer con la estrategia de financiamiento correcta.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener" aria-label="Instagram @tonyvaldesloans"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM21.9 7.9c-.1-1.6-.4-3-1.6-4.2S17.7 2.2 16.1 2.1C14.5 2 9.5 2 7.9 2.1 6.3 2.2 4.9 2.5 3.7 3.7S2.2 6.3 2.1 7.9C2 9.5 2 14.5 2.1 16.1c.1 1.6.4 3 1.6 4.2s2.6 1.5 4.2 1.6c1.6.1 6.6.1 8.2 0 1.6-.1 3-.4 4.2-1.6s1.5-2.6 1.6-4.2c.1-1.6.1-6.6 0-8.2zm-2.1 10a3.3 3.3 0 0 1-1.9 1.9c-1.3.5-4.4.4-5.9.4s-4.6.1-5.9-.4a3.3 3.3 0 0 1-1.9-1.9c-.5-1.3-.4-4.4-.4-5.9s-.1-4.6.4-5.9A3.3 3.3 0 0 1 6.1 4.2C7.4 3.7 10.5 3.8 12 3.8s4.6-.1 5.9.4a3.3 3.3 0 0 1 1.9 1.9c.5 1.3.4 4.4.4 5.9s.1 4.6-.4 5.9z"/></svg></a>
+          <a href="https://www.facebook.com/tonyvaldesloanss/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8V6c0-.9.6-1.1 1-1.1h2.5V1H14c-3.6 0-4.4 2.7-4.4 4.4V8H7v4h2.6v11H14V12h3.2l.4-4z"/></svg></a>
+          <a href="https://www.youtube.com/@TonyValdesLoans" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2 31 31 0 0 0 .5 12 31 31 0 0 0 1 16.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .5-4.8 31 31 0 0 0-.5-4.8zM9.7 15V9l5.8 3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4>Inversionistas</h4>
+        <ul>
+          <li><a href="#estrategias">Fix &amp; Flip</a></li>
+          <li><a href="#estrategias">DSCR y rentas</a></li>
+          <li><a href="#estrategias">Multifamily y construcción</a></li>
+          <li><a href="#calculadora">Calculadora</a></li>
+          <li><a href="#casos">Casos reales</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Tony Valdes Loans</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/#sobre-tony">Sobre Tony</a></li>
+          <li><a href="/#comprar">Compra de vivienda</a></li>
+          <li><a href="/#realtors">Para Realtors</a></li>
+          <li><a href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans">Agenda tu asesoría</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="tel:+17708656771">📞 (770) 865-6771</a></li>
+          <li><a href="https://wa.me/17708653002" target="_blank" rel="noopener">💬 WhatsApp (770) 865-3002</a></li>
+          <li><a href="mailto:info@tonyvaldesloans.com">✉️ info@tonyvaldesloans.com</a></li>
+          <li><a href="https://www.instagram.com/tonyvaldesloans/" target="_blank" rel="noopener">📷 @tonyvaldesloans</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <div class="ehl" aria-label="Equal Housing Opportunity">
+        <svg viewBox="0 0 48 48" fill="#D9D7EE" aria-hidden="true"><path d="M24 4 3 16v4h3v22h36V20h3v-4zm14 34H10V18.6L24 10l14 8.6z"/><path d="M16 24h16v3H16zm0 6h16v3H16z"/></svg>
+        EQUAL HOUSING<br>OPPORTUNITY
+      </div>
+      <div>
+        <p><strong>Tony Valdes, Mortgage Loan Officer, NMLS #1593970.</strong> Tony Valdes Loans opera con <strong>Loan Factory, Inc., NMLS #320841</strong>. <a href="https://www.nmlsconsumeraccess.org/" target="_blank" rel="noopener">NMLS Consumer Access</a>.</p>
+        <p>Esto no es una oferta de préstamo ni un compromiso de prestar. Todos los préstamos están sujetos a la aprobación de crédito, verificación de ingresos, tasación y suscripción (underwriting). Los programas, tasas, términos y condiciones pueden cambiar sin previo aviso y no están disponibles en todos los estados. Otras restricciones pueden aplicar.</p>
+        <p>Los casos presentados son ejemplos reales de clientes. Los resultados individuales pueden variar. La información de este sitio es educativa y no constituye asesoría legal ni fiscal; consulta con tu contador o abogado.</p>
+      </div>
+    </div>
+    <p class="copy">© <span id="year">2026</span> Tony Valdes Loans. Todos los derechos reservados. · <a href="/privacidad">Privacidad</a> · <a href="/terminos">Términos</a></p>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/17708653002?text=Hola%20Tony%2C%20quiero%20analizar%20una%20inversi%C3%B3n" target="_blank" rel="noopener" aria-label="Escríbele a Tony por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.6-.1 1.7-.7 1.9-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2z"/></svg>
+</a>
+
+<script>
+(function(){
+  // Año dinámico
+  var y=document.getElementById('year'); if(y) y.textContent=new Date().getFullYear();
+
+  var header=document.getElementById('siteHeader');
+  window.addEventListener('scroll',function(){header.classList.toggle('shrink',window.scrollY>40)},{passive:true});
+
+  var toggle=document.getElementById('menuToggle'), nav=document.getElementById('mainNav');
+  function closeNav(){nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}
+  toggle.addEventListener('click',function(){var o=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',o?'true':'false')});
+  nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeNav)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeNav()});
+
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.12});
+    els.forEach(function(el,i){el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+  } else { els.forEach(function(el){el.classList.add('in')}) }
+
+  // ===== Calculadoras =====
+  function num(id){var v=parseFloat(document.getElementById(id).value);return isFinite(v)&&v>0?v:0}
+  function money(v){var s=Math.round(Math.abs(v)).toLocaleString('en-US');return (v<0?'-$':'$')+s}
+  function setText(id,t){document.getElementById(id).textContent=t}
+  function verdict(id,cls,key){var el=document.getElementById(id);el.className='verdict '+cls;el.textContent=T(key)}
+  function calcFlip(){
+    var buy=num('f-buy'),rehab=num('f-rehab'),arv=num('f-arv'),hold=num('f-hold'),sell=num('f-sell');
+    var costs=arv*sell/100, total=buy+rehab+hold+costs, profit=arv-total, roi=total>0?profit/total*100:0;
+    var mao=arv*0.7-rehab;
+    setText('flip-profit',money(profit)); setText('flip-total',money(total));
+    setText('flip-roi',roi.toFixed(1)+'%'); setText('flip-mao',money(Math.max(0,mao)));
+    if(roi>=15) verdict('flip-verdict','good','_flip_good'); else if(roi>=8) verdict('flip-verdict','mid','_flip_mid'); else verdict('flip-verdict','low','_flip_low');
+  }
+  function calcDscr(){
+    var rent=num('d-rent'),pitia=num('d-pi')+num('d-tax')+num('d-ins')+num('d-hoa');
+    var r=pitia>0?rent/pitia:0, cash=rent-pitia;
+    setText('dscr-ratio',r.toFixed(2)); setText('dscr-pitia',money(pitia));
+    setText('dscr-cash',money(cash)); setText('dscr-year',money(cash*12));
+    if(r>=1.25) verdict('dscr-verdict','good','_dscr_good'); else if(r>=1) verdict('dscr-verdict','mid','_dscr_mid'); else verdict('dscr-verdict','low','_dscr_low');
+  }
+  window.tvlRecalc=function(){calcFlip();calcDscr()};
+  document.querySelectorAll('.calc-panel input').forEach(function(i){i.addEventListener('input',window.tvlRecalc)});
+  var tabs=document.querySelectorAll('.calc-tabs [role=tab]');
+  tabs.forEach(function(t){t.addEventListener('click',function(){
+    tabs.forEach(function(o){var on=o===t;o.setAttribute('aria-selected',on?'true':'false');document.getElementById(o.getAttribute('aria-controls')).hidden=!on});
+    var flip=t.id==='tab-flip'; document.getElementById('out-flip').hidden=!flip; document.getElementById('out-dscr').hidden=flip;
+  })});
+  window.tvlRecalc();
+
+  // ===== Formulario =====
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, obj=form.objetivo, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    if(!obj.value){setErr(obj,T('_err_goal'));ok=false}else setErr(obj);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input,.invalid select');if(first)first.focus();return}
+
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:obj.value, deal:form.deal.value.trim(),
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'web-inversionistas', pagina:location.href
+    };
+    var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(showSuccess,showSuccess);
+  });
+  function showSuccess(){document.getElementById('formWrap').style.display='none';document.getElementById('formSuccess').classList.add('show')}
+})();
+</script>
+</body>
+</html>

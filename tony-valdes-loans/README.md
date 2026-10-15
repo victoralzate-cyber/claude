@@ -91,6 +91,15 @@ Términos y Privacidad en ES/EN/PT, con el mismo diseño de la marca. El idioma 
 
 El formulario está conectado al workflow **"Lead Web – Tony Valdes Loans"** (disparador Inbound Webhook, constante `GHL_WEBHOOK` en el `<script>`). Envía en formato form-urlencoded: `nombre`, `first_name`, `last_name`, `telefono` (E.164), `email`, `objetivo` (siempre en español), `idioma` (es/en/pt), `consentimiento_tcpa`, `consentimiento_fecha`, `origen` y `pagina`.
 
+## Landing de Inversionistas (`inversionistas/`)
+
+Página para inversionistas inmobiliarios, en ES/EN/PT y con el mismo sistema visual. Va en GHL como página con el slug **`inversionistas`**.
+- Secciones: hero con KPIs, por qué invertir, las 5 estrategias en detalle (con claves y financiamiento), **calculadoras Fix & Flip y DSCR**, programas, casos reales, proceso, FAQ y formulario.
+- Calculadora Fix & Flip: ganancia, inversión total, ROI y oferta máxima (regla del 70%). Calculadora DSCR: ratio, PITIA y flujo de caja mensual y anual. Las dos dan un veredicto traducido.
+- El formulario usa el mismo webhook, con `origen=web-inversionistas`, y suma un campo opcional `deal` para que el cliente describa su inversión.
+- Archivos: `inversionistas/ghl-pegar-en-ghl.html` (pegar en GHL), `inversionistas/index-con-imagenes.html` (revisar), `inversionistas/index.html` y `inversionistas/src-es.html` (fuente en español). Las traducciones nuevas están en `inversionistas/i18n/`.
+- En Inicio, los links "Invertir" y "Quiero invertir" apuntan a `/inversionistas`.
+
 ## SEO (`seo/`)
 
 - `seo/og-tony-valdes-loans.jpg`: imagen para compartir en redes (1200×630). En GHL va en Settings → SEO → Social Image.
