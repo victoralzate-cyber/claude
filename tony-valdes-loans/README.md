@@ -91,6 +91,13 @@ Términos y Privacidad en ES/EN/PT, con el mismo diseño de la marca. El idioma 
 
 El formulario está conectado al workflow **"Lead Web – Tony Valdes Loans"** (disparador Inbound Webhook, constante `GHL_WEBHOOK` en el `<script>`). Envía en formato form-urlencoded: `nombre`, `first_name`, `last_name`, `telefono` (E.164), `email`, `objetivo` (siempre en español), `idioma` (es/en/pt), `consentimiento_tcpa`, `consentimiento_fecha`, `origen` y `pagina`.
 
+## SEO (`seo/`)
+
+- `seo/og-tony-valdes-loans.jpg`: imagen para compartir en redes (1200×630). En GHL va en Settings → SEO → Social Image.
+- `seo/favicon-512.png` (más `-180` y `-32`): favicon con la casita del logo.
+- `seo/head-code.html`: datos estructurados Schema.org (FinancialService + Person). Va en el Head Tracking Code de la página Inicio.
+- `seo/build_images.py`: regenera las imágenes (requiere los TTF de Montserrat).
+
 ## Notas de compliance
 
 - No se usan promesas de tasas ("garantizo los rates más bajos"), y los casos no mencionan tasas ni pagos mensuales de préstamos de vivienda. Esos datos son "triggering terms" de la Reg. Z y obligarían a publicar el APR y los términos completos.
