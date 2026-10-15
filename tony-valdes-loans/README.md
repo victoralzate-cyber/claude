@@ -77,9 +77,8 @@ Se genera a partir de `index-con-imagenes.html`. Si se edita la página, hay que
 | `TERMINOS_URL_AQUI` | URL de Términos y Condiciones |
 | `PRIVACIDAD_URL_AQUI` | URL de Política de Privacidad |
 | `TU_LINK_FACEBOOK_AQUI` / `TU_LINK_YOUTUBE_AQUI` | Redes sociales (si no se usan, elimina el ícono) |
-| `GHL_WEBHOOK_URL_AQUI` | Webhook de un workflow de GHL. Está en el `<script>`, junto al comentario `// TODO: conectar a GHL`. Descomenta el `fetch` |
 
-El formulario envía: `nombre`, `telefono`, `email`, `objetivo`, `consentimiento` y `origen`.
+El formulario está conectado al workflow **"Lead Web – Tony Valdes Loans"** (disparador Inbound Webhook, constante `GHL_WEBHOOK` en el `<script>`). Envía en formato form-urlencoded: `nombre`, `first_name`, `last_name`, `telefono` (E.164), `email`, `objetivo` (siempre en español), `idioma` (es/en/pt), `consentimiento_tcpa`, `consentimiento_fecha`, `origen` y `pagina`.
 
 ## Notas de compliance
 

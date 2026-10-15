@@ -910,7 +910,7 @@ footer.site a:hover{color:var(--jasmine)}
 
     // Webhook del workflow de GHL (disparador "Inbound Webhook"). Se envía como formulario
     // simple (no-cors) para que el navegador no bloquee la petición por CORS.
-    var GHL_WEBHOOK='GHL_WEBHOOK_URL_AQUI';
+    var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
     if(GHL_WEBHOOK.indexOf('http')===0){
       var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
       fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)})
