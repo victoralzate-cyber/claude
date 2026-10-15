@@ -854,13 +854,27 @@ html,body{overflow-x:clip}
     if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
     if(!ok){var first=form.querySelector('.invalid input,.invalid select');if(first)first.focus();return}
 
-    var payload={nombre:nombre.value.trim(),telefono:tel.value.trim(),email:email.value.trim(),objetivo:obj.value,consentimiento:true,origen:'web-inicio'};
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,'');
+    var phone=digits.length===10?'+1'+digits:'+'+digits;
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:obj.value,
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'web-inicio', pagina:location.href
+    };
 
-    // TODO: conectar a GHL — reemplaza la URL por el webhook de tu workflow en GoHighLevel
-    // fetch('GHL_WEBHOOK_URL_AQUI',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
-    //   .then(function(){showSuccess()}).catch(function(){showSuccess()});
-    console.log('Lead listo para GHL:',payload);
-    showSuccess();
+    // Webhook del workflow de GHL (disparador "Inbound Webhook"). Se envía como formulario
+    // simple (no-cors) para que el navegador no bloquee la petición por CORS.
+    var GHL_WEBHOOK='GHL_WEBHOOK_URL_AQUI';
+    if(GHL_WEBHOOK.indexOf('http')===0){
+      var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+      fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)})
+        .then(showSuccess,showSuccess);
+    } else {
+      console.log('Lead listo para GHL (falta configurar el webhook):',payload);
+      showSuccess();
+    }
   });
   function showSuccess(){document.getElementById('formWrap').style.display='none';var s=document.getElementById('formSuccess');s.classList.add('show');s.focus&&s.focus()}
 })();
