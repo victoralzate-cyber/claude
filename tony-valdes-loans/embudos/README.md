@@ -43,7 +43,7 @@ Tres reglas que cumplen todos:
 
 2. En cada paso: página en blanco, una sección y una fila a todo lo ancho, un elemento **Code** y pega el archivo completo. La página se estira a todo el ancho sola.
 3. **Descripción SEO del paso 1:** "Responde 8 preguntas en 60 segundos y recibe tu plan personalizado para comprar tu primera casa en EE. UU. Sin costo y sin afectar tu crédito. Tony Valdes, NMLS #1593970." Imagen social: `seo/og-tony-valdes-loans.jpg`.
-4. **Calendario → página 4:** en la configuración del calendario, en *Confirmation page*, pon como redirección `https://tonyvaldesloansinfo.com/primeros-compradores-cita`. Como esa redirección aplica a todas las citas de ese calendario, lo ideal es **clonar el calendario** (por ejemplo "Calendario Primeros Compradores") y cambiar la URL del calendario en las páginas 2 y 3.
+4. **Calendario → página 4:** en la configuración del calendario, en *Confirmation page*, pon como redirección `https://tonyvaldesloansinfo.com/primeros-compradores-cita`. El embudo usa su propio calendario clonado, **Calendario Primeros Compradores** (`https://api.leadconnectorhq.com/widget/booking/ThrthngO5Or3QFqeWH0j`), para no afectar el calendario de la web principal.
 5. Si cambias las rutas, ajusta `NEXT_URL`, `TEST_URL` y `GUIDE_URL` al inicio del `<script>` de cada página.
 
 ### Datos que llegan al workflow (mismo webhook de siempre)
