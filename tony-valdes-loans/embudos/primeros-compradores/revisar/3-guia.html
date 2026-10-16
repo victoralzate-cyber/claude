@@ -130,6 +130,10 @@ p{margin:0 0 1em}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @media (prefers-reduced-motion:reduce){.chip{animation:none}}
 
+/* Retrato de Tony dentro del arco (la foto siempre queda completa y proporcionada) */
+.portrait{position:relative;aspect-ratio:4/5;border-radius:999px 999px 28px 28px;overflow:hidden;background:radial-gradient(circle at 50% 28%,#2E2890 0%,var(--blue-3) 45%,var(--blue) 100%);border:6px solid #fff;box-shadow:var(--shadow)}
+.portrait img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);height:93%;width:auto;max-width:none;object-fit:contain}
+
 /* Tarjeta de Tony (mini perfil) */
 .tony-card{display:flex;align-items:center;gap:12px;background:#fff;border-radius:18px;padding:10px 16px 10px 10px;box-shadow:0 14px 34px rgba(3,0,46,.16)}
 .tony-card .av{width:52px;height:52px;border-radius:50%;overflow:hidden;background:linear-gradient(160deg,#E9E1CB,#F7F1E2);flex:none;border:2px solid var(--gold)}
@@ -158,14 +162,12 @@ p{margin:0 0 1em}
 
 /* Bloque cita de Tony */
 .tony-quote{display:grid;grid-template-columns:300px 1fr;gap:46px;align-items:center}
-.tony-quote .photo{position:relative;align-self:end}
-.tony-quote .photo::before{content:"";position:absolute;left:8%;right:8%;bottom:0;top:18%;border-radius:999px 999px 0 0;background:linear-gradient(180deg,var(--blue-3),var(--blue));z-index:0}
-.tony-quote .photo img{position:relative;z-index:1;width:100%}
+.tony-quote .photo{position:relative;padding:16px}
 .tony-quote blockquote{margin:0 0 22px;font-size:clamp(1.25rem,2.4vw,1.7rem);font-weight:700;line-height:1.4;color:var(--blue)}
 .tony-quote blockquote::before{content:"“";display:block;font-size:4rem;line-height:.6;color:var(--gold);font-family:Georgia,serif}
 .tony-quote .sig{font-weight:800;color:var(--blue)}
 .tony-quote .sig span{display:block;font-weight:600;font-size:.82rem;color:var(--ink-soft)}
-@media (max-width:820px){.tony-quote{grid-template-columns:1fr;gap:26px}.tony-quote .photo{max-width:250px;margin:0 auto}}
+@media (max-width:820px){.tony-quote{grid-template-columns:1fr;gap:26px}.tony-quote .photo{max-width:280px;width:100%;margin:0 auto}}
 
 /* Llavero de progreso */
 .keys{display:flex;gap:6px;align-items:center}
