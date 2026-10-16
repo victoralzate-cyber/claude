@@ -102,6 +102,8 @@ META = {'es': {k: e for k, e, n, p in _M}, 'en': {k: n for k, e, n, p in _M}, 'p
 
 # Textos fijos de las páginas (es, en, pt)
 T = [
+("📅 Abrir el calendario","📅 Open the calendar","📅 Abrir o calendário"),
+("¿No ves el calendario? Ábrelo aquí →","Can't see the calendar? Open it here →","Não está vendo o calendário? Abra aqui →"),
 ("🔑 Test gratis · 60 segundos","🔑 Free quiz · 60 seconds","🔑 Teste grátis · 60 segundos"),
 ('¿Qué tan cerca estás de <span class="gold-text">tu primera casa</span>?','How close are you to <span class="gold-text">your first home</span>?','Quão perto você está da <span class="gold-text">sua primeira casa</span>?'),
 ("Responde 8 preguntas rápidas y recibe tu plan personalizado: qué ya tienes listo, qué te falta y cuál es tu siguiente paso para dejar de pagar renta.","Answer 8 quick questions and get your personalized plan: what you already have, what you're missing and your next step to stop paying rent.","Responda 8 perguntas rápidas e receba seu plano personalizado: o que você já tem, o que falta e qual é o seu próximo passo para parar de pagar aluguel."),
