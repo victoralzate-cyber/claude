@@ -49,9 +49,12 @@ for page in cfg.PAGES:
     h = h.replace('/*FUNNEL_CSS*/', read(os.path.join(SHARED, 'funnel.css')))
     tema = os.path.join(fdir, 'src', 'tema.css')
     h = h.replace('/*THEME_CSS*/', read(tema) if os.path.exists(tema) else '')
+    tjs = os.path.join(fdir, 'src', 'tema.js')
+    h = h.replace('/*THEME_JS*/', read(tjs) if os.path.exists(tjs) else '')
     h = h.replace('<!--HEADER-->', read(os.path.join(SHARED, 'header.html')))
     h = h.replace('<!--FOOTER-->', read(os.path.join(SHARED, 'footer.html')).replace('{{WA}}', cfg.WA_TEXT))
     h = h.replace('/*CORE_JS*/', read(os.path.join(SHARED, 'core.js')))
+    h = h.replace('__EVENT__', json.dumps(getattr(cfg, 'EVENT', {}), ensure_ascii=False))
     with tempfile.TemporaryDirectory() as td:
         a, b, d = (os.path.join(td, x) for x in ('a.html', 'b.html', 'es.json'))
         open(a, 'w', encoding='utf-8').write(h)

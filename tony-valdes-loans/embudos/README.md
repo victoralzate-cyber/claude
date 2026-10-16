@@ -12,6 +12,7 @@ Tres reglas que cumplen todos:
 | # | Embudo | Reemplaza a | Gancho | Estilo | Páginas |
 |---|---|---|---|---|---|
 | 1 | **Primeros Compradores** ✅ | /primeros-compradores | Test "¿Qué tan cerca estás de tu primera casa?" | "Puerta" (crema, arcos, llaves) | Test → Resultado → Guía → Cita confirmada |
+| 1b | **Webinar Primeros Compradores** ✅ | — (nuevo) | Masterclass gratis en vivo "Tu primera casa en USA" | "Escenario" (variante en vivo del estilo Puerta) | Registro → Lugar reservado → Sala (en vivo / repetición) → conecta con el test |
 | 2 | **Masterclass Inversionistas** (en vivo y luego grabada) | /inversion-inmobiliaria, /como-invertir-en-usa, /Investors-Webinar | Masterclass "Invierte en USA" | "Escenario" (oscuro, reflector, cuenta regresiva) | Registro → Confirmación → Sala / Repetición → Aplicación → Gracias |
 | 3 | **Inversionistas Extranjeros** | /inversion-inmobiliaria-para-extranjeros | Guía "Cómo invertir en USA sin vivir aquí" | "Global" (mapa, pasaporte, rutas) | Guía → Precalificación → Cita |
 | 4 | **Agentes Aliados** | /agentes-inmobiliarios, /real-estate-agents | Entrenamiento "Cómo duplicar tus cierres" | "Alianza" (claro, banda dorada) | Registro → Entrenamiento → Aplicación → Bienvenida |
@@ -76,10 +77,52 @@ Nuevos:
 
 Todas las fotos van **incluidas dentro de cada archivo**, igual que en las otras páginas: no hace falta subir nada a la Biblioteca de Medios y se ven aunque abras el archivo solo. Las fotos de clientes están en `assets/clientes/`. **Confirma que cada cliente que aparece autorizó el uso de su foto.**
 
+## Embudo 1b · Webinar Primeros Compradores (`webinar-primeros-compradores/`)
+
+Para la gente que llega por anuncios de la masterclass. Usa el mismo diseño y **se conecta con el embudo de Primeros Compradores**: desde la confirmación y desde la sala se manda al test (`/primeros-compradores`), y de ahí al resultado y a la cita.
+
+**Recorrido:**
+1. **Registro** (`/primeros-compradores-webinar`): hero oscuro tipo escenario con la fecha, cuenta regresiva, qué van a aprender, para quién es, clientes reales, Tony y un formulario con TCPA. Incluye la pregunta opcional "¿Qué te gustaría preguntarle a Tony?".
+2. **Lugar reservado** (`/primeros-compradores-webinar-confirmado`): "¡María, tu lugar está reservado!" con 3 pasos: agregar al calendario (Google o Apple/Outlook, se genera solo con la fecha), activar avisos por WhatsApp y hacer el test de 60 segundos. Además, invitar a un amigo y la cuenta regresiva.
+3. **Sala** (`/primeros-compradores-webinar-sala`): **cambia sola según la fecha**.
+   - **Antes:** cuenta regresiva y botones de calendario.
+   - **En vivo:** desde 10 minutos antes hasta 30 minutos después, aparece el botón "Entrar al Zoom ahora".
+   - **Después:** la repetición queda anclada.
+
+   Debajo, siempre: hacer el test, agendar la revisión y WhatsApp. Para revisarla en cualquier estado: `?modo=antes`, `?modo=vivo` o `?modo=repeticion`.
+
+### Datos del webinar (un solo lugar)
+
+En `webinar-primeros-compradores/i18n.py` → `EVENT`:
+- `start`: fecha y hora con zona horaria. Ejemplo: `2026-11-05T19:00:00-05:00`. Usa `-04:00` en horario de verano del Este y `-05:00` en invierno.
+- `minutes`: duración.
+- `zoom`: enlace de Zoom. Si está vacío, la sala dice que el enlace llegó por correo y WhatsApp.
+- `replay`: enlace de la repetición (YouTube, Vimeo o .mp4). Si está vacío, dice "muy pronto".
+- `whatsapp_group`: enlace del grupo. Si está vacío, se usa el WhatsApp de Tony.
+
+Después de cambiar algo: `python3 embudos/_tools/build.py embudos/webinar-primeros-compradores` y vuelve a pegar las 3 páginas. La fecha se muestra en el idioma del visitante y en hora del Este.
+
+### Datos que llegan al workflow
+
+Los de siempre, más:
+- `origen` = `webinar-primeros-compradores`
+- `objetivo` = `Webinar: primeros compradores`
+- `webinar` (nombre)
+- `webinar_fecha` (fecha ISO)
+- `pregunta` (lo que quiere preguntarle a Tony)
+
+**Secuencia sugerida:**
+- Confirmación inmediata con el enlace de la sala.
+- Recordatorios: 24 horas antes, 1 hora antes, 10 minutos antes y "¡estamos en vivo!".
+- Después del evento: la repetición a quien no asistió y el test a todos.
+
+Enlace de la sala para los mensajes: `https://tonyvaldesloansinfo.com/primeros-compradores-webinar-sala`.
+
 ## Cómo regenerar
 
 ```bash
 python3 embudos/_tools/build.py embudos/primeros-compradores
+python3 embudos/_tools/build.py embudos/webinar-primeros-compradores
 ```
 
 El script:

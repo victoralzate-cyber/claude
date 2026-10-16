@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Webinar · Página 2 · Lugar reservado ===== */
+.k-hero{background:radial-gradient(800px 500px at 80% 30%,#F3E6C4 0%,var(--cream) 60%);position:relative;overflow:hidden}
+.k-hero .container{display:grid;grid-template-columns:1.2fr .8fr;gap:44px;align-items:center;padding-top:60px;padding-bottom:70px}
+.k-check{width:76px;height:76px;border-radius:50%;background:#2E9E5B;color:#fff;display:grid;place-items:center;font-size:2.2rem;font-weight:900;margin-bottom:20px;box-shadow:0 0 0 10px rgba(46,158,91,.15);animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
+@keyframes pop{from{transform:scale(0)}to{transform:scale(1)}}
+.k-hero h1{font-size:clamp(2rem,4.6vw,3.3rem);font-weight:900;color:var(--blue);line-height:1.06;margin-bottom:14px}
+.k-hero .sub{font-size:1.08rem;color:var(--ink-soft);max-width:560px;margin-bottom:22px}
+.k-hero .when{margin-bottom:20px}
+.k-photo{max-width:340px;width:100%;justify-self:center;padding:16px}
+@media (max-width:860px){.k-hero .container{grid-template-columns:1fr;gap:26px}.k-photo{max-width:280px}}
+
+.steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:s}
+.step{position:relative;background:#fff;border-radius:22px;padding:30px 26px 26px;box-shadow:0 14px 40px rgba(3,0,46,.09);border:1px solid #EFE7D2;display:flex;flex-direction:column}
+.step::before{counter-increment:s;content:"PASO " counter(s);position:absolute;top:-13px;left:24px;background:var(--blue);color:var(--jasmine);font-size:.7rem;font-weight:900;letter-spacing:.12em;padding:6px 12px;border-radius:999px}
+.step .ico{font-size:2rem;margin-bottom:10px}
+.step h3{font-size:1.15rem;color:var(--blue)}
+.step p{color:var(--ink-soft);font-size:.93rem;flex:1}
+.step .btns{display:grid;gap:10px}
+.step .btn{padding:13px 20px;font-size:.9rem;width:100%}
+.step .btn-ghost{color:var(--blue)}
+@media (max-width:900px){.steps3{grid-template-columns:1fr;gap:30px}}
+
+.invite{display:grid;grid-template-columns:auto 1fr auto;gap:24px;align-items:center;background:var(--blue);color:#fff;border-radius:24px;padding:30px 34px}
+.invite .em{font-size:2.6rem}
+.invite h3{margin:0 0 4px;font-size:1.3rem}
+.invite p{margin:0;color:#CFCDE6}
+@media (max-width:760px){.invite{grid-template-columns:1fr;text-align:center}.invite .btn{width:100%}}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<section class="k-hero">
+  <div class="container">
+    <div>
+      <div class="k-check" aria-hidden="true">✓</div>
+      <h1 id="kTitle">¡Tu lugar está reservado!</h1>
+      <p class="sub">Te enviamos la confirmación por correo y WhatsApp. Completa estos 3 pasos para no perderte la clase y sacarle el máximo provecho.</p>
+      <div class="when light"><span>📅 <b data-ev="date">-</b></span><span>🕖 <b data-ev="time">-</b></span></div>
+      <div class="cd light" aria-label="Cuenta regresiva"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+    </div>
+    <div class="k-photo">
+      <div class="arch-frame"><div class="portrait"><img src="{{A}}/tony-senalando-frente.webp?h=900" alt="Tony Valdes te espera en la masterclass" width="380" height="640"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">No te pierdas la clase</span>
+      <h2>3 pasos para llegar listo</h2>
+    </div>
+    <div class="steps3">
+      <div class="step reveal">
+        <div class="ico">📅</div>
+        <h3>Agrégalo a tu calendario</h3>
+        <p>Así te llega un recordatorio y el enlace de la sala queda guardado.</p>
+        <div class="btns">
+          <a class="btn btn-blue" data-cal="google" href="#" target="_blank" rel="noopener">Google Calendar</a>
+          <a class="btn btn-ghost" data-cal="ics" href="#">Apple / Outlook</a>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="ico">💬</div>
+        <h3>Activa los avisos por WhatsApp</h3>
+        <p>Te mandamos el enlace de Zoom y un recordatorio justo antes de empezar.</p>
+        <div class="btns"><a class="btn btn-wa" id="waBtn" href="https://wa.me/17708653002" target="_blank" rel="noopener">Activar avisos</a></div>
+      </div>
+      <div class="step reveal">
+        <div class="ico">🎯</div>
+        <h3>Haz el test de 60 segundos</h3>
+        <p>Descubre qué tan cerca estás de tu primera casa y llega a la clase sabiendo qué preguntar.</p>
+        <div class="btns"><a class="btn btn-gold" id="testBtn" href="/primeros-compradores">Hacer mi test</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec cream">
+  <div class="container">
+    <div class="invite reveal">
+      <span class="em" aria-hidden="true">💑</span>
+      <div>
+        <h3>¿Vas a comprar con alguien más?</h3>
+        <p>Invita a tu pareja, a un familiar o a un amigo que también quiera dejar de pagar renta.</p>
+      </div>
+      <a class="btn btn-gold" id="shareBtn" href="#">Invitar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container tony-quote">
+    <div class="photo reveal"><div class="arch-frame"><div class="portrait"><img src="{{A}}/tony-sentado.webp?h=900" alt="Tony Valdes, Loan Officer" width="420" height="700" loading="lazy"></div></div></div>
+    <div class="reveal">
+      <span class="eyebrow">Nos vemos en la clase</span>
+      <blockquote>Prepara tus preguntas. En la masterclass las respondo en vivo, y al final te digo exactamente cuál es tu siguiente paso. ¡Sí es posible!</blockquote>
+      <p class="sig">Tony Valdes<span>Loan Officer · NMLS #1593970</span></p>
+    </div>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+/*THEME_JS*/
+
+  var n=(QS.get('n')||'').slice(0,30);
+  function render(){
+    fillEvent(); bindCalendar();
+    var name=n?n.charAt(0).toUpperCase()+n.slice(1):'';
+    document.getElementById('kTitle').textContent=name?T('_k_title_n').replace('{n}',name):T('_k_title');
+    var wa=EV.whatsapp_group||('https://wa.me/17708653002?text='+encodeURIComponent(T('_wa_avisos').replace('{d}',evDate()+' · '+evTime())));
+    document.getElementById('waBtn').href=wa;
+    document.getElementById('testBtn').href=URLS.test+'?lang='+LANG;
+    document.getElementById('shareBtn').href='https://wa.me/?text='+encodeURIComponent(T('_share_w').replace('{d}',evDate()+' · '+evTime())+' '+abs(URLS.registro));
+  }
+  window.tvlRecalc=render;
+  startLang(); startCountdowns();
+})();
+</script>
+</body>
+</html>

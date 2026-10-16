@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Webinar · Página 1 · Registro ===== */
+.w-hero .container{position:relative;z-index:2;display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:60px;padding-bottom:80px}
+.w-hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem);font-weight:900;line-height:1.06;margin:22px 0 18px}
+.w-hero .sub{font-size:1.1rem;color:#D6D4EC;max-width:560px;margin-bottom:24px}
+.w-hero .when{margin-bottom:22px}
+.w-hero .cd{margin-bottom:28px}
+.w-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.w-ctas small{color:#CFCDE6;font-weight:700}
+.w-photo{position:relative;max-width:400px;width:100%;justify-self:center;padding:16px}
+.w-photo .portrait{background:radial-gradient(circle at 50% 30%,#3A33A8 0%,#1B1670 50%,#0A0745 100%)}
+.w-photo .arch-frame::before{border-color:var(--jasmine)}
+.w-photo .chip.c1{top:14%;left:-22px}
+.w-photo .chip.c2{bottom:14%;right:-18px;animation-delay:-2.5s}
+@media (max-width:900px){.w-hero .container{grid-template-columns:1fr;gap:30px;padding-top:44px}.w-photo{max-width:320px}.w-photo .chip.c1{left:-4px}.w-photo .chip.c2{right:-4px}}
+
+.reg{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+.learn h2{font-size:clamp(1.7rem,3.2vw,2.4rem);color:var(--blue)}
+.learn ol{list-style:none;margin:26px 0 0;padding:0;counter-reset:l;display:grid;gap:16px}
+.learn li{counter-increment:l;display:grid;grid-template-columns:52px 1fr;gap:16px;align-items:start;background:#fff;border-radius:18px;padding:18px;border:1px solid #EFE7D2;box-shadow:0 8px 24px rgba(3,0,46,.05)}
+.learn li::before{content:"0" counter(l);width:52px;height:52px;border-radius:14px;background:var(--blue);color:var(--jasmine);display:grid;place-items:center;font-weight:900;font-size:1.05rem}
+.learn li strong{display:block;color:var(--blue);margin-bottom:2px}
+.learn li span{font-size:.92rem;color:var(--ink-soft)}
+.reg-card{position:sticky;top:90px;background:#fff;border-radius:26px;box-shadow:var(--shadow);overflow:hidden;border:1px solid #EFE7D2}
+.reg-top{background:var(--blue);color:#fff;padding:22px 28px}
+.reg-top h2{font-size:1.5rem;margin:0 0 4px}
+.reg-top p{margin:0;color:#CFCDE6;font-size:.92rem}
+.reg-top p b{color:var(--jasmine)}
+.reg-body{padding:24px 28px 28px}
+.reg-body .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.reg-body .full{grid-column:1/-1}
+.reg-body textarea{min-height:84px;resize:vertical}
+.reg-body .opt-lbl{font-weight:600;color:var(--ink-soft);font-size:.78rem}
+.reg-btn{width:100%;margin-top:8px}
+.reg-note{text-align:center;margin:12px 0 0}
+@media (max-width:900px){.reg{grid-template-columns:1fr}.reg-card{position:static}}
+@media (max-width:520px){.reg-body .grid{grid-template-columns:1fr}.reg-body{padding:22px 20px 24px}}
+
+.fit{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fit div{background:var(--cream);border-radius:18px;padding:22px;font-weight:700;color:var(--blue);border:1px solid #EFE7D2}
+.fit div::before{content:"✓";display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--gold-grad);color:var(--blue);font-weight:900;margin-bottom:12px}
+@media (max-width:900px){.fit{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.fit{grid-template-columns:1fr}}
+
+.w-final{text-align:center;padding:84px 0}
+.w-final .container{position:relative;z-index:2}
+.w-final h2{font-size:clamp(1.8rem,3.6vw,2.6rem);max-width:760px;margin:16px auto 14px}
+.w-final p{color:#CFCDE6;max-width:560px;margin:0 auto 22px}
+.w-final .cd{justify-content:center;margin-bottom:26px}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="stage w-hero dark">
+  <div class="container">
+    <div>
+      <span class="live"><i></i>Masterclass gratis · En vivo por Zoom</span>
+      <h1>Tu primera casa en USA: <span class="gold-text">cómo comprar aunque creas que no calificas</span></h1>
+      <p class="sub">En una clase en vivo, Tony te explica paso a paso cómo pasar de pagar renta a tener tus llaves: cuánto necesitas de verdad, los programas de ayuda y qué hacer si eres independiente o tu crédito no es perfecto.</p>
+      <div class="when"><span>📅 <b data-ev="date">-</b></span><span>🕖 <b data-ev="time">-</b></span></div>
+      <div class="cd" aria-label="Cuenta regresiva"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+      <div class="w-ctas">
+        <a class="btn btn-gold" href="#registro">Reservar mi lugar gratis</a>
+        <small>100% gratis · En español</small>
+      </div>
+    </div>
+    <div class="w-photo">
+      <div class="arch-frame"><div class="portrait"><img src="{{A}}/tony-senalando-lado.webp?h=1000" alt="Tony Valdes, tu instructor en la masterclass" width="420" height="590"></div></div>
+      <span class="chip c1"><i>🎙️</i>En vivo con Tony</span>
+      <span class="chip gold c2"><i>💬</i>Preguntas y respuestas</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REGISTRO ============ -->
+<section class="sec cream" id="registro">
+  <div class="container reg">
+    <div class="learn reveal">
+      <span class="eyebrow">En esta clase vas a aprender</span>
+      <h2>Lo que nadie te explica antes de comprar tu primera casa</h2>
+      <ol>
+        <li><div><strong>Cuánto necesitas realmente para comprar</strong><span>Y por qué muchas veces es menos de lo que imaginas.</span></div></li>
+        <li><div><strong>Los programas de ayuda para la entrada</strong><span>Qué son, quién califica y cómo aprovecharlos.</span></div></li>
+        <li><div><strong>Cómo comprar si eres independiente o tu crédito no es perfecto</strong><span>Opciones reales para trabajadores 1099, dueños de negocio y créditos en construcción.</span></div></li>
+        <li><div><strong>Los 6 pasos desde la preaprobación hasta las llaves</strong><span>Para que sepas qué esperar y no te tomen por sorpresa.</span></div></li>
+      </ol>
+    </div>
+    <div class="reg-card reveal">
+      <div class="reg-top">
+        <h2>Reserva tu lugar gratis</h2>
+        <p>📅 <b data-ev="date">-</b> · <b data-ev="time">-</b></p>
+      </div>
+      <div class="reg-body">
+        <form id="leadForm" novalidate>
+          <div class="grid">
+            <div class="field full"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="telefono">Teléfono (WhatsApp)</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="pregunta">¿Qué te gustaría preguntarle a Tony? <span class="opt-lbl">(opcional)</span></label><textarea id="pregunta" name="pregunta" maxlength="400"></textarea></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+            <span>Acepto los <a href="https://www.valdesloans.com/terminos" target="_blank" rel="noopener">Términos</a> y la <a href="https://www.valdesloans.com/privacidad" target="_blank" rel="noopener">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+          <span class="err" id="consentErr" aria-live="polite"></span>
+          <button class="btn btn-gold reg-btn" type="submit">Reservar mi lugar</button>
+          <p class="fine reg-note">Te enviaremos el enlace de la clase por correo y WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PARA QUIÉN ============ -->
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">¿Esta clase es para ti?</span>
+      <h2>Sí, si te identificas con alguna de estas</h2>
+    </div>
+    <div class="fit">
+      <div class="reveal">Pagas renta y quieres que ese dinero sea para tu propia casa</div>
+      <div class="reveal">Trabajas por tu cuenta o con 1099 y no sabes si calificas</div>
+      <div class="reveal">Crees que necesitas mucho dinero ahorrado para comprar</div>
+      <div class="reveal">Tu crédito no es perfecto y quieres un plan para mejorarlo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CLIENTES ============ -->
+<section class="sec cream">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Ellos ya dieron el paso</span>
+      <h2>De inquilinos a dueños</h2>
+      <p>Familias que empezaron igual que tú: con dudas, con preguntas y con muchas ganas de tener su casa.</p>
+    </div>
+    <div class="polas">
+      <figure class="pola reveal" style="margin:0"><img src="{{A}}/clientes/familia-dia-de-llaves.webp?h=600" alt="Familia celebrando en la puerta de su nueva casa" width="400" height="500" loading="lazy"><p>¡Día de llaves!</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="{{A}}/clientes/firmando-cierre.webp?h=600" alt="Clientes firmando los documentos de cierre" width="400" height="500" loading="lazy"><p>Firmando el cierre</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="{{A}}/clientes/clienta-nueva-casa.webp?h=600" alt="Clienta con Tony frente a su nueva casa" width="400" height="500" loading="lazy"><p>¡Nueva casa!</p></figure>
+      <figure class="pola reveal" style="margin:0"><img src="{{A}}/clientes/cliente-oficina-cierre.webp?h=600" alt="Cliente con Tony celebrando después del cierre" width="400" height="500" loading="lazy"><p>¡Lo logramos!</p></figure>
+    </div>
+    <p class="pola-note">Clientes reales de Tony Valdes Loans. Los resultados individuales pueden variar.</p>
+  </div>
+</section>
+
+<!-- ============ TONY ============ -->
+<section class="sec">
+  <div class="container tony-quote">
+    <div class="photo reveal"><div class="arch-frame"><div class="portrait"><img src="{{A}}/tony-brazos-cruzados.webp?h=900" alt="Tony Valdes, Loan Officer" width="420" height="700" loading="lazy"></div></div></div>
+    <div class="reveal">
+      <span class="eyebrow">Tu instructor</span>
+      <blockquote>Mi trabajo no es solo aprobar préstamos. Es enseñarte a usar el crédito como una herramienta para construir patrimonio, y acompañarte hasta que tengas tus llaves en la mano.</blockquote>
+      <p class="sig">Tony Valdes<span>Loan Officer · NMLS #1593970 · Más de 25 años en finanzas</span></p>
+      <a class="btn btn-blue" href="#registro">Reservar mi lugar gratis</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA FINAL ============ -->
+<section class="stage w-final dark">
+  <div class="container">
+    <span class="live"><i></i>En vivo por Zoom</span>
+    <h2>Tu primera casa empieza con la información correcta</h2>
+    <p>Una hora con Tony puede ahorrarte meses de dudas y miles de dólares en errores.</p>
+    <div class="cd"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+    <a class="btn btn-gold" href="#registro">Quiero mi lugar gratis</a>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+/*THEME_JS*/
+
+  var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+  window.tvlRecalc=fillEvent;
+  startLang(); startCountdowns();
+
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input');if(first)first.focus();return}
+
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:'Webinar: primeros compradores',
+      webinar:'Tu primera casa en USA', webinar_fecha:EV.start, pregunta:form.pregunta.value.trim(),
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'webinar-primeros-compradores', pagina:location.href
+    };
+    var url=URLS.confirmado+'?n='+encodeURIComponent(parts[0])+'&lang='+LANG;
+    var btn=form.querySelector('button[type=submit]'); btn.disabled=true;
+    var gone=false; function go(){if(!gone){gone=true;location.href=url}}
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(go,go);
+    setTimeout(go,1800);
+  });
+})();
+</script>
+</body>
+</html>
