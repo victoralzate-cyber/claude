@@ -27,7 +27,7 @@ Tres reglas que cumplen todos:
 
 **Archivos:**
 - `ghl/1-test.html`, `ghl/2-resultado.html`, `ghl/3-guia.html`, `ghl/4-cita.html`: para pegar en GHL.
-- `revisar/…`: las mismas páginas para abrirlas en el navegador. El recorrido completo funciona: el test redirige al resultado.
+- `revisar/…`: las mismas páginas para abrirlas en el navegador, con todas las fotos incluidas. El recorrido completo funciona: el test redirige al resultado.
 - `src/…`: fuente en español. Las traducciones y textos dinámicos están en `i18n.py`.
 
 ### Cómo montarlo en GHL
@@ -74,7 +74,7 @@ Nuevos:
 
 ### Fotos
 
-Las fotos de clientes salen de la Biblioteca de Medios de GHL (se cargan desde su CDN). Las fotos de Tony van incluidas en el archivo. **Confirma que cada cliente que aparece autorizó el uso de su foto.**
+Todas las fotos van **incluidas dentro de cada archivo**, igual que en las otras páginas: no hace falta subir nada a la Biblioteca de Medios y se ven aunque abras el archivo solo. Las fotos de clientes están en `assets/clientes/`. **Confirma que cada cliente que aparece autorizó el uso de su foto.**
 
 ## Cómo regenerar
 

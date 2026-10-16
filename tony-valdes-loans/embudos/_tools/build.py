@@ -76,7 +76,7 @@ for page in cfg.PAGES:
     h = h.replace('__I18N__', json.dumps(d, ensure_ascii=False))
     h = re.sub(r'<title>.*?</title>', '<title>' + page['title']['es'] + '</title>', h, count=1, flags=re.S)
     h = re.sub(r'(<meta name="description" content=")[^"]*', lambda m: m.group(1) + page['desc']['es'].replace('"', '&quot;'), h, count=1)
-    h = re.sub(r'\{\{A\}\}/([\w\-]+\.(?:png|webp))(?:\?h=(\d+))?',
+    h = re.sub(r'\{\{A\}\}/([\w\-/]+\.(?:png|webp))(?:\?h=(\d+))?',
                lambda m: data_uri(m.group(1), int(m.group(2) or (400 if m.group(1).endswith('.png') else 1300))), h)
     out_rev = os.path.join(fdir, 'revisar', name)
     open(out_rev, 'w', encoding='utf-8').write(h)
