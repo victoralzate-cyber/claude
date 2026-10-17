@@ -165,6 +165,15 @@ Embudo de la masterclass en vivo **"Inversionistas y Empresarios: cómo identifi
 - La confirmación y la sala mandan al **diagnóstico de financiamiento** (`/diagnostico-financiamiento`) y al calendario de Tony.
 - La fecha, el Zoom, la repetición y el grupo de WhatsApp se cambian en `EVENT`, dentro de `webinar-inversionistas-empresarios/i18n.py`.
 
+## Fotos de stock
+
+Las fotos de ambiente salen de Unsplash, que permite uso comercial gratis y sin atribución. Están en `assets/stock/`, con los créditos en `assets/stock/CREDITOS.md`:
+- Skyline de Atlanta de noche y de Miami.
+- Casas modernas iluminadas.
+- Obra en construcción, rascacielos y una reunión de negocios.
+
+Van incluidas dentro de cada archivo, como fondos bajo una capa azul de la marca y en las tarjetas de perfil.
+
 ## Cómo regenerar
 
 ```bash
