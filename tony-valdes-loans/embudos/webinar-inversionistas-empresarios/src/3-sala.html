@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Webinar · Página 3 · Sala (antes / en vivo / repetición) ===== */
+.room{padding:64px 0 80px;text-align:center}
+.room .container{position:relative;z-index:2}
+.room h1{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:900;line-height:1.08;max-width:860px;margin:18px auto 14px}
+.room .sub{color:#D6D4EC;max-width:620px;margin:0 auto 24px;font-size:1.06rem}
+.room .when,.room .cd{justify-content:center}
+.room .when{margin-bottom:22px}
+.room .cd{margin:0 auto 28px}
+.room .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.room .btn-ghost{color:#fff}
+.mode{display:none}
+.mode.on{display:block}
+.screen{position:relative;max-width:960px;margin:6px auto 26px;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 30px 80px rgba(0,0,0,.45);border:1px solid rgba(244,228,120,.25);aspect-ratio:16/9}
+.screen iframe,.screen video{position:absolute;inset:0;width:100%;height:100%;border:0}
+.screen .soon{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;padding:24px;background:radial-gradient(circle at 50% 40%,#1B1670,var(--blue));color:#D6D4EC}
+.screen .soon b{font-size:1.3rem;color:#fff}
+.go-live{font-size:1.15rem;padding:20px 40px}
+.next3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.next3 .card{display:flex;flex-direction:column}
+.next3 .card p{flex:1;margin-bottom:18px}
+.next3 .btn{padding:13px 20px;font-size:.9rem}
+@media (max-width:860px){.next3{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<section class="grid-bg room dark">
+  <div class="container">
+
+    <!-- ANTES -->
+    <div class="mode" data-mode="antes">
+      <span class="live"><i></i>Masterclass gratis · Próximamente</span>
+      <h1>Inversionistas y <span class="gold-text">Empresarios</span>: cómo identificar oportunidades y financiarlas estratégicamente</h1>
+      <p class="sub">La sala se abre 10 minutos antes de empezar. Guarda esta página: aquí mismo vas a encontrar el botón para entrar.</p>
+      <div class="when"><span>📅 <b data-ev="date">-</b></span><span>🕖 <b data-ev="time">-</b></span></div>
+      <div class="cd"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+      <div class="row">
+        <a class="btn btn-gold" data-cal="google" href="#" target="_blank" rel="noopener">Agregar a Google Calendar</a>
+        <a class="btn btn-ghost" data-cal="ics" href="#">Apple / Outlook</a>
+      </div>
+    </div>
+
+    <!-- EN VIVO -->
+    <div class="mode" data-mode="vivo">
+      <span class="live"><i></i>¡Estamos en vivo!</span>
+      <h1>La masterclass está empezando</h1>
+      <p class="sub" id="liveSub">Entra ahora a la sala de Zoom. Ten a mano papel y tus preguntas: Tony las responde en vivo.</p>
+      <div class="row">
+        <a class="btn btn-gold go-live" id="zoomBtn" href="#" target="_blank" rel="noopener">Entrar al Zoom ahora</a>
+        <a class="btn btn-wa" id="liveWa" href="https://wa.me/17708653002" target="_blank" rel="noopener">¿No tienes el enlace? Pídelo aquí</a>
+      </div>
+    </div>
+
+    <!-- REPETICIÓN -->
+    <div class="mode" data-mode="repeticion">
+      <span class="live"><i></i>Repetición disponible</span>
+      <h1>Mira la masterclass completa</h1>
+      <p class="sub">¿Te la perdiste o quieres verla otra vez? Aquí está la grabación. Al final, da tu siguiente paso.</p>
+      <div class="screen" id="screen">
+        <div class="soon"><b>La repetición estará disponible muy pronto</b><span>Te avisamos por WhatsApp y correo en cuanto esté lista.</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sec slate">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Después de la clase</span>
+      <h2>Convierte lo que aprendiste en tu próximo deal</h2>
+    </div>
+    <div class="next3">
+      <div class="card reveal"><div class="ico">🎯</div><h3>Haz tu diagnóstico de financiamiento</h3><p>En 60 segundos descubre qué programas podrían encajar con tu deal o tu negocio.</p><a class="btn btn-gold" id="testBtn" href="/diagnostico-financiamiento">Hacer mi diagnóstico</a></div>
+      <div class="card reveal"><div class="ico">📞</div><h3>Agenda el análisis de tu deal</h3><p>15 minutos con Tony para revisar los números de tu deal o la situación de tu negocio.</p><a class="btn btn-blue" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans" target="_blank" rel="noopener">Agendar ahora</a></div>
+      <div class="card reveal"><div class="ico">💬</div><h3>Escríbele a Tony</h3><p>¿Te quedó una duda de la clase? Escríbele por WhatsApp y te responde personalmente.</p><a class="btn btn-wa" id="waAsk" href="https://wa.me/17708653002" target="_blank" rel="noopener">Escribir por WhatsApp</a></div>
+    </div>
+    <p class="fine" style="text-align:center;margin-top:30px">Contenido educativo. No constituye asesoría fiscal o financiera, ni es una oferta de préstamo o un compromiso de prestar.</p>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+/*THEME_JS*/
+
+  function videoEmbed(u){
+    if(!u) return '';
+    var m=u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|live\/|embed\/|shorts\/))([\w-]{11})/);
+    if(m) return '<iframe src="https://www.youtube.com/embed/'+m[1]+'?rel=0" title="Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+    var v=u.match(/vimeo\.com\/(\d+)/);
+    if(v) return '<iframe src="https://player.vimeo.com/video/'+v[1]+'" title="Masterclass" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+    return '<video src="'+esc(u)+'" controls playsinline preload="metadata"></video>';
+  }
+  var mode=evMode();
+  document.querySelectorAll('.mode').forEach(function(m){m.classList.toggle('on',m.getAttribute('data-mode')===mode)});
+  if(mode==='repeticion'&&EV.replay) document.getElementById('screen').innerHTML=videoEmbed(EV.replay);
+  var zb=document.getElementById('zoomBtn');
+  if(EV.zoom){zb.href=EV.zoom}else{zb.style.display='none'}
+
+  function render(){
+    fillEvent(); bindCalendar();
+    if(!EV.zoom) document.getElementById('liveSub').textContent=T('_live_nozoom');
+    document.getElementById('liveWa').href='https://wa.me/17708653002?text='+encodeURIComponent(T('_wa_link'));
+    document.getElementById('waAsk').href='https://wa.me/17708653002?text='+encodeURIComponent(T('_wa_ask'));
+    document.getElementById('testBtn').href=URLS.test+'?lang='+LANG;
+  }
+  window.tvlRecalc=render;
+  startLang(); startCountdowns();
+  // Si la página queda abierta, cambia sola de "antes" a "en vivo"
+  setInterval(function(){if(evMode()!==mode&&!QS.get('modo'))location.reload()},30000);
+})();
+</script>
+</body>
+</html>

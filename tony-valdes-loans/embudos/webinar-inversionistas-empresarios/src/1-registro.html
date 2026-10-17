@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Masterclass Inversionistas y Empresarios · Registro ===== */
+.m-hero .container{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center;padding-top:60px;padding-bottom:84px}
+.m-hero h1{font-size:clamp(2.1rem,4.4vw,3.5rem);font-weight:900;line-height:1.05;margin:20px 0 18px}
+.m-hero h1 small{display:block;font-size:.5em;line-height:1.25;margin-top:12px;font-weight:800}
+.m-hero .sub{font-size:1.08rem;color:#D6D4EC;max-width:580px;margin-bottom:22px}
+.m-hero .when{margin-bottom:20px}
+.m-hero .cd{margin-bottom:28px}
+.m-ctas{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.m-ctas small{color:#CFCDE6;font-weight:700}
+.m-photo{position:relative;max-width:410px;width:100%;justify-self:center}
+.m-badge{position:absolute;z-index:4;right:-22px;top:42px;background:var(--gold-grad);color:var(--blue);border-radius:10px;padding:12px 16px;box-shadow:0 18px 40px rgba(0,0,0,.3);font-weight:800;font-size:.86rem;line-height:1.25;max-width:200px}
+.m-badge2{position:absolute;z-index:4;left:-22px;bottom:50px;background:#fff;color:var(--blue);border-radius:10px;padding:12px 16px;box-shadow:0 18px 40px rgba(0,0,0,.3);max-width:230px}
+.m-badge2 strong{display:block;font-size:.9rem;line-height:1.25}
+.m-badge2 span{font-size:.74rem;color:var(--ink-soft)}
+@media (max-width:900px){.m-hero .container{grid-template-columns:1fr;gap:34px;padding-top:44px}.m-photo{max-width:320px}.m-badge{right:-6px}.m-badge2{left:-6px}}
+
+.reg{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+.learn h2{font-size:clamp(1.7rem,3.2vw,2.4rem);color:var(--blue)}
+.learn ol{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:14px}
+.learn li{display:grid;grid-template-columns:56px 1fr;gap:16px;align-items:center;background:#fff;border-radius:14px;padding:16px 18px;border:1px solid #E6E8F0;box-shadow:0 8px 24px rgba(3,0,46,.05)}
+.learn li .i{width:56px;height:56px;border-radius:12px;background:var(--blue);display:grid;place-items:center;font-size:1.5rem;border:2px solid var(--gold)}
+.learn li strong{display:block;color:var(--blue);margin-bottom:2px}
+.learn li span{font-size:.9rem;color:var(--ink-soft)}
+.reg-card{position:sticky;top:90px;background:#fff;border-radius:18px;box-shadow:var(--shadow);overflow:hidden;border:1px solid #E6E8F0}
+.reg-top{background:var(--blue);color:#fff;padding:22px 28px;border-bottom:3px solid var(--gold)}
+.reg-top h2{font-size:1.45rem;margin:0 0 4px}
+.reg-top p{margin:0;color:#CFCDE6;font-size:.92rem}
+.reg-top p b{color:var(--jasmine)}
+.reg-body{padding:24px 28px 28px}
+.reg-body .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+.reg-body .full{grid-column:1/-1}
+.reg-body textarea{min-height:80px;resize:vertical}
+.reg-body .opt-lbl{font-weight:600;color:var(--ink-soft);font-size:.78rem}
+.seg2{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.seg2 label{position:relative;cursor:pointer}
+.seg2 input{position:absolute;opacity:0;pointer-events:none;width:1px;height:1px;padding:0;left:0;top:0}
+.seg2 span{display:block;text-align:center;font-weight:800;font-size:.84rem;padding:11px 6px;border-radius:10px;border:1.5px solid #D5D9E6;color:var(--blue)}
+.seg2 input:checked+span{background:var(--blue);color:#fff;border-color:var(--blue)}
+.seg2 input:focus-visible+span{outline:3px solid var(--cobalt);outline-offset:2px}
+.reg-btn{width:100%;margin-top:8px}
+@media (max-width:900px){.reg{grid-template-columns:1fr}.reg-card{position:static}}
+@media (max-width:520px){.reg-body .grid{grid-template-columns:1fr}.reg-body{padding:22px 18px 24px}}
+
+.who2{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.who2 .card ul{list-style:none;padding:0;margin:12px 0 0;display:grid;gap:10px}
+.who2 .card li{display:flex;gap:10px;font-weight:600;color:var(--blue);font-size:.95rem}
+.who2 .card.inv li::before{content:"→";color:var(--gold);font-weight:900}
+.who2 .card.emp li::before{content:"→";color:var(--emp);font-weight:900}
+@media (max-width:820px){.who2{grid-template-columns:1fr}}
+
+.mini{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mini .big{font-size:1.5rem;font-weight:900;color:var(--blue);margin-top:12px}
+.mini .big small{display:block;font-size:.72rem;font-weight:700;color:var(--ink-soft)}
+@media (max-width:860px){.mini{grid-template-columns:1fr}}
+
+.m-final{text-align:center;padding:84px 0}
+.m-final h2{font-size:clamp(1.8rem,3.6vw,2.6rem);max-width:780px;margin:16px auto 14px}
+.m-final p{color:#CFCDE6;max-width:560px;margin:0 auto 22px}
+.m-final .cd{justify-content:center;margin-bottom:26px}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<section class="grid-bg m-hero dark">
+  <div class="container">
+    <div>
+      <span class="live"><i></i>Masterclass gratis · En vivo por Zoom</span>
+      <h1>Inversionistas y <span class="gold-text">Empresarios</span><small>Cómo identificar oportunidades y financiarlas estratégicamente</small></h1>
+      <p class="sub">Una clase en vivo con Tony Valdes sobre el estado actual del mercado, dónde están las oportunidades en bienes raíces y cómo financiarlas de forma inteligente, aunque tus ingresos no sean "tradicionales".</p>
+      <div class="when"><span>📅 <b data-ev="date">-</b></span><span>🕖 <b data-ev="time">-</b></span></div>
+      <div class="cd" aria-label="Cuenta regresiva"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+      <div class="m-ctas">
+        <a class="btn btn-gold" href="#registro">Reserva tu lugar ahora</a>
+        <small>100% gratis · En español</small>
+      </div>
+    </div>
+    <div class="m-photo">
+      <div class="frame"><div class="pic cut"><img src="{{A}}/tony-senalando-lado.webp?h=1000" alt="Tony Valdes, instructor de la masterclass" width="410" height="512"></div></div>
+      <div class="m-badge">🎙️ En vivo con Tony</div>
+      <div class="m-badge2"><strong>Ex-Vicepresidente de Banca Comercial</strong><span>JP Morgan Chase · Bank of America</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec slate" id="registro">
+  <div class="container reg">
+    <div class="learn reveal">
+      <span class="eyebrow">En esta masterclass vas a aprender</span>
+      <h2>Lo que necesitas saber antes de tu próximo movimiento</h2>
+      <ol>
+        <li><div class="i" aria-hidden="true">📊</div><div><strong>Estado actual del mercado</strong><span>Qué está pasando hoy y cómo leerlo como inversionista.</span></div></li>
+        <li><div class="i" aria-hidden="true">🏠</div><div><strong>Oportunidades de inversión en bienes raíces</strong><span>Fix &amp; Flip, rentas, multifamily y construcción: dónde están los números.</span></div></li>
+        <li><div class="i" aria-hidden="true">💲</div><div><strong>Estrategias + financiamiento inteligente</strong><span>DSCR, Bank Statement, equity y más: cómo estructurar cada deal.</span></div></li>
+        <li><div class="i" aria-hidden="true">💬</div><div><strong>Preguntas y respuestas en vivo</strong><span>Trae tu caso: Tony responde al final de la clase.</span></div></li>
+      </ol>
+    </div>
+    <div class="reg-card reveal">
+      <div class="reg-top">
+        <h2>Reserva tu lugar gratis</h2>
+        <p>📅 <b data-ev="date">-</b> · <b data-ev="time">-</b></p>
+      </div>
+      <div class="reg-body">
+        <form id="leadForm" novalidate>
+          <div class="grid">
+            <div class="field full"><label>Mi perfil</label>
+              <div class="seg2" role="radiogroup">
+                <label><input type="radio" name="perfil" value="Inversionista" checked><span>Inversionista</span></label>
+                <label><input type="radio" name="perfil" value="Empresario"><span>Empresario</span></label>
+                <label><input type="radio" name="perfil" value="Ambos"><span>Ambos</span></label>
+              </div>
+            </div>
+            <div class="field full"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="telefono">Teléfono (WhatsApp)</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+            <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            <div class="field full"><label for="pregunta">¿Qué te gustaría preguntarle a Tony? <span class="opt-lbl">(opcional)</span></label><textarea id="pregunta" name="pregunta" maxlength="400"></textarea></div>
+          </div>
+          <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+            <span>Acepto los <a href="https://www.valdesloans.com/terminos" target="_blank" rel="noopener">Términos</a> y la <a href="https://www.valdesloans.com/privacidad" target="_blank" rel="noopener">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+          <span class="err" id="consentErr" aria-live="polite"></span>
+          <button class="btn btn-gold reg-btn" type="submit">Reservar mi lugar</button>
+          <p class="fine" style="text-align:center;margin:12px 0 0">Te enviaremos el enlace de la clase por correo y WhatsApp.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">¿Para quién es?</span><h2>Para quien quiere que su dinero trabaje</h2></div>
+    <div class="who2">
+      <div class="card inv reveal"><span class="tag-inv">Inversionistas</span>
+        <ul>
+          <li>Ya inviertes y quieres escalar tu portafolio</li>
+          <li>Quieres hacer tu primer Fix &amp; Flip o tu primera renta</li>
+          <li>Buscas financiamiento que califique con la renta</li>
+        </ul>
+      </div>
+      <div class="card emp reveal"><span class="tag-emp">Empresarios</span>
+        <ul>
+          <li>Tienes un negocio y quieres invertir sus ganancias</li>
+          <li>Tus taxes muestran poco, pero tu negocio sí genera</li>
+          <li>Quieres comprar el local de tu negocio o liberar capital</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec slate">
+  <div class="container tony-quote">
+    <div class="frame reveal"><div class="pic cut"><img src="{{A}}/tony-brazos-cruzados.webp?h=1000" alt="Tony Valdes, Mortgage Loan Officer" width="320" height="400" loading="lazy"></div></div>
+    <div class="reveal">
+      <span class="eyebrow">Tu instructor</span>
+      <blockquote>Fui Vicepresidente de Banca Comercial y trabajé con más de 150 clientes de alto perfil. En esta clase te comparto cómo piensan los grandes inversionistas para encontrar y financiar sus oportunidades.</blockquote>
+      <p class="sig">Tony Valdes<span>Mortgage Loan Officer · NMLS #1593970 · 25+ años en banca y finanzas</span></p>
+      <a class="btn btn-blue" href="#registro">Reservar mi lugar gratis</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Casos reales con Tony Valdes</span><h2>Números reales de clientes reales</h2></div>
+    <div class="mini">
+      <div class="card inv reveal"><span class="tag-inv">Fix &amp; Flip</span><h3 style="margin-top:12px">Duncan Drive</h3><p>Compra de $235,000 y remodelación de $70,000. Vendida en septiembre de 2025 por $419,999.</p><div class="big">$100K+<small>de ganancia</small></div></div>
+      <div class="card inv reveal"><span class="tag-inv">Multifamily</span><h3 style="margin-top:12px">Cuádruplex en Forest Park, GA</h3><p>Compra de $730,000 y una mejora de $7,000 por unidad. Cuatro rentas trabajando para el inversionista cada mes.</p><div class="big">$6,600<small>de renta mensual</small></div></div>
+      <div class="card emp reveal"><span class="tag-emp">Ejecución</span><h3 style="margin-top:12px">Deal rescatado</h3><p>Un deal que otro lender no pudo cerrar. Buscamos una estructura alternativa y lo cerramos.</p><div class="big">10 días<small>del rescate al cierre</small></div></div>
+    </div>
+    <p class="fine" style="text-align:center;margin-top:22px">Los resultados individuales pueden variar. Cada caso depende de la propiedad, el mercado y la calificación del cliente.</p>
+  </div>
+</section>
+
+<section class="grid-bg m-final dark">
+  <div class="container">
+    <span class="live"><i></i>En vivo por Zoom</span>
+    <h2>¿Vas a dejar pasar esta masterclass?</h2>
+    <p>Una hora con Tony puede cambiar la forma en que inviertes y haces crecer tu negocio.</p>
+    <div class="cd"><div><b data-cd="d">00</b><span>días</span></div><div><b data-cd="h">00</b><span>horas</span></div><div><b data-cd="m">00</b><span>min</span></div><div><b data-cd="s">00</b><span>seg</span></div></div>
+    <a class="btn btn-gold" href="#registro">Reserva tu lugar ahora</a>
+    <p class="fine" style="margin-top:20px">Contenido educativo. No constituye asesoría fiscal o financiera.</p>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+/*THEME_JS*/
+
+  var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+  window.tvlRecalc=fillEvent;
+  startLang(); startCountdowns();
+
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input');if(first)first.focus();return}
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), objetivo:'Webinar: inversionistas y empresarios', perfil:form.perfil.value,
+      webinar:'Masterclass Inversionistas y Empresarios', webinar_fecha:EV.start, pregunta:form.pregunta.value.trim(),
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'webinar-inversionistas-empresarios', pagina:location.href
+    };
+    var url=URLS.confirmado+'?n='+encodeURIComponent(parts[0])+'&lang='+LANG;
+    form.querySelector('button[type=submit]').disabled=true;
+    var gone=false; function go(){if(!gone){gone=true;location.href=url}}
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(go,go);
+    setTimeout(go,1800);
+  });
+})();
+</script>
+</body>
+</html>

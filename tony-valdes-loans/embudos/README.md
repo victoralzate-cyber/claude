@@ -150,6 +150,21 @@ Página independiente para anuncios dirigidos a inversionistas y dueños de nego
 
 **Calendario:** usa el calendario principal de Tony. Para que después de agendar lleve a la página 3, clona el calendario y pon la redirección a `/diagnostico-financiamiento-cita`. Luego cambia la URL del calendario en `src/2-plan.html` y regenera.
 
+## Masterclass Inversionistas y Empresarios (`webinar-inversionistas-empresarios/`)
+
+Embudo de la masterclass en vivo **"Inversionistas y Empresarios: cómo identificar oportunidades y financiarlas estratégicamente"**, del jueves 5 de noviembre a las 7:30 p.m. (hora de Atlanta / Miami). Usa el estilo "Capital" y los mismos 3 temas de las piezas de anuncio: estado actual del mercado, oportunidades de inversión en bienes raíces y estrategias + financiamiento inteligente.
+
+| Paso | Ruta | Archivo |
+|---|---|---|
+| 1 · Registro | `masterclass-inversionistas` | `ghl/1-registro.html` |
+| 2 · Lugar reservado | `masterclass-inversionistas-confirmado` | `ghl/2-confirmado.html` |
+| 3 · Sala (antes / en vivo / repetición) | `masterclass-inversionistas-sala` | `ghl/3-sala.html` |
+
+- El formulario pregunta el perfil (Inversionista / Empresario / Ambos) y una pregunta opcional para Tony.
+- Llega con `origen = webinar-inversionistas-empresarios`, `perfil`, `webinar`, `webinar_fecha` y `pregunta`.
+- La confirmación y la sala mandan al **diagnóstico de financiamiento** (`/diagnostico-financiamiento`) y al calendario de Tony.
+- La fecha, el Zoom, la repetición y el grupo de WhatsApp se cambian en `EVENT`, dentro de `webinar-inversionistas-empresarios/i18n.py`.
+
 ## Cómo regenerar
 
 ```bash
@@ -157,6 +172,7 @@ python3 embudos/_tools/build.py embudos/primeros-compradores
 python3 embudos/_tools/build.py embudos/webinar-primeros-compradores
 python3 embudos/_tools/build.py embudos/inversionistas-empresarios-landing
 python3 embudos/_tools/build.py embudos/inversionistas-empresarios-embudo
+python3 embudos/_tools/build.py embudos/webinar-inversionistas-empresarios
 ```
 
 El script:
