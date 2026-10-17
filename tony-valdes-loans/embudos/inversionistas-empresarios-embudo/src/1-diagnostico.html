@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Diagnóstico · Página 1 ===== */
+.d-hero .container{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px;align-items:start;padding-top:64px;padding-bottom:84px}
+.d-hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);font-weight:900;line-height:1.06;margin:16px 0 18px}
+.d-hero .sub{font-size:1.08rem;color:#D6D4EC;margin-bottom:26px}
+.d-points{list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px}
+.d-points li{display:flex;gap:12px;align-items:flex-start;color:#E6E4F5}
+.d-points li::before{content:"✓";flex:none;width:24px;height:24px;border-radius:6px;background:var(--gold-grad);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:.78rem;margin-top:2px}
+.d-tony{display:flex;align-items:center;gap:14px;border-top:1px solid rgba(244,228,120,.2);padding-top:22px}
+.d-tony .av{width:64px;height:64px;border-radius:12px;overflow:hidden;background:linear-gradient(170deg,#1D2A6E,#0A0745);border:2px solid var(--gold);flex:none}
+.d-tony .av img{width:100%;height:100%;object-fit:cover;object-position:top}
+.d-tony strong{display:block}
+.d-tony span{font-size:.8rem;color:#B9B7D3}
+@media (max-width:960px){.d-hero .container{grid-template-columns:1fr;gap:34px;padding-top:44px}}
+
+.quiz{background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,.4);overflow:hidden;position:relative}
+.quiz-top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 26px;border-bottom:1px solid #E6E8F0;background:var(--slate)}
+.quiz-top .lbl{font-size:.8rem;font-weight:800;color:var(--ink-soft)}
+.quiz-top .lbl b{color:var(--blue)}
+.qback{font:inherit;font-size:.8rem;font-weight:800;color:var(--blue);background:none;border:0;cursor:pointer;padding:0}
+.qback[hidden]{display:block;visibility:hidden}
+.qbar{height:4px;background:#E6E8F0}
+.qbar i{display:block;height:100%;width:0;background:var(--gold-grad);transition:width .35s}
+.quiz-body{padding:30px 26px 32px;min-height:430px}
+.qstep{display:none;animation:qin .4s ease}
+.qstep.on{display:block}
+@keyframes qin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.qstep h3{font-size:clamp(1.25rem,2.4vw,1.55rem);color:var(--blue);margin-bottom:6px}
+.qstep .hint{color:var(--ink-soft);font-size:.92rem;margin-bottom:20px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{display:flex;align-items:center;gap:14px;width:100%;text-align:left;font:inherit;font-weight:700;font-size:.98rem;color:var(--blue);background:#fff;border:1.5px solid #DCE0EA;border-radius:12px;padding:14px 16px;cursor:pointer;transition:border-color .2s,background .2s,transform .15s}
+.opt::before{content:attr(data-ico);display:grid;place-items:center;width:40px;height:40px;flex:none;border-radius:10px;background:var(--slate);font-size:1.2rem}
+.opt:hover{border-color:var(--gold);transform:translateY(-1px)}
+.opt.sel{border-color:var(--blue);background:#F4F5FB}
+.opt.big{flex-direction:column;align-items:flex-start;gap:8px;padding:18px}
+.opt.big small{font-weight:600;color:var(--ink-soft);font-size:.82rem}
+.opt.inv.sel{border-color:var(--gold)}
+.opt.emp.sel{border-color:var(--emp)}
+@media (max-width:560px){.opts.two{grid-template-columns:1fr}.quiz-body{padding:24px 18px 26px}.quiz-top{padding:16px 18px}}
+.gate-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.gate-grid .full{grid-column:1/-1}
+@media (max-width:560px){.gate-grid{grid-template-columns:1fr}}
+.gate-btn{width:100%;margin-top:8px}
+
+.trust3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:860px){.trust3{grid-template-columns:1fr}}
+.logos{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 28px;margin-top:30px;font-weight:800;color:var(--ink-soft);font-size:.86rem}
+.logos span{display:inline-flex;align-items:center;gap:8px}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main>
+
+<section class="grid-bg d-hero dark" id="diagnostico">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Diagnóstico gratis · 60 segundos</span>
+      <h1>¿Qué financiamiento <span class="gold-text">te conviene</span> para invertir o hacer crecer tu negocio?</h1>
+      <p class="sub">Responde unas preguntas rápidas y recibe tu plan: los programas que podrían encajar contigo, qué documentos preparar y tu siguiente paso.</p>
+      <ul class="d-points">
+        <li>Para inversionistas: Fix &amp; Flip, DSCR, multifamily, construcción y equity</li>
+        <li>Para empresarios: califica con tus estados de cuenta, P&amp;L o 1099</li>
+        <li>Sin costo y sin revisar tu crédito</li>
+      </ul>
+      <div class="d-tony">
+        <div class="av"><img src="{{A}}/tony-brazos-cruzados.webp?h=240" alt="Tony Valdes" width="64" height="64"></div>
+        <div><strong>Tony Valdes · NMLS #1593970</strong><span>Ex-Vicepresidente de Banca Comercial · 25+ años en finanzas</span></div>
+      </div>
+    </div>
+
+    <div class="quiz" id="quiz">
+      <div class="quiz-top">
+        <button type="button" class="qback" id="qBack" hidden>← Atrás</button>
+        <span class="lbl" id="qLbl">Paso <b id="qNum">1</b> de <b id="qTot">7</b></span>
+      </div>
+      <div class="qbar"><i id="qBar"></i></div>
+      <div class="quiz-body">
+
+        <div class="qstep on" data-key="perfil" data-for="all">
+          <h3>¿Cuál es tu perfil?</h3>
+          <p class="hint">Así adaptamos las preguntas a tu caso.</p>
+          <div class="opts">
+            <button type="button" class="opt big inv" data-ico="🏘️" data-v="Inversionista" data-c="inv">Soy inversionista<small>Compro o quiero comprar propiedades como negocio</small></button>
+            <button type="button" class="opt big emp" data-ico="💼" data-v="Empresario" data-c="emp">Soy empresario<small>Tengo un negocio, soy independiente o trabajo con 1099</small></button>
+            <button type="button" class="opt big" data-ico="🚀" data-v="Ambos" data-c="amb">Ambos<small>Tengo un negocio y también quiero invertir</small></button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="objetivo_inv" data-for="inv">
+          <h3>¿Qué quieres hacer?</h3>
+          <p class="hint">Elige tu objetivo principal.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🔨" data-v="Fix & Flip">Comprar, remodelar y vender (Fix &amp; Flip)</button>
+            <button type="button" class="opt" data-ico="🏠" data-v="Comprar para rentar">Comprar para rentar</button>
+            <button type="button" class="opt" data-ico="🏢" data-v="Multifamily">Comprar un multifamiliar</button>
+            <button type="button" class="opt" data-ico="🏗️" data-v="Construcción nueva">Construir para vender o rentar</button>
+            <button type="button" class="opt" data-ico="🔑" data-v="Usar mi equity">Usar el equity de mis propiedades</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="objetivo_emp" data-for="emp amb">
+          <h3>¿Qué quieres lograr?</h3>
+          <p class="hint">Elige tu objetivo principal.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🏡" data-v="Comprar mi casa">Comprar mi casa</button>
+            <button type="button" class="opt" data-ico="🏬" data-v="Comprar local u oficina">Comprar el local u oficina de mi negocio</button>
+            <button type="button" class="opt" data-ico="📈" data-v="Invertir con las ganancias">Invertir con las ganancias de mi negocio</button>
+            <button type="button" class="opt" data-ico="💵" data-v="Liberar capital">Liberar capital con mi equity</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="experiencia" data-for="inv amb">
+          <h3>¿Cuántos deals de inversión has hecho?</h3>
+          <p class="hint">No necesitas experiencia: hay programas para quien empieza.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🌱" data-v="Ninguno todavía">Ninguno todavía</button>
+            <button type="button" class="opt" data-ico="📊" data-v="1-2 deals">1 o 2</button>
+            <button type="button" class="opt" data-ico="🏆" data-v="3+ deals">3 o más</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="capital" data-for="inv">
+          <h3>¿Cuánto capital tienes disponible para invertir?</h3>
+          <p class="hint">Un aproximado está bien. Incluye ahorros, socios o equity.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="💲" data-v="Menos de $25K">Menos de $25,000</button>
+            <button type="button" class="opt" data-ico="💰" data-v="$25K-$75K">Entre $25,000 y $75,000</button>
+            <button type="button" class="opt" data-ico="🏦" data-v="Más de $75K">Más de $75,000</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="anos_negocio" data-for="emp amb">
+          <h3>¿Cuánto tiempo llevas con tu negocio?</h3>
+          <p class="hint">O trabajando por tu cuenta.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🏆" data-v="2+ años">2 años o más</button>
+            <button type="button" class="opt" data-ico="📈" data-v="1-2 años">Entre 1 y 2 años</button>
+            <button type="button" class="opt" data-ico="🌱" data-v="Menos de 1 año">Menos de 1 año</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="taxes" data-for="emp amb">
+          <h3>¿Cómo reflejan tus taxes tus ingresos?</h3>
+          <p class="hint">Esto define qué programas te convienen más.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="📉" data-v="Muestran poco por deducciones">Muestran poco por las deducciones</button>
+            <button type="button" class="opt" data-ico="✅" data-v="Reflejan bien mis ingresos">Reflejan bien lo que gano</button>
+            <button type="button" class="opt" data-ico="🧾" data-v="Trabajo con 1099">Trabajo con 1099</button>
+            <button type="button" class="opt" data-ico="❓" data-v="No declaro aún">Todavía no declaro como negocio</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="credito" data-for="all">
+          <h3>¿Cómo describirías tu crédito?</h3>
+          <p class="hint">Un aproximado está bien. Este diagnóstico no revisa tu crédito.</p>
+          <div class="opts two">
+            <button type="button" class="opt" data-ico="🌟" data-v="700+">700 o más</button>
+            <button type="button" class="opt" data-ico="👍" data-v="640-699">640 a 699</button>
+            <button type="button" class="opt" data-ico="🔧" data-v="580-639">580 a 639</button>
+            <button type="button" class="opt" data-ico="❓" data-v="Menos de 580 o no sabe">Menos de 580 o no lo sé</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="plazo" data-for="all">
+          <h3>¿Cuándo quieres avanzar?</h3>
+          <p class="hint">Así priorizamos tu caso.</p>
+          <div class="opts">
+            <button type="button" class="opt" data-ico="🎯" data-v="Ya tengo un deal">Ya tengo una propiedad o un deal en mente</button>
+            <button type="button" class="opt" data-ico="⚡" data-v="Próximos 30 días">En los próximos 30 días</button>
+            <button type="button" class="opt" data-ico="📅" data-v="1-3 meses">En 1 a 3 meses</button>
+            <button type="button" class="opt" data-ico="🔎" data-v="Explorando">Solo estoy explorando</button>
+          </div>
+        </div>
+
+        <div class="qstep" data-key="gate" data-for="all" id="gate">
+          <h3>¡Tu plan de financiamiento está listo! 🎯</h3>
+          <p class="hint">¿A dónde te lo enviamos? Lo verás en la siguiente pantalla.</p>
+          <form id="leadForm" novalidate>
+            <div class="gate-grid">
+              <div class="field full"><label for="nombre">Nombre completo</label><input id="nombre" name="nombre" type="text" autocomplete="name" required><span class="err" aria-live="polite"></span></div>
+              <div class="field"><label for="telefono">Teléfono</label><input id="telefono" name="telefono" type="tel" autocomplete="tel" required><span class="err" aria-live="polite"></span></div>
+              <div class="field"><label for="email">Correo electrónico</label><input id="email" name="email" type="email" autocomplete="email" required><span class="err" aria-live="polite"></span></div>
+            </div>
+            <label class="consent"><input type="checkbox" id="consent" name="consent" required>
+              <span>Acepto los <a href="https://www.valdesloans.com/terminos" target="_blank" rel="noopener">Términos</a> y la <a href="https://www.valdesloans.com/privacidad" target="_blank" rel="noopener">Política de Privacidad</a>, y autorizo a Tony Valdes Loans a contactarme por llamada, mensaje de texto, WhatsApp o correo. Pueden aplicar tarifas de mensajes y datos. Puedo cancelar en cualquier momento respondiendo STOP. El consentimiento no es condición para recibir servicios.</span></label>
+            <span class="err" id="consentErr" aria-live="polite"></span>
+            <button class="btn btn-gold gate-btn" type="submit">Ver mi plan ahora</button>
+            <p class="fine" style="text-align:center;margin:12px 0 0">Este diagnóstico es educativo. No es una solicitud de crédito ni afecta tu puntaje.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec slate">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Por qué Tony Valdes</span>
+      <h2>Experiencia de banca comercial a tu servicio</h2>
+    </div>
+    <div class="trust3">
+      <div class="card reveal"><div class="ico">🏦</div><h3>Ex-VP de Banca Comercial</h3><p>Más de 150 clientes de alto perfil en bancos como JP Morgan Chase y Bank of America.</p></div>
+      <div class="card reveal"><div class="ico">🔀</div><h3>Múltiples lenders</h3><p>Con Loan Factory accedes a muchos programas, no a uno solo. Así encontramos la opción que encaja.</p></div>
+      <div class="card reveal"><div class="ico">⚡</div><h3>Ejecución rápida</h3><p>En un caso real rescatamos un deal y lo cerramos en solo 10 días.</p></div>
+    </div>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+
+<script>
+(function(){
+/*CORE_JS*/
+
+  var NEXT_URL='/diagnostico-financiamiento-plan';
+  var GHL_WEBHOOK='https://services.leadconnectorhq.com/hooks/HPP0xQMdW6R0lXxSsNah/webhook-trigger/668d7c8e-d4d7-41b1-85f8-528cc05d18c5';
+  if(location.protocol==='file:') NEXT_URL='2-plan.html';
+
+  var all=[].slice.call(document.querySelectorAll('.qstep')), back=document.getElementById('qBack');
+  var prof='all', ans={}, idx={}, hist=[0];
+  function flow(){return all.filter(function(s){var f=s.getAttribute('data-for');return f==='all'||(prof!=='all'&&f.split(' ').indexOf(prof)>-1)})}
+  function show(step){
+    all.forEach(function(s){s.classList.toggle('on',s===step)});
+    var f=flow(), i=f.indexOf(step), tot=f.length-1, isGate=step.id==='gate';
+    document.getElementById('qNum').textContent=Math.min(i+1,tot);
+    document.getElementById('qTot').textContent=prof==='all'?7:tot;
+    document.getElementById('qLbl').style.visibility=isGate?'hidden':'visible';
+    document.getElementById('qBar').style.width=(isGate?100:(i/(prof==='all'?7:tot))*100)+'%';
+    back.hidden=hist.length<2;
+  }
+  all.forEach(function(s){
+    s.querySelectorAll('.opt').forEach(function(b,j){
+      b.addEventListener('click',function(){
+        s.querySelectorAll('.opt').forEach(function(o){o.classList.toggle('sel',o===b)});
+        var k=s.getAttribute('data-key'); ans[k]=b.getAttribute('data-v'); idx[k]=j;
+        if(k==='perfil') prof=b.getAttribute('data-c');
+        var f=flow(), nx=f[f.indexOf(s)+1];
+        setTimeout(function(){hist.push(all.indexOf(nx));show(nx);scrollQuiz()},240);
+      });
+    });
+  });
+  back.addEventListener('click',function(){if(hist.length>1){hist.pop();show(all[hist[hist.length-1]])}});
+  function scrollQuiz(){if(window.innerWidth<960){var q=document.getElementById('quiz'),r=q.getBoundingClientRect();if(r.top<0||r.top>window.innerHeight*.4)q.scrollIntoView({behavior:'smooth',block:'start'})}}
+  window.tvlRecalc=function(){show(all[hist[hist.length-1]])};
+  startLang();
+
+  var form=document.getElementById('leadForm');
+  function setErr(input,msg){var f=input.closest('.field');f.classList.toggle('invalid',!!msg);f.querySelector('.err').textContent=msg||''}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true, nombre=form.nombre, tel=form.telefono, email=form.email, consent=form.consent;
+    if(nombre.value.trim().length<2){setErr(nombre,T('_err_name'));ok=false}else setErr(nombre);
+    if(tel.value.replace(/\D/g,'').length<10){setErr(tel,T('_err_phone'));ok=false}else setErr(tel);
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())){setErr(email,T('_err_email'));ok=false}else setErr(email);
+    var ce=document.getElementById('consentErr');
+    if(!consent.checked){ce.textContent=T('_err_consent');ok=false}else ce.textContent='';
+    if(!ok){var first=form.querySelector('.invalid input');if(first)first.focus();return}
+    var full=nombre.value.trim().replace(/\s+/g,' '), parts=full.split(' ');
+    var digits=tel.value.replace(/\D/g,''), phone=digits.length===10?'+1'+digits:'+'+digits;
+    var obj=ans.objetivo_inv||ans.objetivo_emp||'';
+    var payload={
+      nombre:full, first_name:parts[0], last_name:parts.slice(1).join(' '),
+      telefono:phone, email:email.value.trim(), perfil:ans.perfil||'',
+      objetivo:(ans.perfil==='Inversionista'?'Inversión: ':'Empresario: ')+obj,
+      experiencia:ans.experiencia||'', capital:ans.capital||'', anos_negocio:ans.anos_negocio||'', taxes:ans.taxes||'',
+      credito:ans.credito||'', plazo:ans.plazo||'',
+      idioma:LANG, consentimiento_tcpa:'si', consentimiento_fecha:new Date().toISOString(),
+      origen:'funnel-inversionistas-empresarios', pagina:location.href
+    };
+    var q={n:parts[0],p:prof,o:idx.objetivo_inv!=null?idx.objetivo_inv:idx.objetivo_emp,x:idx.experiencia,c:idx.capital,y:idx.anos_negocio,t:idx.taxes,k:idx.credito,w:idx.plazo,lang:LANG};
+    var qs=Object.keys(q).filter(function(k){return q[k]!=null}).map(function(k){return k+'='+encodeURIComponent(q[k])}).join('&');
+    try{sessionStorage.setItem('tvl-ie',qs)}catch(err){}
+    form.querySelector('button[type=submit]').disabled=true;
+    var gone=false; function go(){if(!gone){gone=true;location.href=NEXT_URL+'?'+qs}}
+    fetch(GHL_WEBHOOK,{method:'POST',mode:'no-cors',keepalive:true,body:new URLSearchParams(payload)}).then(go,go);
+    setTimeout(go,1800);
+  });
+})();
+</script>
+</body>
+</html>

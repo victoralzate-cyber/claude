@@ -118,11 +118,45 @@ Los de siempre, más:
 
 Enlace de la sala para los mensajes: `https://tonyvaldesloansinfo.com/primeros-compradores-webinar-sala`.
 
+## Landing Inversionistas y Empresarios (`inversionistas-empresarios-landing/`)
+
+Página independiente para anuncios dirigidos a inversionistas y dueños de negocio. Tiene **estilo "Capital"**: azul profundo con retícula tipo plano, marcos con esquinas doradas y dos colores de camino (dorado para inversionista, cobalto para empresario).
+
+- **Hero:** "Financiamiento inteligente para hacer crecer tu capital", con dos botones de camino (**Soy inversionista** / **Soy empresario**), Tony con el sello "Ex-Vicepresidente de Banca Comercial · JP Morgan Chase · Bank of America" y una franja de cifras.
+- **Perfiles:** dos tarjetas, inversionista y empresario. Los botones abren la pestaña correcta de programas y marcan el perfil en el formulario.
+- **Programas en pestañas:**
+  - Inversionistas: Fix & Flip/Bridge, DSCR, construcción, Multifamily 5+, HELOC/HELOAN y Foreign National.
+  - Empresarios: Bank Statement, P&L, 1099, Asset-Based, propiedad comercial y Cash-Out/HELOC.
+- **"Haz tus números":** calculadora DSCR y una comparación de "lo que muestran tus taxes" contra "lo que muestran tus depósitos".
+- Casos reales con fotos de obra, el porqué de Tony, el proceso en 4 pasos y FAQ.
+- **Formulario:** perfil, objetivo, deal opcional y TCPA. Llega con `origen = landing-inversionistas-empresarios`, más `perfil` y `deal`.
+- **Montaje:** página en GHL con la ruta `inversionistas-empresarios` y el archivo `ghl/landing.html`.
+
+## Embudo Diagnóstico de Financiamiento (`inversionistas-empresarios-embudo/`)
+
+1. **Diagnóstico** (`/diagnostico-financiamiento`): test que **cambia según el perfil**.
+   - **Inversionista:** objetivo, experiencia y capital.
+   - **Empresario:** objetivo, años del negocio y cómo reflejan sus taxes.
+   - **Ambos:** combina las dos.
+   - **Todos:** crédito, plazo y formulario con TCPA.
+2. **Plan** (`/diagnostico-financiamiento-plan`): "Luis, este es tu plan de financiamiento", con:
+   - La **recomendación principal y una alternativa**, cada una con qué documentos preparar.
+   - Notas según sus respuestas: crédito, poca experiencia, poco capital, menos de 2 años de negocio.
+   - El sello **🔥 Prioridad alta** si ya tiene un deal o quiere avanzar en 30 días.
+   - El calendario incrustado con botones de respaldo y casos reales.
+3. **Cita confirmada** (`/diagnostico-financiamiento-cita`): qué tener a la mano (para inversionista y para empresario), qué pasa en la llamada y Tony.
+
+**Campos nuevos en el workflow:** `perfil`, `objetivo` (empieza con "Inversión:" o "Empresario:"), `experiencia`, `capital`, `anos_negocio`, `taxes`, `credito`, `plazo` y `origen = funnel-inversionistas-empresarios`.
+
+**Calendario:** usa el calendario principal de Tony. Para que después de agendar lleve a la página 3, clona el calendario y pon la redirección a `/diagnostico-financiamiento-cita`. Luego cambia la URL del calendario en `src/2-plan.html` y regenera.
+
 ## Cómo regenerar
 
 ```bash
 python3 embudos/_tools/build.py embudos/primeros-compradores
 python3 embudos/_tools/build.py embudos/webinar-primeros-compradores
+python3 embudos/_tools/build.py embudos/inversionistas-empresarios-landing
+python3 embudos/_tools/build.py embudos/inversionistas-empresarios-embudo
 ```
 
 El script:

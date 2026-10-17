@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>-</title>
+<meta name="description" content="-">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/*FUNNEL_CSS*/
+/*THEME_CSS*/
+
+/* ===== Diagnóstico · Página 2 · Plan ===== */
+.p-hero .container{display:grid;grid-template-columns:1.25fr .75fr;gap:50px;align-items:center;padding-top:64px;padding-bottom:80px}
+.p-hero h1{font-size:clamp(2rem,4.4vw,3.3rem);font-weight:900;line-height:1.07;margin:16px 0 16px}
+.p-hero .lead{font-size:1.08rem;color:#D6D4EC;max-width:600px;margin-bottom:26px}
+.p-hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.p-hero .btn-ghost{color:#fff}
+.hot{display:none;align-items:center;gap:8px;font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;background:#C0453A;color:#fff;padding:7px 14px;border-radius:6px;margin-left:10px}
+.hot.on{display:inline-flex}
+.p-photo{max-width:320px;width:100%;justify-self:center}
+.no-data .has{display:none!important}
+.empty{display:none}
+.no-data .empty{display:block}
+@media (max-width:860px){.p-hero .container{grid-template-columns:1fr;gap:30px}.p-photo{max-width:260px}}
+
+.recs{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.rec{background:#fff;border-radius:18px;box-shadow:0 16px 44px rgba(3,0,46,.1);border:1px solid #E6E8F0;overflow:hidden;display:flex;flex-direction:column}
+.rec-top{display:flex;align-items:center;gap:16px;padding:24px 26px;border-bottom:1px solid #E6E8F0}
+.rec-top .ico{width:58px;height:58px;border-radius:14px;display:grid;place-items:center;font-size:1.7rem;background:var(--slate);flex:none}
+.rec-top small{display:block;font-size:.7rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-d)}
+.rec:nth-child(2) .rec-top small{color:var(--ink-soft)}
+.rec-top h3{margin:2px 0 0;font-size:1.35rem;color:var(--blue)}
+.rec-bd{padding:22px 26px 26px;flex:1}
+.rec-bd p{color:var(--ink-soft)}
+.rec-bd h4{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin:18px 0 10px}
+.rec-bd ul{list-style:none;padding:0;margin:0;display:grid;gap:8px}
+.rec-bd li{display:flex;gap:10px;font-size:.92rem;color:var(--ink)}
+.rec-bd li::before{content:"□";color:var(--gold);font-weight:900}
+.rec:first-child{border-top:5px solid var(--gold)}
+@media (max-width:860px){.recs{grid-template-columns:1fr}}
+
+.notes{max-width:860px;margin:30px auto 0;display:grid;gap:12px}
+.note{display:flex;gap:14px;align-items:flex-start;background:#fff;border-left:4px solid var(--emp);border-radius:10px;padding:16px 18px;box-shadow:0 8px 24px rgba(3,0,46,.06)}
+.note::before{content:"💡";font-size:1.2rem}
+.note p{margin:0;color:var(--ink);font-size:.94rem}
+
+.agenda{display:grid;grid-template-columns:.85fr 1.15fr;gap:40px;align-items:start}
+.agenda h2{font-size:clamp(1.6rem,3.2vw,2.3rem)}
+.agenda ul{list-style:none;padding:0;margin:0 0 26px;display:grid;gap:14px}
+.agenda li{display:flex;gap:12px;color:#D6D4EC}
+.agenda li b{color:#fff}
+.agenda li::before{content:"✓";flex:none;width:26px;height:26px;border-radius:6px;background:var(--gold-grad);color:var(--blue);display:grid;place-items:center;font-weight:900;font-size:.8rem;margin-top:2px}
+.agenda .btns{display:flex;gap:12px;flex-wrap:wrap}
+.cal{background:#fff;border-radius:16px;padding:10px;min-height:640px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.cal iframe{width:100%;min-height:640px;border:0;display:block}
+.cal-alt{display:flex;justify-content:center;margin:0 0 8px;padding:14px;border-radius:10px;background:var(--slate);color:var(--blue);font-weight:800;font-size:.9rem;text-decoration:none;text-align:center}
+@media (max-width:900px){.agenda{grid-template-columns:1fr}}
+
+.mini-cases{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.mini-cases .card .big{font-size:1.5rem;font-weight:900;color:var(--blue);margin-top:12px}
+.mini-cases .card .big small{display:block;font-size:.72rem;font-weight:700;color:var(--ink-soft)}
+@media (max-width:860px){.mini-cases{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!--HEADER-->
+<main id="root">
+
+<section class="grid-bg p-hero dark">
+  <div class="container">
+    <div>
+      <div class="has">
+        <span class="eyebrow">Tu diagnóstico</span><span class="hot" id="hot">🔥 Prioridad alta</span>
+        <h1 id="pTitle">Tu plan de financiamiento</h1>
+        <p class="lead" id="pLead">-</p>
+        <div class="row">
+          <a class="btn btn-gold" href="#agenda">Revisar mi plan con Tony</a>
+          <a class="btn btn-ghost" id="pWa" href="https://wa.me/17708653002" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+        </div>
+      </div>
+      <div class="empty">
+        <span class="eyebrow">Diagnóstico de financiamiento</span>
+        <h1>Primero, haz tu diagnóstico de 60 segundos</h1>
+        <p class="lead">Responde unas preguntas rápidas y aquí verás los programas que podrían encajar contigo.</p>
+        <a class="btn btn-gold" id="toQuiz" href="/diagnostico-financiamiento">Hacer mi diagnóstico</a>
+      </div>
+    </div>
+    <div class="p-photo frame"><div class="pic cut"><img src="{{A}}/tony-blazer-senalando.webp?h=1000" alt="Tony Valdes revisa tu plan de financiamiento" width="320" height="400"></div></div>
+  </div>
+</section>
+
+<section class="sec slate has">
+  <div class="container">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Según tus respuestas</span>
+      <h2>Los programas que podrían encajar contigo</h2>
+      <p>Es una primera orientación. En la llamada confirmamos con tus números reales.</p>
+    </div>
+    <div class="recs" id="recs"></div>
+    <div class="notes" id="notes"></div>
+  </div>
+</section>
+
+<section class="sec grid-bg dark" id="agenda">
+  <div class="container agenda">
+    <div>
+      <span class="eyebrow">Tu siguiente paso</span>
+      <h2>Revisa tu plan con Tony en 15 minutos</h2>
+      <ul>
+        <li><span><b>Confirmamos el programa</b> con los números de tu deal o de tu negocio.</span></li>
+        <li><span><b>Te digo qué documentos preparar</b> para avanzar sin perder tiempo.</span></li>
+        <li><span><b>Sales con una estrategia clara</b>, aunque todavía estés explorando.</span></li>
+      </ul>
+      <div class="btns">
+        <a class="btn btn-gold" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans" target="_blank" rel="noopener">📅 Abrir el calendario</a>
+        <a class="btn btn-wa" id="aWa" href="https://wa.me/17708653002" target="_blank" rel="noopener">Prefiero WhatsApp</a>
+      </div>
+      <p class="fine" style="margin-top:22px">Este plan es educativo y se basa solo en tus respuestas. No es una aprobación ni una oferta de crédito. Programas sujetos a calificación, tasación y aprobación.</p>
+    </div>
+    <div class="cal">
+      <a class="cal-alt" href="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans" target="_blank" rel="noopener">¿No ves el calendario? Ábrelo aquí →</a>
+      <iframe src="https://api.leadconnectorhq.com/widget/bookings/calendario-tony-valdes-loans" scrolling="no" id="calIe" title="Calendario de Tony Valdes Loans" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="container">
+    <div class="sec-head reveal"><span class="eyebrow">Casos reales</span><h2>Así se ve cuando el financiamiento encaja</h2></div>
+    <div class="mini-cases">
+      <div class="card inv reveal"><span class="tag-inv">Fix &amp; Flip</span><h3 style="margin-top:12px">Duncan Drive</h3><p>Compra de $235,000 y remodelación de $70,000. Vendida en septiembre de 2025 por $419,999.</p><div class="big">$100K+<small>de ganancia</small></div></div>
+      <div class="card inv reveal"><span class="tag-inv">Multifamily</span><h3 style="margin-top:12px">Cuádruplex en Forest Park, GA</h3><p>Compra de $730,000 y una mejora de $7,000 por unidad. Cuatro rentas trabajando para el inversionista cada mes.</p><div class="big">$6,600<small>de renta mensual</small></div></div>
+      <div class="card emp reveal"><span class="tag-emp">Ejecución</span><h3 style="margin-top:12px">Deal rescatado</h3><p>Un deal que otro lender no pudo cerrar. Buscamos una estructura alternativa y lo cerramos.</p><div class="big">10 días<small>del rescate al cierre</small></div></div>
+    </div>
+    <p class="fine" style="text-align:center;margin-top:22px">Los resultados individuales pueden variar. Cada caso depende de la propiedad, el mercado y la calificación del cliente.</p>
+  </div>
+</section>
+
+</main>
+<!--FOOTER-->
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+(function(){
+/*CORE_JS*/
+
+  var QUIZ_URL='/diagnostico-financiamiento';
+  if(location.protocol==='file:') QUIZ_URL='1-diagnostico.html';
+  document.getElementById('toQuiz').href=QUIZ_URL;
+  var src=QS; if(!QS.get('p')){try{src=new URLSearchParams(sessionStorage.getItem('tvl-ie')||'')}catch(e){}}
+  function g(k){var v=src.get(k);return v===null||v===''?null:parseInt(v,10)}
+  var n=(src.get('n')||'').slice(0,30), p=src.get('p'), o=g('o'), x=g('x'), c=g('c'), y=g('y'), t=g('t'), k=g('k'), w=g('w');
+  var has=(p==='inv'||p==='emp'||p==='amb')&&o!=null;
+  if(!has) document.getElementById('root').classList.add('no-data');
+
+  var ICO={ff:'🔨',dscr:'🏘️',mf:'🏢',con:'🏗️',heloc:'🔑',cash:'💵',bs:'🏦',pl:'📊',n99:'🧾',asset:'💼',com:'🏬',trad:'📄'};
+  var NAME={ff:'Fix & Flip / Bridge',dscr:'DSCR',mf:'Multifamily',heloc:'HELOC / HELOAN',cash:'Cash-Out Refinance',bs:'Bank Statement',pl:'Profit & Loss (P&L)',n99:'1099',asset:'Asset-Based'};
+  function recs(){
+    if(p==='inv') return [['ff','heloc'],['dscr','heloc'],['mf','dscr'],['con','ff'],['heloc','cash']][o]||['dscr','ff'];
+    if(o===0) return [['bs','pl'],['trad','bs'],['n99','bs'],['asset','bs']][t]||['bs','pl'];
+    return [null,['com','bs'],['dscr','ff'],['cash','heloc']][o]||['bs','dscr'];
+  }
+  function notes(){
+    var r=[];
+    if(k===3) r.push('_n_cred_low'); else if(k===2) r.push('_n_cred_mid');
+    if(x===0) r.push('_n_new');
+    if(c===0) r.push('_n_cap');
+    if(y===2) r.push('_n_years');
+    if(t===3) r.push('_n_notax');
+    if(p==='amb') r.push('_n_amb');
+    return r;
+  }
+  function render(){
+    if(!has) return;
+    var name=n?n.charAt(0).toUpperCase()+n.slice(1):'';
+    document.getElementById('pTitle').textContent=name?T('_p_title_n').replace('{n}',name):T('_p_title');
+    document.getElementById('pLead').textContent=T('_p_lead_'+(p==='inv'?'inv':'emp'));
+    document.getElementById('hot').classList.toggle('on',w===0||w===1);
+    var html='';
+    recs().forEach(function(key,i){
+      var docs=T('_doc_'+key).split('|').map(function(d){return '<li>'+esc(d)+'</li>'}).join('');
+      html+='<article class="rec"><div class="rec-top"><div class="ico">'+ICO[key]+'</div><div><small>'+T(i===0?'_rec_main':'_rec_alt')+'</small><h3>'+esc(NAME[key]||T('_pn_'+key))+'</h3></div></div>'+
+        '<div class="rec-bd"><p>'+esc(T('_pd_'+key))+'</p><h4>'+T('_rec_docs')+'</h4><ul>'+docs+'</ul></div></article>';
+    });
+    document.getElementById('recs').innerHTML=html;
+    document.getElementById('notes').innerHTML=notes().map(function(nk){return '<div class="note"><p>'+esc(T(nk))+'</p></div>'}).join('');
+    var main=recs()[0], wa=T('_wa_plan').replace('{p}',NAME[main]||T('_pn_'+main));
+    ['pWa','aWa'].forEach(function(id){document.getElementById(id).href='https://wa.me/17708653002?text='+encodeURIComponent(wa)});
+  }
+  window.tvlRecalc=render;
+  startLang();
+})();
+</script>
+</body>
+</html>
