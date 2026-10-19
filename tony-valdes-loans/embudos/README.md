@@ -174,6 +174,25 @@ Las fotos de ambiente salen de Unsplash, que permite uso comercial gratis y sin 
 
 Van incluidas dentro de cada archivo, como fondos bajo una capa azul de la marca y en las tarjetas de perfil.
 
+## SEO de la masterclass y la landing de inversionistas
+
+Imágenes para redes (1200×630) en `seo/`. Se regeneran con `python3 seo/build_og_embudos.py`.
+- `og-masterclass-inversionistas.jpg`: los 3 pasos de la masterclass.
+- `og-landing-inversionistas-empresarios.jpg`: la landing.
+
+En GHL van en el paso → **Settings → SEO Meta Data**: título, descripción, palabras clave y **Social Image**. El favicon es `seo/favicon-512.png`, en la configuración del embudo.
+
+| Página | Título | Descripción |
+|---|---|---|
+| Masterclass · Registro | Masterclass Gratis: Inversionistas y Empresarios \| Tony Valdes | Clase gratis en vivo por Zoom con Tony Valdes: estado del mercado, oportunidades en bienes raíces y financiamiento inteligente. Jueves 5 de nov., 7:30 p.m. |
+| Masterclass · Lugar reservado | ¡Tu lugar está reservado! \| Masterclass Tony Valdes | Completa 3 pasos para no perderte la masterclass para inversionistas y empresarios. |
+| Masterclass · Sala | Sala de la Masterclass \| Tony Valdes Loans | Entra a la masterclass en vivo o mira la repetición. |
+| Landing | Financiamiento para Inversionistas y Empresarios \| Tony Valdes | Fix & Flip, DSCR, multifamily y programas para dueños de negocio: Bank Statement, P&L y propiedad comercial. Análisis gratis con Tony Valdes, NMLS #1593970. |
+
+**Palabras clave de la masterclass:** masterclass inversión inmobiliaria, inversionistas bienes raíces, empresarios, financiamiento para inversionistas, préstamos DSCR, Fix and Flip, Bank Statement, invertir en Atlanta, invertir en Miami, Tony Valdes.
+
+**Palabras clave de la landing:** financiamiento para inversionistas, préstamos para empresarios, préstamo DSCR, Fix and Flip, Bank Statement loan, préstamos para self-employed, propiedad comercial, multifamily, Tony Valdes Loans.
+
 ## Cómo regenerar
 
 ```bash

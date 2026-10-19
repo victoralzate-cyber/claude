@@ -17,10 +17,10 @@ def L(es, en, pt): return {'es': es, 'en': en, 'pt': pt}
 
 PAGES = [
     {'src': '1-registro.html', 'label': 'MASTERCLASS INVERSIONISTAS Y EMPRESARIOS · PASO 1 REGISTRO',
-     'title': L('Masterclass gratis: Inversionistas y Empresarios | Tony Valdes Loans',
+     'title': L('Masterclass Gratis: Inversionistas y Empresarios | Tony Valdes',
                 'Free masterclass: Investors and Business Owners | Tony Valdes Loans',
                 'Masterclass grátis: Investidores e Empresários | Tony Valdes Loans'),
-     'desc': L('Clase gratis en vivo con Tony Valdes: estado actual del mercado, oportunidades de inversión en bienes raíces y estrategias de financiamiento inteligente. Jueves 5 de noviembre, 7:30 p.m. (Atlanta / Miami).',
+     'desc': L('Clase gratis en vivo por Zoom con Tony Valdes: estado del mercado, oportunidades en bienes raíces y financiamiento inteligente. Jueves 5 de nov., 7:30 p.m.',
                'Free live class with Tony Valdes: current market conditions, real estate investment opportunities and smart financing strategies. Thursday, November 5, 7:30 p.m. (Atlanta / Miami).',
                'Aula grátis ao vivo com Tony Valdes: situação atual do mercado, oportunidades de investimento imobiliário e estratégias de financiamento inteligente. Quinta-feira, 5 de novembro, 19h30 (Atlanta / Miami).')},
     {'src': '2-confirmado.html', 'label': 'MASTERCLASS INVERSIONISTAS Y EMPRESARIOS · PASO 2 LUGAR RESERVADO',
