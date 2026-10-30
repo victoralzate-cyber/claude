@@ -4,7 +4,7 @@
 
 **Antes de usarlo:**
 1. Crea los campos personalizados: **Origen, Idioma, Perfil, Pregunta para Tony, Webinar**. La IA no crea campos.
-2. Ten a mano el enlace de Zoom. Si todavía no lo tienes, deja el texto `[ENLACE ZOOM]` y lo cambias después.
+2. Ten a mano el enlace de Zoom. Si todavía no lo tienes, deja el texto `https://us06web.zoom.us/j/82236213247` y lo cambias después.
 
 ---
 
@@ -35,8 +35,8 @@ Y enviar email con asunto "Mañana: Masterclass para Inversionistas y Empresario
 Enviar SMS: "⏰ {{contact.first_name}}, en 1 hora empezamos la Masterclass con Tony Valdes (7:30 p.m.). Ten listo papel y tus preguntas. Sala: https://tonyvaldesloansinfo.com/masterclass-inversionistas-sala"
 
 6) Esperar hasta el 5 de noviembre de 2026 a las 7:28 PM.
-Enviar SMS: "🔴 ¡Estamos EN VIVO! Entra ahora: [ENLACE ZOOM] — Tony Valdes Loans"
-Enviar email con asunto "🔴 Estamos en vivo: entra ahora" y un botón grande "Entrar a Zoom" a [ENLACE ZOOM].
+Enviar SMS: "🔴 ¡Estamos EN VIVO! Entra ahora: https://us06web.zoom.us/j/82236213247 — Tony Valdes Loans"
+Enviar email con asunto "🔴 Estamos en vivo: entra ahora" y un botón grande "Entrar a Zoom" a https://us06web.zoom.us/j/82236213247.
 
 7) Esperar hasta el 6 de noviembre de 2026 a las 10:00 AM.
 Enviar SMS: "{{contact.first_name}}, gracias por registrarte a la Masterclass 🙌 ¿No pudiste verla completa? Aquí está la repetición: https://tonyvaldesloansinfo.com/masterclass-inversionistas-sala — Y si quieres revisar tu caso con Tony, haz tu diagnóstico gratis: https://tonyvaldesloansinfo.com/diagnostico-financiamiento"
@@ -73,6 +73,6 @@ En este workflow, después de la acción Create/Update Contact, agrega una condi
 La IA de GHL a veces deja pasos a medias. Revisa:
 1. Que el **trigger** sea el tag `masterclass-inv-nov5`.
 2. Que las **esperas** sean "until specific date/time" con la fecha y la hora correctas, en **America/New_York**.
-3. Que los **enlaces** de los mensajes estén completos y que `[ENLACE ZOOM]` esté reemplazado.
+3. Que los **enlaces** de los mensajes estén completos y que `https://us06web.zoom.us/j/82236213247` esté reemplazado.
 4. Que las **variables** de perfil y pregunta coincidan con el nombre real de tus campos en el selector `{{ }}`.
 5. Que el workflow esté en **Publish** (no en Draft) antes del primer registro.

@@ -6,7 +6,7 @@ EVENT = {
     'start': '2026-11-05T19:30:00-05:00',  # jueves 5 de noviembre, 7:30 p.m. hora de Atlanta / Miami (-05:00 en invierno, -04:00 en verano)
     'tz': 'America/New_York',
     'minutes': 75,
-    'zoom': '',             # enlace de Zoom (vacío = "te llegó por correo y WhatsApp")
+    'zoom': 'https://us06web.zoom.us/j/82236213247',  # enlace de Zoom
     'replay': '',           # repetición: YouTube, Vimeo o .mp4 (vacío = "muy pronto")
     'whatsapp_group': '',   # grupo de WhatsApp (vacío = WhatsApp de Tony)
 }

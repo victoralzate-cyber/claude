@@ -330,7 +330,7 @@ html,body{overflow-x:clip}
   } else { els.forEach(function(el){el.classList.add('in')}) }
 
   // ===== Evento: una sola fecha para las 3 páginas (se cambia en i18n.py → EVENT) =====
-  var EV={"start": "2026-11-05T19:30:00-05:00", "tz": "America/New_York", "minutes": 75, "zoom": "", "replay": "", "whatsapp_group": ""};
+  var EV={"start": "2026-11-05T19:30:00-05:00", "tz": "America/New_York", "minutes": 75, "zoom": "https://us06web.zoom.us/j/82236213247", "replay": "", "whatsapp_group": ""};
   var START=new Date(EV.start), END=new Date(START.getTime()+(EV.minutes||60)*60000);
   var LOC={es:'es-US',en:'en-US',pt:'pt-BR'};
   var URLS={registro:'/masterclass-inversionistas',confirmado:'/masterclass-inversionistas-confirmado',sala:'/masterclass-inversionistas-sala',test:'/diagnostico-financiamiento'};

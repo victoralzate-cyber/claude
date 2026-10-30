@@ -115,7 +115,7 @@ Aquí usa los nombres de tus campos personalizados tal como los muestre GHL en e
 - **Wait** → *Until* **5 de noviembre de 2026, 7:28 p.m.**
 - **SMS**
 ```
-🔴 ¡Estamos EN VIVO! Entra ahora: [ENLACE DE ZOOM]
+🔴 ¡Estamos EN VIVO! Entra ahora: https://us06web.zoom.us/j/82236213247
 Tony Valdes Loans
 ```
 - **Email**
