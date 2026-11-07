@@ -122,9 +122,10 @@ export function flecha(g, x, y, l, color) {
 // Titular: grotesca negrísima apretada, con UNA palabra (o dos) en cursiva serif con marcador amarillo a mano.
 //   partes: ["Revisa tus", { it: "números" }]   o una cadena.
 //   t/desde/paso: cada palabra entra al tiempo `desde + i·paso` (o pasá `tiempos` con un instante por palabra,
-//   p. ej. sacado de v.t(...) para que caiga con la voz). Sin t, todo visible.
+//   p. ej. sacado de v.t(...) para que caiga con la voz). Sin t, todo visible. marcaDesde: cuándo se dibuja el
+//   marcador (si no, poco después de que aparece su palabra).
 // Devuelve la altura usada.
-export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlinea = 1.04, t = null, desde = 0, paso = 0.09, tiempos = null, color = C.tinta, alinear = "izq" } = {}) {
+export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlinea = 1.04, t = null, desde = 0, paso = 0.09, tiempos = null, color = C.tinta, alinear = "izq", marcaDesde = null } = {}) {
   g.save(); limpio(g);
   const lista = (Array.isArray(partes) ? partes : [partes]).flatMap((p) =>
     typeof p === "string" ? p.split(/\s+/).filter(Boolean).map((w) => ({ w, it: false })) : String(p.it).split(/\s+/).map((w) => ({ w, it: true })));
@@ -154,7 +155,7 @@ export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlin
         g.font = fuente(p.it); g.letterSpacing = esp(p.it); g.fillStyle = color; g.textBaseline = "alphabetic"; g.textAlign = "left";
         g.fillText(p.w, px, base + 14 * (1 - u));
         g.filter = "none";
-        if (p.ancho) subrayar(g, px - 4, base + tam * 0.02, p.ancho + 8, t == null ? 1 : tramo(t, t0 + 0.2, t0 + 0.65), tam);
+        if (p.ancho) subrayar(g, px - 4, base + tam * 0.02, p.ancho + 8, t == null ? 1 : marcaDesde != null ? tramo(t, marcaDesde, marcaDesde + 0.45) : tramo(t, t0 + 0.2, t0 + 0.65), tam);
       }
       px += p.a + hueco;
     }
