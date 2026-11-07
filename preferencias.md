@@ -1,10 +1,9 @@
 # Preferencias
 
 ## Voz
-- «no me gusta la voz de Matilda con el ID XrExE9yKIg1WjnnlVkGX» → no usarla.
+- «me gusta la de Matilda» → voz: Matilda, ID `XrExE9yKIg1WjnnlVkGX` (va en `guion.json`, `voz.id`).
 
 ## Pendiente de definir
 - Idioma y audiencia
 - Cierre de los videos
-- Voz elegida
 - Efectos de sonido / música
