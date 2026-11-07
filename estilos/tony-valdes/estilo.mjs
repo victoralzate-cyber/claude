@@ -14,20 +14,22 @@ import { fileURLToPath } from "node:url";
 const AQUI = dirname(fileURLToPath(import.meta.url));
 const BN = join(AQUI, "..", "blanco-y-negro", "letra");
 
-// Colores medidos en las láminas.
+// Estructura medida en las láminas; colores de la paleta de marca (brandbook Tony Valdes Loans): el naranja de los
+// carruseles pasa a amarillo Jasmine y los oscuros a azul Cetacean.
 export const C = {
-  fondo: "#EFEEEF",        // papel gris cálido
-  grilla: "#E2DCDC",       // cuadrícula fina, apenas rosada
-  tinta: "#1E1715",        // titulares y texto fuerte (casi negro café)
-  texto: "#3A3230",        // cuerpo
-  suave: "#8A817E",        // pie, notas
-  naranja: "#E8763A",      // íconos (números, checks, cruces) y flechas
-  terracota: "#C96F56",    // subrayado de la palabra en cursiva, «Sigue →»
-  rojo: "#A24E36",         // montos negativos
+  fondo: "#EFEEEF",        // papel gris
+  grilla: "#DDDEE8",       // cuadrícula fina, apenas azulada
+  tinta: "#03002E",        // Cetacean Blue: titulares y texto fuerte
+  texto: "#2C2B45",        // cuerpo
+  suave: "#7D7C92",        // pie, notas
+  amarillo: "#F4E478",     // Jasmine: íconos, subrayado de la cursiva, fila del total
+  oro: "#B07908",          // Philippine Gold: flechas, «Sigue →», barra de avance (amarillo que se lee sobre claro)
+  azul: "#083FB0",         // Cobalt Blue: montos negativos, tilde de verificado
+  celeste: "#7888F4",      // Cornflower Blue: acentos suaves
   tarjeta: "#FFFFFF",
-  oscura: "#2F211C",       // placa del llamado a la acción y encabezado de tablas
-  resalta: "#FFF3B8",      // fila del total
-  verificado: "#3B82F6",
+  oscura: "#03002E",       // placa del llamado a la acción y encabezado de tablas
+  resalta: "#F4E478",
+  verificado: "#083FB0",
 };
 
 export const LETRA = { titular: "TV Titular", titular2: "TV Titular Bold", serif: "TV Serif", cuerpo: "TV Cuerpo" };
@@ -88,15 +90,15 @@ export function pie(g, { izq = "", der = "Sigue →", avance = null, y = 1800 } 
   g.save(); limpio(g);
   g.font = `400 27px "${LETRA.cuerpo}"`; g.textBaseline = "middle";
   g.fillStyle = C.suave; g.textAlign = "left"; g.fillText(izq, M, y);
-  g.fillStyle = C.terracota; g.textAlign = "right"; g.fillText(der, W - M, y);
+  g.fillStyle = C.oro; g.textAlign = "right"; g.fillText(der, W - M, y);
   if (avance != null) {
-    g.fillStyle = "rgba(30,23,21,0.08)"; redondo(g, M, y + 40, W - 2 * M, 5, 3); g.fill();
-    g.fillStyle = C.terracota; redondo(g, M, y + 40, (W - 2 * M) * Math.max(0, Math.min(1, avance)), 5, 3); g.fill();
+    g.fillStyle = "rgba(3,0,46,0.08)"; redondo(g, M, y + 40, W - 2 * M, 5, 3); g.fill();
+    g.fillStyle = C.oro; redondo(g, M, y + 40, (W - 2 * M) * Math.max(0, Math.min(1, avance)), 5, 3); g.fill();
   }
   g.restore();
 }
 
-// La pastilla «→ LA IDEA CLAVE»: borde de tinta, fondo claro, flecha naranja. Entra con u (0→1) desde la izquierda.
+// La pastilla «→ LA IDEA CLAVE»: borde de tinta, fondo claro, flecha dorada. Entra con u (0→1) desde la izquierda.
 export function etiqueta(g, texto, x, y, u = 1) {
   if (u <= 0) return 0;
   g.save(); limpio(g);
@@ -105,7 +107,7 @@ export function etiqueta(g, texto, x, y, u = 1) {
   g.globalAlpha = u; g.translate(-24 * (1 - u), 0);
   g.fillStyle = "#F7F6F6"; redondo(g, x, y, w, h, 10); g.fill();
   g.strokeStyle = C.tinta; g.lineWidth = 2.5; g.stroke();
-  flecha(g, x + 34, y + h / 2, 22, C.naranja);
+  flecha(g, x + 34, y + h / 2, 22, C.oro);
   g.fillStyle = C.tinta; g.textBaseline = "middle"; g.textAlign = "left"; g.fillText(t, x + 60, y + h / 2 + 1);
   g.restore();
   return w;
@@ -117,7 +119,7 @@ export function flecha(g, x, y, l, color) {
   g.restore();
 }
 
-// Titular: grotesca negrísima apretada, con UNA palabra (o dos) en cursiva serif subrayada en terracota a mano.
+// Titular: grotesca negrísima apretada, con UNA palabra (o dos) en cursiva serif con marcador amarillo a mano.
 //   partes: ["Revisa tus", { it: "números" }]   o una cadena.
 //   t/desde/paso: cada palabra entra al tiempo `desde + i·paso` (o pasá `tiempos` con un instante por palabra,
 //   p. ej. sacado de v.t(...) para que caiga con la voz). Sin t, todo visible.
@@ -152,7 +154,7 @@ export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlin
         g.font = fuente(p.it); g.letterSpacing = esp(p.it); g.fillStyle = color; g.textBaseline = "alphabetic"; g.textAlign = "left";
         g.fillText(p.w, px, base + 14 * (1 - u));
         g.filter = "none";
-        if (p.ancho) subrayar(g, px - 4, base + tam * 0.16, p.ancho + 8, t == null ? 1 : tramo(t, t0 + 0.2, t0 + 0.65), tam);
+        if (p.ancho) subrayar(g, px - 4, base + tam * 0.02, p.ancho + 8, t == null ? 1 : tramo(t, t0 + 0.2, t0 + 0.65), tam);
       }
       px += p.a + hueco;
     }
@@ -161,10 +163,10 @@ export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlin
   return lineas.length * alto;
 }
 
-// El trazo a mano bajo la cursiva: una curva apenas ondulada que se dibuja de izquierda a derecha.
+// El marcador amarillo bajo la cursiva: un trazo grueso, apenas ondulado, que se dibuja de izquierda a derecha.
 export function subrayar(g, x, y, w, u = 1, tam = 100) {
   if (u <= 0) return;
-  g.save(); g.globalAlpha = 1; g.strokeStyle = C.terracota; g.lineWidth = Math.max(3, tam * 0.045); g.lineCap = "round";
+  g.save(); g.globalAlpha = 1; g.globalCompositeOperation = "multiply"; g.strokeStyle = C.amarillo; g.lineWidth = Math.max(8, tam * 0.16); g.lineCap = "round";
   g.beginPath();
   const n = 24, fin = Math.max(1, Math.round(n * salir(u)));
   for (let k = 0; k <= fin; k++) { const s = k / n, xx = x + w * s, yy = y + Math.sin(s * Math.PI * 1.3) * tam * 0.035 - s * tam * 0.02; k ? g.lineTo(xx, yy) : g.moveTo(xx, yy); }
@@ -194,18 +196,18 @@ export function tarjeta(g, x, y, w, h, { u = 1, r = 26, color = C.tarjeta } = {}
   if (u <= 0) return;
   g.save(); limpio(g); g.globalAlpha = u;
   const dy = 40 * (1 - u);
-  g.shadowColor = "rgba(40,25,20,0.10)"; g.shadowBlur = 30; g.shadowOffsetY = 10;
+  g.shadowColor = "rgba(3,0,46,0.10)"; g.shadowBlur = 30; g.shadowOffsetY = 10;
   g.fillStyle = color; redondo(g, x, y + dy, w, h, r); g.fill();
   g.restore();
 }
 
-// Ícono naranja: "num" con un número, "check" o "x". u lo hace crecer con un leve sobrepaso.
+// Ícono amarillo: "num" con un número, "check" o "x". u lo hace crecer con un leve sobrepaso.
 export function icono(g, tipo, x, y, { n = 1, tam = 56, u = 1 } = {}) {
   if (u <= 0) return;
   const s = u < 1 ? salir(u) * (1 + 0.12 * Math.sin(u * Math.PI)) : 1;
   g.save(); limpio(g); g.translate(x + tam / 2, y + tam / 2); g.scale(s, s);
-  g.fillStyle = C.naranja; redondo(g, -tam / 2, -tam / 2, tam, tam, tam * 0.24); g.fill();
-  g.strokeStyle = "#fff"; g.fillStyle = "#fff"; g.lineWidth = tam * 0.1; g.lineCap = "round"; g.lineJoin = "round";
+  g.fillStyle = C.amarillo; redondo(g, -tam / 2, -tam / 2, tam, tam, tam * 0.24); g.fill();
+  g.strokeStyle = C.tinta; g.fillStyle = C.tinta; g.lineWidth = tam * 0.1; g.lineCap = "round"; g.lineJoin = "round";
   if (tipo === "num") { g.font = `700 ${tam * 0.56}px "${LETRA.titular2}"`; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(String(n), 0, tam * 0.03); }
   else if (tipo === "check") { g.beginPath(); g.moveTo(-tam * 0.22, 0); g.lineTo(-tam * 0.06, tam * 0.16); g.lineTo(tam * 0.24, -tam * 0.16); g.stroke(); }
   else { const k = tam * 0.18; g.beginPath(); g.moveTo(-k, -k); g.lineTo(k, k); g.moveTo(k, -k); g.lineTo(-k, k); g.stroke(); }
@@ -230,7 +232,7 @@ export function item(g, tipo, n, titular, texto, x, y, { ancho = W - 2 * M, u = 
   return h;
 }
 
-// Cuenta tipo «Renta − todos los gastos = flujo de caja»: filas con monto a la derecha; los negativos en rojo y la
+// Cuenta tipo «Renta − todos los gastos = flujo de caja»: filas con monto a la derecha; los negativos en azul cobalto y la
 // última (total) resaltada en amarillo. filas: [{ txt, monto, t0 }] con monto como cadena («−$1,350»).
 export function cuenta(g, filas, x, y, { ancho = W - 2 * M, alto = 100, t = null, total = true } = {}) {
   const h = filas.length * alto + 24;
@@ -242,12 +244,12 @@ export function cuenta(g, filas, x, y, { ancho = W - 2 * M, alto = 100, t = null
     const fy = y + 12 + i * alto, ult = total && i === filas.length - 1;
     g.globalAlpha = u;
     if (ult) { g.fillStyle = C.resalta; redondo(g, x + 8, fy, ancho - 16, alto, 16); g.fill(); }
-    else if (i) { g.fillStyle = "rgba(30,23,21,0.08)"; g.fillRect(x + 30, fy, ancho - 60, 2); }
+    else if (i) { g.fillStyle = "rgba(3,0,46,0.08)"; g.fillRect(x + 30, fy, ancho - 60, 2); }
     const neg = /^[−-]/.test(f.monto);
     g.textBaseline = "middle";
     g.font = ult ? `700 46px "${LETRA.titular2}"` : `400 42px "${LETRA.cuerpo}"`; g.fillStyle = C.tinta; g.textAlign = "left";
     g.fillText(f.txt, x + 34 + 16 * (1 - u), fy + alto / 2);
-    g.font = `700 ${ult ? 48 : 42}px "${LETRA.titular2}"`; g.fillStyle = neg ? C.rojo : C.tinta; g.textAlign = "right";
+    g.font = `700 ${ult ? 48 : 42}px "${LETRA.titular2}"`; g.fillStyle = neg ? C.azul : C.tinta; g.textAlign = "right";
     g.fillText(f.monto, x + ancho - 34, fy + alto / 2);
   });
   g.restore();
@@ -264,13 +266,13 @@ export function placa(g, titular, texto, x, y, { ancho = W - 2 * M, u = 1 } = {}
   const dy = 40 * (1 - u);
   g.save(); g.globalAlpha = u;
   titulo(g, titular, x + pad, y + dy + pad, { tam: 80, ancho: ancho - 2 * pad, color: "#fff" });
-  parrafo(g, texto, x + pad, y + dy + pad + h1 + 20, { tam: 42, ancho: ancho - 2 * pad, color: "#EDE6E3", fuerte: "#FFFFFF", al: u });
+  parrafo(g, texto, x + pad, y + dy + pad + h1 + 20, { tam: 42, ancho: ancho - 2 * pad, color: "#E6E6F2", fuerte: C.amarillo, al: u });
   g.restore();
   return h;
 }
 
 // Subtítulo de la voz (opcional, abajo): la frase que se dice en Inter Bold, palabra por palabra, la palabra clave en
-// cursiva terracota. Úsalo sólo en escenas sin texto propio; si la lámina ya dice la frase, no hace falta.
+// cursiva con el marcador amarillo. Úsalo sólo en escenas sin texto propio; si la lámina ya dice la frase, no hace falta.
 export function subtitulo(g, t, v, { y = 1590, ancho = W - 2 * M, tam = 50 } = {}) {
   const f = v.frases.find((x) => t >= x.inicio - 0.1 && t < x.fin + 0.4);
   if (!f) return;

@@ -4,8 +4,8 @@ Es el estilo por defecto de los reels de Tony Valdes Loans (ver `preferencias.md
 carruseles: «Guía para empezar a invertir en bienes raíces» (10 láminas, noviembre 2026).
 
 En una frase: papel gris con cuadrícula fina, cabecera con avatar y @tonyvaldesloans, una pastilla «→ TEMA», un
-titular negrísimo con una palabra en cursiva serif subrayada a mano en terracota, y debajo tarjetas blancas con íconos
-naranjas (números, checks, cruces), cuentas con el total en amarillo y un cierre en placa café oscura.
+titular negrísimo con una palabra en cursiva serif con marcador amarillo, y debajo tarjetas blancas con íconos
+amarillos (números, checks, cruces), cuentas con el total en amarillo y un cierre en placa azul oscuro.
 
 ## Qué se mantiene de la skill
 
@@ -17,26 +17,27 @@ entrega como dice [SKILL.md](../SKILL.md).
 Reemplaza el lenguaje visual del kit (luz, volumen, partículas, cámara 3D, subtítulos con recuadro). Se mantiene el
 fondo: lo que dice la voz se ve, grande, y cada idea nueva trae una lámina o una pieza nueva.
 
-### Paleta (`tv.C`)
+### Paleta (`tv.C`, del brandbook de Tony Valdes Loans)
+
+El formato es el de los carruseles; los colores son los de la marca: el naranja pasa a amarillo y los oscuros a azul.
 
 | Uso | Color |
 |---|---|
-| Fondo / cuadrícula | `#EFEEEF` / `#E2DCDC` |
-| Tinta de titulares / cuerpo | `#1E1715` / `#3A3230` |
-| Íconos y flechas | naranja `#E8763A` |
-| Subrayado de la cursiva, «Sigue →» | terracota `#C96F56` |
-| Montos negativos | `#A24E36` |
-| Placa de cierre y encabezado de tabla | café `#2F211C` |
-| Fila del total | amarillo `#FFF3B8` |
+| Fondo / cuadrícula | `#EFEEEF` / `#DDDEE8` |
+| Titulares, placa de cierre, encabezado de tabla | Cetacean Blue `#03002E` |
+| Íconos, marcador bajo la cursiva, fila del total, @usuario en la placa | Jasmine `#F4E478` |
+| Flechas, «Sigue →», barra de avance | Philippine Gold `#B07908` |
+| Montos negativos, tilde de verificado | Cobalt Blue `#083FB0` |
+| Acentos suaves | Cornflower Blue `#7888F4` |
 
-Fuera de esto no entra color, salvo ilustraciones (casas, monedas) en tonos cálidos.
+Fuera de esto no entra color, salvo ilustraciones (casas, obra) que pueden llevar tonos cálidos.
 
 ### Letra
 
 - Titular: Inter Display ExtraBold, interletra apretada. Una o dos palabras clave en **Instrument Serif Italic**,
-  un poco más grande, con el subrayado terracota que se dibuja después de que aparece la palabra.
+  un poco más grande, con el marcador amarillo que se dibuja después de que aparece la palabra.
 - Cuerpo: Inter Regular, con **negritas** en Inter Display Bold.
-- Pastilla: Inter Display Bold en mayúsculas, flecha naranja.
+- Pastilla: Inter Display Bold en mayúsculas, flecha dorada.
 
 ### Estructura de cada escena (lámina)
 
@@ -45,14 +46,14 @@ Fuera de esto no entra color, salvo ilustraciones (casas, monedas) en tonos cál
 3. Titular que se arma palabra por palabra con la voz (`tiempos` sacados de `v.t(...)`).
 4. El contenido de la idea: lista de tarjetas (`tv.item` con "num", "check" o "x"), cuenta (`tv.cuenta`), párrafo, o
    una ilustración dibujada con el kit dentro de una tarjeta.
-5. Pie fijo: «03/08» y «Sigue →», con una barra de avance terracota.
+5. Pie fijo: «03/08» y «Sigue →», con una barra de avance dorada.
 6. Cierre: `tv.placa` con «¿Listo para dar el siguiente paso?» y el llamado a la acción.
 
 Cada elemento entra cuando la voz lo nombra. Entre láminas: la nueva entra empujando desde la derecha (0,35 s) y la
-cuadrícula se desliza despacio todo el tiempo. Nada rebota salvo el ícono naranja, que crece con un leve sobrepaso.
+cuadrícula se desliza despacio todo el tiempo. Nada rebota salvo el ícono amarillo, que crece con un leve sobrepaso.
 
 Subtítulos: `"subtitulos": "no"` en `guion.json`; la lámina ya muestra la idea. En escenas sin texto propio, usá
-`tv.subtitulo(g, t, v)`: la frase abajo, palabra por palabra, con la clave en cursiva terracota.
+`tv.subtitulo(g, t, v)`: la frase abajo, palabra por palabra, con la clave en cursiva con marcador amarillo.
 
 ## Herramientas
 
@@ -63,7 +64,7 @@ import { GlobalFonts, loadImage } from "@napi-rs/canvas";
 import * as tv from "../../../estilos/tony-valdes/estilo.mjs";
 tv.registrar(GlobalFonts);                         // en mundo.js, una vez
 tv.fondo(g, { corre: t * 12 });
-tv.cabecera(g, { avatar });                       // avatar = await loadImage("estilos/tony-valdes/avatar.jpg")
+tv.cabecera(g, { avatar });                       // avatar = await loadImage("estilos/tony-valdes/avatar.png")
 tv.etiqueta(g, "Antes de invertir", tv.M, 400, tv.entra(t, t0));
 const h = tv.titulo(g, ["Revisa tus", { it: "números" }], tv.M, 490, { t, tiempos });
 tv.item(g, "check", 0, "Reservas", "para varios meses de hipoteca", tv.M, y, { u: tv.entra(t, t1) });
@@ -72,7 +73,7 @@ tv.placa(g, "¿Listo para dar el siguiente paso?", "Escríbeme a **@tonyvaldeslo
 tv.pie(g, { izq: "03/08", avance: t / v.duracion });
 ```
 
-Si falta `estilos/tony-valdes/avatar.jpg`, la cabecera muestra un círculo café con «TV».
+El avatar es `estilos/tony-valdes/avatar.png` (foto de perfil de Instagram). Si falta, la cabecera muestra un círculo azul con «TV».
 
 ## Antes de mostrarlo
 
