@@ -8,6 +8,8 @@
 - «me gusta el estilo solo cambiar el color naranja por el amarillo y lo que se pueda azul con el color de la paleta» (brandbook: Cetacean Blue #03002E, Jasmine #F4E478, Philippine Gold #B07908, Cobalt Blue #083FB0, Cornflower Blue #7888F4).
 - Foto de perfil: `estilos/tony-valdes/avatar.png`.
 
+- Variante nocturna (carrusel «Estrategia de adquisición»): «necesito un estilo nocturno igual al que te paso» → `estilos/tony-valdes-noche.md`. Se elige por video.
+
 ## Sonido
 - Efectos: «si efectos de sonido».
 

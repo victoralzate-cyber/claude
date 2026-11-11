@@ -125,7 +125,7 @@ export function flecha(g, x, y, l, color) {
 //   p. ej. sacado de v.t(...) para que caiga con la voz). Sin t, todo visible. marcaDesde: cuándo se dibuja el
 //   marcador (si no, poco después de que aparece su palabra).
 // Devuelve la altura usada.
-export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlinea = 1.04, t = null, desde = 0, paso = 0.09, tiempos = null, color = C.tinta, alinear = "izq", marcaDesde = null } = {}) {
+export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlinea = 1.04, t = null, desde = 0, paso = 0.09, tiempos = null, color = C.tinta, alinear = "izq", marcaDesde = null, colorIt = null, marca = true } = {}) {
   g.save(); limpio(g);
   const lista = (Array.isArray(partes) ? partes : [partes]).flatMap((p) =>
     typeof p === "string" ? p.split(/\s+/).filter(Boolean).map((w) => ({ w, it: false })) : String(p.it).split(/\s+/).map((w) => ({ w, it: true })));
@@ -152,10 +152,15 @@ export function titulo(g, partes, x, y, { tam = 104, ancho = W - 2 * M, interlin
       i++;
       if (u > 0) {
         g.globalAlpha = u; g.filter = u < 1 ? `blur(${(6 * (1 - u)).toFixed(1)}px)` : "none";
-        g.font = fuente(p.it); g.letterSpacing = esp(p.it); g.fillStyle = color; g.textBaseline = "alphabetic"; g.textAlign = "left";
+        g.font = fuente(p.it); g.letterSpacing = esp(p.it); g.textBaseline = "alphabetic"; g.textAlign = "left";
+        if (p.it && colorIt === "oro") { // degradado dorado, como el estilo nocturno
+          const gr = g.createLinearGradient(px, base - tam, px + p.a, base + tam * 0.2);
+          gr.addColorStop(0, "#B07908"); gr.addColorStop(0.45, "#F4E478"); gr.addColorStop(0.7, "#FFF1A8"); gr.addColorStop(1, "#C9961E");
+          g.fillStyle = gr;
+        } else g.fillStyle = p.it && colorIt ? colorIt : color;
         g.fillText(p.w, px, base + 14 * (1 - u));
         g.filter = "none";
-        if (p.ancho) subrayar(g, px - 4, base + tam * 0.02, p.ancho + 8, t == null ? 1 : marcaDesde != null ? tramo(t, marcaDesde, marcaDesde + 0.45) : tramo(t, t0 + 0.2, t0 + 0.65), tam);
+        if (p.ancho && marca) subrayar(g, px - 4, base + tam * 0.02, p.ancho + 8, t == null ? 1 : marcaDesde != null ? tramo(t, marcaDesde, marcaDesde + 0.45) : tramo(t, t0 + 0.2, t0 + 0.65), tam);
       }
       px += p.a + hueco;
     }
