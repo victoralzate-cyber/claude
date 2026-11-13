@@ -10,6 +10,9 @@
 
 - Variante nocturna (carrusel «Estrategia de adquisición»): «necesito un estilo nocturno igual al que te paso» → `estilos/tony-valdes-noche.md`. Se elige por video.
 
+## Videos donde aparece Tony
+- «por favor no tapar la cara con los banners informativos» → tarjetas, pastillas y teléfono siempre debajo del mentón; ningún texto puede salirse de la pantalla.
+
 ## Sonido
 - Efectos: «si efectos de sonido».
 
