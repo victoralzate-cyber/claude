@@ -13,6 +13,8 @@
 ## Videos donde aparece Tony
 - «por favor no tapar la cara con los banners informativos» → tarjetas, pastillas y teléfono siempre debajo del mentón; ningún texto puede salirse de la pantalla.
 
+- Tarjeta del nombre: «Tony Loan Officer, Realtor Appraiser y abajo los tres números de la licencia en pequeño … pero no se tiene que decir tres licencias» → «Tony Valdes / Loan Officer · Realtor · Appraiser / NMLS #1593970 · GA Real Estate #413550 · GA Appraiser #424072».
+
 ## Sonido
 - Efectos: «si efectos de sonido».
 
