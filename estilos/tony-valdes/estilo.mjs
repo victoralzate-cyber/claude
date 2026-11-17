@@ -181,7 +181,7 @@ export function subrayar(g, x, y, w, u = 1, tam = 100) {
 
 // Párrafo en Inter con **negritas** dentro. Devuelve la altura.
 export function parrafo(g, texto, x, y, { tam = 38, ancho = W - 2 * M, interlinea = 1.42, color = C.texto, fuerte = C.tinta, al = 1 } = {}) {
-  g.save(); limpio(g); g.globalAlpha = al;
+  g.save(); limpio(g); g.globalAlpha = al; g.textAlign = "left";
   const trozos = []; String(texto).split(/(\*\*[^*]+\*\*)/).forEach((s) => {
     const b = s.startsWith("**"); (b ? s.slice(2, -2) : s).split(/(\s+)/).forEach((w) => w && trozos.push({ w, b }));
   });
