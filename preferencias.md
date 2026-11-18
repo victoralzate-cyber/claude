@@ -15,6 +15,8 @@
 
 - Tarjeta del nombre: «Tony Loan Officer, Realtor Appraiser y abajo los tres números de la licencia en pequeño … pero no se tiene que decir tres licencias» → «Tony Valdes / Loan Officer · Realtor · Appraiser / NMLS #1593970 · GA Real Estate #413550 · GA Appraiser #424072».
 
+- Formato cinético (reel «MI INVERSIÓN»): «super bueno me gusto mucho» → `estilos/tony-valdes-cinetico.md`. Alternar con los otros estilos para que los videos no sean iguales.
+
 ## Sonido
 - Efectos: «si efectos de sonido».
 
