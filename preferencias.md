@@ -1,6 +1,7 @@
 # Preferencias
 
 ## Voz
+- 2026-11-20: «no quiero a matilda ya tengo una nueva voz es esta: W0ezD6onri043ABUtEHF» → voz por defecto: **Tony Valdes** (voz clonada, español con acento cubano), ID `W0ezD6onri043ABUtEHF`. Matilda ya no se usa.
 - «me gusta la de Matilda» → voz: Matilda, ID `XrExE9yKIg1WjnnlVkGX` (va en `guion.json`, `voz.id`).
 
 ## Formato visual
