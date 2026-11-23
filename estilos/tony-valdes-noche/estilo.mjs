@@ -177,7 +177,7 @@ export function mensaje(g, img, texto, y, u, { x = M, w = W - 2 * M } = {}) {
   g.font = `700 28px "${tv.LETRA.titular2}"`; g.fillStyle = "#03002E"; g.fillText("tonyvaldesloans", x + 116, y + dy + 46);
   const nw = g.measureText("tonyvaldesloans").width;
   g.font = `400 26px "${tv.LETRA.cuerpo}"`; g.fillStyle = "#6B6E8F"; g.fillText(" te envió un mensaje · ahora", x + 116 + nw, y + dy + 46);
-  g.font = `500 32px "${tv.LETRA.cuerpo}"`; g.fillStyle = "#03002E"; g.fillText(texto, x + 116, y + dy + 90);
+  let tm = 32; g.font = `500 ${tm}px "${tv.LETRA.cuerpo}"`; const maxw = w - 116 - 100; while (g.measureText(texto).width > maxw && tm > 20) { tm -= 1; g.font = `500 ${tm}px "${tv.LETRA.cuerpo}"`; } g.fillStyle = "#03002E"; g.fillText(texto, x + 116, y + dy + 90);
   g.fillStyle = "#03002E"; g.beginPath(); g.roundRect(x + w - 82, y + dy + 42, 50, 50, 12); g.fill();
   g.strokeStyle = "#FFFFFF"; g.lineWidth = 3; g.lineJoin = "round"; g.beginPath();
   g.moveTo(x + w - 70, y + dy + 66); g.lineTo(x + w - 44, y + dy + 54); g.lineTo(x + w - 56, y + dy + 82); g.lineTo(x + w - 60, y + dy + 70); g.closePath(); g.stroke();

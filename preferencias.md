@@ -18,8 +18,12 @@
 
 - Formato cinético (reel «MI INVERSIÓN»): «super bueno me gusto mucho» → `estilos/tony-valdes-cinetico.md`. Alternar con los otros estilos para que los videos no sean iguales.
 
+- En los reels de fondo azul: «las animaciones me gustan como las de los cuadros azules y fondo blanco» → usar las tarjetas blancas con la casa ilustrada a color, no los dibujos de línea dorada.
+
 ## Sonido
 - Efectos: «si efectos de sonido».
+
+- Volumen: «quedo con mucho volumen» (reel con la voz de Tony, −14 LUFS) → master a −16 LUFS.
 
 ## Cierre
 - Fix & Flip: «Escribe FLIP si estás evaluando una operación y te mando una consulta gratis por mensaje directo.»
